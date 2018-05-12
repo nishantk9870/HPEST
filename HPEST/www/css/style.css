@@ -1,1 +1,82 @@
 /* Empty. Add your own CSS if you like */
+.bar.bar-stable {
+   background: #32CD32 ;
+}
+
+.bar-stable .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 17px;
+}
+
+.innerbnr_block {
+    width: 100%;
+    float: left;
+}
+
+.about_page, .ap_links, .apq_links, .bred_nav, .accdiv {
+    padding: 0 15px;
+}
+.maincontent {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.mainwrapper {
+    max-width: 550px;
+    min-width: 240px;
+    margin: 0px auto;
+}
+
+.about_page .txt {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-sarif;
+    line-height: 24px;
+    color: #111;
+    font-weight: 300;
+}
+
+.ap_links {
+    background: #EEEEEE;
+}
+
+.ap_left {
+    width: 100%;
+    float: left;
+}
+
+.ap_left li {
+    width: 100%;
+    float: left;
+    padding: 0 40px;
+    list-style: none;
+    position: relative;
+    margin-top: 10px;
+}
+
+.ap_left li:before {
+    content: url(../img/ap_list.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.apq_left h2 {
+    padding: 20px 30px;
+    margin:  0;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-sarif;
+    color: #4B4E53;
+    font-weight: 300;
+    border-left: 2px solid #4B4E53;
+}
+
+img {
+    width:100%;
+}
