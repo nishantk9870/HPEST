@@ -6,78 +6,95 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+  .run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        cordova.plugins.Keyboard.disableScroll(true);
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-})
-
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-
-    .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+      }
+      if (window.StatusBar) {
+        // org.apache.cordova.statusbar required
+        StatusBar.styleDefault();
+      }
+    });
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
 
-  .state('app.aboutus', {
-      url: '/aboutus',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/aboutus.html'
-        }
-      }
-    })
-    .state('app.contactus', {
-      url: '/contactus',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/contactUs.html',
-          controller: 'contactusCtrl'
-        }
-      }
-    })
+      .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'AppCtrl'
+      })
 
-    .state('app.home', {
-      url: '/home',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/home.html',
-          controller:'homeCtrl'
+      .state('app.search', {
+        url: '/search',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/search.html'
+          }
         }
-      }
-    })
+      })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
+      .state('app.aboutus', {
+        url: '/aboutus',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/aboutus.html'
+          }
+        }
+      })
+      .state('app.contactus', {
+        url: '/contactus',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/contactUs.html',
+            controller: 'contactusCtrl'
+          }
+        }
+      })
+
+      .state('app.home', {
+        url: '/home',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/home.html',
+            controller: 'homeCtrl'
+          }
+        }
+      })
+      .state('app.ants', {
+        url: '/ants',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/ants.html'
+          }
+        }
+      })
+      .state('app.bats', {
+        url: '/bats',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/bats.html',
+            controller: 'batsCtrl'
+          }
+        }
+      })
+      .state('app.bedBugs', {
+        url: '/bedBugs',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/bedBugs.html',
+            controller: 'bedBugsCtrl'
+          }
+        }
+      })
+
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/home');
   });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
-});

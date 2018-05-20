@@ -3,32 +3,38 @@
     <ion-nav-bar class="bar-stable">
       <ion-nav-back-button>
       </ion-nav-back-button>
-
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-clear">
+          <i class="fa fa-calendar-alt"></i>
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Menu</h1>
-    </ion-header-bar>
-    <ion-content>
-      <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
+  <ion-side-menu side="left" id="sideMenu">
+    <ion-content overflow-scroll="false">
+      <ion-scroll>
+        <div class="menuHeader">
+          <img src="img/logo.png">
+        </div>
+      </ion-scroll>
+      <ion-list ng-repeat="menu in menuItems" id="sidenav">
+        <ion-item>
+          <item>
+            <div ng-click="navigateToMenu(menu)" role="menu">{{menu.name}}
+              <i ng-class="menu.showSubMenu ? 'fa fa-angle-up' : 'fa fa-angle-down'" ng-if="menu.subMenu" aria-hidden="true"></i>
+            </div>
+          </item>
         </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Careers
-        </ion-item>
-        <ion-item menu-close href="#/app/aboutus">
-          About Us
-        </ion-item>
-        <ion-item menu-close href="#/app/contactus">
-          Contact Us
+        <ion-item submenu-item ng-if="menu.showSubMenu" ng-repeat="subMenu in menu.subMenu">
+          <item>
+            <div ng-click="navigateToMenu(subMenu)" ng-bind="subMenu.name" role="menu"></div>
+          </item>
         </ion-item>
       </ion-list>
     </ion-content>

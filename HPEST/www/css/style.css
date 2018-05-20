@@ -3,218 +3,289 @@ Autors:
 Jilna NT
 Nishant K 
  */
+
 .bar.bar-stable {
-   background: #32CD32 ;
+  background: #32CD32;
 }
 
 .bar-stable .button.button-clear {
-    border-color: transparent;
-    background: none;
-    box-shadow: none;
-    color: #fff;
-    font-size: 17px;
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: #fff;
+  font-size: 17px;
 }
 
 .innerbnr_block {
-    width: 100%;
-    float: left;
+  width: 100%;
+  float: left;
 }
 
-.about_page, .ap_links, .apq_links, .bred_nav, .accdiv {
-    padding: 0 15px;
+.about_page,
+.ap_links,
+.apq_links,
+.bred_nav,
+.accdiv {
+  padding: 0 15px;
 }
+
 .maincontent {
-    width: 100%;
-    float: left;
-    position: relative;
+  width: 100%;
+  float: left;
+  position: relative;
 }
 
 .mainwrapper {
-    max-width: 550px;
-    min-width: 240px;
-    margin: 0px auto;
+  max-width: 550px;
+  min-width: 240px;
+  margin: 0px auto;
 }
 
 .about_page .txt {
-    padding: 0;
-    margin: 0;
-    font-size: 15px;
-    font-family: 'Open Sans', sans-sarif;
-    line-height: 24px;
-    color: #111;
-    font-weight: 300;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-sarif;
+  line-height: 24px;
+  color: #111;
+  font-weight: 300;
 }
 
 .ap_links {
-    background: #EEEEEE;
+  background: #EEEEEE;
 }
 
 .ap_left {
-    width: 100%;
-    float: left;
+  width: 100%;
+  float: left;
 }
 
 .ap_left li {
-    width: 100%;
-    float: left;
-    padding: 0 40px;
-    list-style: none;
-    position: relative;
-    margin-top: 10px;
+  width: 100%;
+  float: left;
+  padding: 0 40px;
+  list-style: none;
+  position: relative;
+  margin-top: 10px;
 }
 
 .ap_left li:before {
-    content: url(../img/ap_list.jpg);
-    position: absolute;
-    top: 0;
-    left: 0;
+  content: url(../img/ap_list.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .apq_left h2 {
-    padding: 20px 30px;
-    margin:  0;
-    font-size: 30px;
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-sarif;
-    color: #4B4E53;
-    font-weight: 300;
-    border-left: 2px solid #4B4E53;
+  padding: 20px 30px;
+  margin: 0;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-sarif;
+  color: #4B4E53;
+  font-weight: 300;
+  border-left: 2px solid #4B4E53;
 }
 
 img {
-    width:100%;
+  width: 100%;
 }
 
 .conact_content {
-    width: 100%;
-    float: left;
-    padding: 0px 15px;
-    background: #f1f1f1;
-    font-family: 'Open Sans', sans-serif;
-    border-bottom: 1px solid #777;
-    margin-bottom: 25px;
+  width: 100%;
+  float: left;
+  padding: 0px 15px;
+  background: #f1f1f1;
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 1px solid #777;
+  margin-bottom: 25px;
 }
 
-.conact_right, .conact_right p {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    line-height: 24px;
+.conact_right,
+.conact_right p {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .conact_right {
-    width: 100%;
-    float: right;
-    background: #F7941D;
-    padding: 35px;
-    text-align: center;
+  width: 100%;
+  float: right;
+  background: #F7941D;
+  padding: 35px;
+  text-align: center;
 }
 
 .conact_left {
-    width: 100%;
-    float: left;
-    padding: 0 0px;
+  width: 100%;
+  float: left;
+  padding: 0 0px;
 }
 
 .contactfielddiv {
-    float: left;
-    width: 100%;
-    font-family: 'Open Sans', sans-serif;
+  float: left;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .fields_two {
-    float: left;
-    width: 48%;
+  float: left;
+  width: 48%;
 }
+
 .fields_two_right {
-    float: right;
-    width: 48%;
+  float: right;
+  width: 48%;
 }
-
-
 
 .conact_right h2 {
-    color: #fff;
-    font-size: 34px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    font-weight: 400;
-    display: block;
-    border-bottom: 1px solid #eee;
-    font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 34px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  display: block;
+  border-bottom: 1px solid #eee;
+  font-family: 'Open Sans', sans-serif;
 }
 
 p {
-    margin:0px;
+  margin: 0px;
 }
 
 input {
-    margin:0 0 10px
+  margin: 0 0 10px
 }
 
 .mandatory {
-    color: #FF0000;
+  color: #FF0000;
 }
 
 .contactfealds {
-    border: 1px solid #cccccc;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    height: 34px;
-    line-height: 20px;
-    margin-bottom: 10px;
-    padding: 6px 12px !important;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width: 100%;
-    color: #3F3F3F;
-    font-family: 'Open Sans', sans-serif;
+  border: 1px solid #cccccc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  height: 34px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  padding: 6px 12px !important;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+  color: #3F3F3F;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .formbutton {
-    background: #333 none repeat scroll 0 0;
-    border: medium none;
-    clear: both;
-    color: #fff;
-    cursor: pointer;
-    float: left;
-    font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 20px;
-    padding: 8px 25px;
-    text-decoration: none;
-    transition: all .3s;
+  background: #333 none repeat scroll 0 0;
+  border: medium none;
+  clear: both;
+  color: #fff;
+  cursor: pointer;
+  float: left;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 20px;
+  padding: 8px 25px;
+  text-decoration: none;
+  transition: all .3s;
 }
 
 .map {
-    float: left;
-    height: 300px;
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 30px;
+  float: left;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .map iframe {
-    width: 100%;
-    height: 100%;
-    border: 8px solid #606060;
+  width: 100%;
+  height: 100%;
+  border: 8px solid #606060;
 }
 
-.swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
-    margin: 0 5px;
-    background: #32CD32;
+.swiper-container-horizontal>.swiper-pagination .swiper-pagination-bullet {
+  margin: 0 5px;
+  background: #32CD32;
 }
 
-.roundPadding{
-    padding:15px
+.roundPadding {
+  padding: 15px
 }
-.navigationData{
-background:black;
-padding:8px 0px 8px 0;
-color:white;
-margin-bottom: 10px
+
+.navigationData {
+  background: black;
+  padding: 8px 0px 8px 0;
+  color: white;
+  margin-bottom: 10px
 }
 
 .navigationP {
-    padding-left: 8px;
+  padding-left: 8px;
+}
+
+#sidenav ion-item[submenu-item] {
+  padding-left: 25px;
+}
+
+#sidenav i {
+  font-size: 25px;
+  float: right;
+  font-weight: 600;
+}
+
+#contentDescription i {
+  font-size: 25px;
+  float: right;
+  font-weight: 600;
+}
+
+#sideMenu {
+  background-color: dimgrey;
+}
+
+#sideMenu ion-content ion-list ion-item {
+  background-color: dimgrey;
+  color: white;
+}
+
+.menuHeader {
+  width: 80%;
+  padding-left: 15px;
+}
+
+.no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+.pageContent {
+  padding: 0 15px 15px 15px;
+  margin: 0;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-sarif;
+  line-height: 24px;
+  color: #111;
+  font-weight: 300;
+}
+
+.dataContainer {
+  padding-top: 15px
+}
+
+.dataDescription {
+  background: #F7941D;
+  color: white !important;
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.contentData {
+  padding: 0 10px 5px 10px;
+  border-left: 0.1px outset dimgrey;
+  border-right: 0.1px outset dimgrey;
+  text-align: justify;
 }
