@@ -121,6 +121,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
         }
       })
+      .state('app.residentialPestControl', {
+        url: '/residentialPestControl',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/services/residentialPestControl.html',
+          }
+        }
+      })
+      .state('app.commercialPestControl', {
+        url: '/commercialPestControl',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/services/commercialPestControl.html',
+          }
+        }
+      })
+      .state('app.environmentallyFriendly', {
+        url: '/environmentallyFriendly',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/services/environmentallyFriendly.html',
+          }
+        }
+      })
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');

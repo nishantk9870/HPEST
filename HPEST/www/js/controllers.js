@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
 
     $scope.menuItems = [{
       name: 'Home',
-      path: 'app'
+      path: 'app.home'
     }, {
       name: 'About Us',
       path: 'app.aboutus'
@@ -20,13 +20,13 @@ angular.module('starter.controllers', [])
       showSubMenu: false,
       subMenu: [{
         name: 'Residential Pest Control',
-        path: '#/app/residential'
+        path: 'app.residentialPestControl'
       }, {
         name: 'Commercial Pest Control',
-        path: '#/app/commercial'
+        path: 'app.commercialPestControl'
       }, {
         name: 'Environmentally Friendly',
-        path: '#/app/environmentally'
+        path: 'app.environmentallyFriendly'
       }]
     }, {
       name: 'Pests',
@@ -113,7 +113,7 @@ angular.module('starter.controllers', [])
 
   .controller('contactusCtrl', function ($scope) {})
 
-  .controller('homeCtrl', function ($scope) {
+.controller('homeCtrl', function($scope,$state) {
     $scope.data = {};
 
     var setupSlider = function () {
@@ -144,6 +144,10 @@ angular.module('starter.controllers', [])
         }
       });
     };
+
+  $scope.navigateTo = function (path) {
+    $state.go(path, {});
+  }
 
     setupSlider();
 
