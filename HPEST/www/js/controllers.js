@@ -117,36 +117,42 @@ angular.module('starter.controllers', [])
   .controller('contactusCtrl', function ($scope) {})
 
 
-  .controller('homeCtrl', function ($scope) {
-    $scope.data = {};
 
-    var setupSlider = function () {
-      //some options to pass to our slider
-      $scope.data.sliderOptions = {
-        initialSlide: 0,
-        direction: 'horizontal', //or vertical
-        speed: 3000, //0.3s transition
-        autoplay: 300
-      };
+.controller('homeCtrl', function($scope) {
+  $scope.data = {};
 
-      //create delegate reference to link with slider
-      $scope.data.sliderDelegate = null;
-
-      //watch our sliderDelegate reference, and use it when it becomes available
-      $scope.$watch('data.sliderDelegate', function (newVal, oldVal) {
-        if (newVal != null) {
-          $scope.data.sliderDelegate.on('slideChangeEnd', function () {
-            $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
-            //use $scope.$apply() to refresh any content external to the slider
-            $scope.$apply();
-          });
-        }
-      });
+  var setupSlider = function() {
+    //some options to pass to our slider
+    $scope.data.sliderOptions = {
+      initialSlide: 0,
+      direction: 'horizontal', //or vertical
+      speed: 3000, //0.3s transition
+      autoplay: 300
     };
 
-    setupSlider();
+    $scope.data.slider2Options = {
+      initialSlide: 4,
+      direction: 'horizontal', //or vertical
+    };
 
-  })
+    //create delegate reference to link with slider
+    $scope.data.sliderDelegate = null;
+
+    //watch our sliderDelegate reference, and use it when it becomes available
+    $scope.$watch('data.sliderDelegate', function(newVal, oldVal) {
+      if (newVal != null) {
+        $scope.data.sliderDelegate.on('slideChangeEnd', function() {
+          $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
+          //use $scope.$apply() to refresh any content external to the slider
+          $scope.$apply();
+        });
+      }
+    });
+  };
+
+  setupSlider();
+
+})
   .controller('batsCtrl', function ($scope) {
     $scope.batsData = [{
       header: 'Habitat',
@@ -207,7 +213,7 @@ angular.module('starter.controllers', [])
     }, {
       header: 'Bed Bugs are not a Sanitation issue.',
       showContent: false,
-      content: 'Even the cleanest of places can fall victim to bed bugs and once inside they spread rapidly. Bed bugs are great hitch hikers and easily travel from place to place in someoneâ€™s personal belongings or luggage.'
+      content: 'Even the cleanest of places can fall victim to bed bugs and once inside they spread rapidly. Bed bugs are great hitch hikers and easily travel from place to place in someone’s personal belongings or luggage.'
     }, {
       header: 'Where have you been finding the bed bugs?',
       showContent: false,

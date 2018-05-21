@@ -289,3 +289,47 @@ input {
   border-right: 0.1px outset dimgrey;
   text-align: justify;
 }
+
+
+.angle-arrow{
+    margin-top: -25px;
+    padding-right: 10px;
+    float: right;
+    font-size: 25px;
+}
+
+.sliderPadding{
+
+    padding-right: 20px;
+    padding-left:20px;
+    padding-bottom: 20px;
+
+}
+
+#bottomSlider .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
+    margin: 0 5px;
+    background: transparent;
+}
+
+.centerHeading {
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin: 0 50px 0 50px ;
+    padding-bottom: 10px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 30px;
+    background: black;
+    color: white;
+}
+
+.swiper-slide img {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
