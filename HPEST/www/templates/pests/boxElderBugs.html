@@ -1,0 +1,32 @@
+<ion-view>
+    <ion-content class="no-scroll">
+      <div class="innerbnr_block">
+        <img src="img/1c57f7548e333148aa84734af2242aaf.jpg">
+      </div>
+      <div class="maincontent pageContent">
+        <div>
+          <h3>Box Elder Bugs</h3>
+          <div>
+            Box elder bugs feed principally by sucking juices from the box elder tree, but are sometimes found on other plants. They do very little damage to the trees they attack, but at certain times of the year they can become a nuisance. Box elder bugs develop by gradual metamorphosis, from egg, to nymph, then to adult.
+            <br>
+            <br> When box elder bugs build up to large populations and invade a home they are usually pests only by their presence, although their piercing-sucking mouthparts can sometimes puncture skin, causing slight irritation.
+            <br>
+            <br>Request an appointment today to protect your property from box elder bugs. Call Hpests Control Services ant control expert by calling +91-8801531541 or you can set up an appointment using our online book now form.
+          </div>
+        </div>
+        <div class="dataContainer">
+          <div id="contentDescription" ng-repeat="data in boxElderBugsData" ng-click="showHeaderContent($index)">
+            <div class="dataDescription">
+              <p>{{data.header}}
+                <i ng-class="data.showContent ? 'fa fa-angle-down' : 'fa fa-angle-right'" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div ng-if="data.showContent" class="contentData">
+              <p ng-bind-html="data.content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

@@ -47,9 +47,6 @@ angular.module('starter.controllers', [])
         name: 'Stink Bugs',
         path: 'app.stinkBugs'
       }, {
-        name: 'Fruit Flies',
-        path: 'app.fruitFlies'
-      }, {
         name: 'Bats',
         path: 'app.bats'
       }, {
@@ -116,43 +113,42 @@ angular.module('starter.controllers', [])
 
   .controller('contactusCtrl', function ($scope) {})
 
+  .controller('homeCtrl', function ($scope) {
+    $scope.data = {};
 
+    var setupSlider = function () {
+      //some options to pass to our slider
+      $scope.data.sliderOptions = {
+        initialSlide: 0,
+        direction: 'horizontal', //or vertical
+        speed: 3000, //0.3s transition
+        autoplay: 300
+      };
 
-.controller('homeCtrl', function($scope) {
-  $scope.data = {};
+      $scope.data.slider2Options = {
+        initialSlide: 4,
+        direction: 'horizontal', //or vertical
+      };
 
-  var setupSlider = function() {
-    //some options to pass to our slider
-    $scope.data.sliderOptions = {
-      initialSlide: 0,
-      direction: 'horizontal', //or vertical
-      speed: 3000, //0.3s transition
-      autoplay: 300
+      //create delegate reference to link with slider
+      $scope.data.sliderDelegate = null;
+
+      //watch our sliderDelegate reference, and use it when it becomes available
+      $scope.$watch('data.sliderDelegate', function (newVal, oldVal) {
+        if (newVal != null) {
+          $scope.data.sliderDelegate.on('slideChangeEnd', function () {
+            $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
+            //use $scope.$apply() to refresh any content external to the slider
+            $scope.$apply();
+          });
+        }
+      });
     };
 
-    $scope.data.slider2Options = {
-      initialSlide: 4,
-      direction: 'horizontal', //or vertical
-    };
+    setupSlider();
 
-    //create delegate reference to link with slider
-    $scope.data.sliderDelegate = null;
+  })
 
-    //watch our sliderDelegate reference, and use it when it becomes available
-    $scope.$watch('data.sliderDelegate', function(newVal, oldVal) {
-      if (newVal != null) {
-        $scope.data.sliderDelegate.on('slideChangeEnd', function() {
-          $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
-          //use $scope.$apply() to refresh any content external to the slider
-          $scope.$apply();
-        });
-      }
-    });
-  };
-
-  setupSlider();
-
-})
   .controller('batsCtrl', function ($scope) {
     $scope.batsData = [{
       header: 'Habitat',
@@ -193,6 +189,7 @@ angular.module('starter.controllers', [])
       });
     }
   })
+
   .controller('bedBugsCtrl', function ($scope) {
     $scope.bedBugsData = [{
       header: 'Identification',
@@ -213,7 +210,7 @@ angular.module('starter.controllers', [])
     }, {
       header: 'Bed Bugs are not a Sanitation issue.',
       showContent: false,
-      content: 'Even the cleanest of places can fall victim to bed bugs and once inside they spread rapidly. Bed bugs are great hitch hikers and easily travel from place to place in someone�s personal belongings or luggage.'
+      content: 'Even the cleanest of places can fall victim to bed bugs and once inside they spread rapidly. Bed bugs are great hitch hikers and easily travel from place to place in someone�s personal belongings or luggage.'
     }, {
       header: 'Where have you been finding the bed bugs?',
       showContent: false,
@@ -234,6 +231,84 @@ angular.module('starter.controllers', [])
           bedBugdata.showContent = false;
         } else if (bedBugIndex == index)
           bedBugdata.showContent = !bedBugdata.showContent;
+      });
+    }
+  })
+
+  .controller('boxElderBugsCtrl', function ($scope) {
+    $scope.boxElderBugsData = [{
+      header: 'Appearance / Identification',
+      showContent: false,
+      content: 'The bodies of box elder bugs are black in color and are marked by red lines along the thorax and sides. Their wings are flat and red. Box elder bugs measure between 11 to 14 mm long.'
+    }, {
+      header: 'Behavior, Diet & Habits',
+      showContent: false,
+      content: 'Box elder bugs do not nest indoors year-round. Rather, they make their homes in box elder, maple and ash trees during warmer seasons and migrate into buildings and homes to find shelter for the winter.They enter through small cracks and crevices within the building, and remain inside, hibernating, through fall and winter. They emerge when heat sources within the building are high and can be located in the warmest areas of a structure’s walls. While they do not cause damage to buildings, their droppings are unsightly and leave stains on furniture and linens.<br><br>Adult bugs live and breed on the leaves of box elder trees, laying their eggs in spring. They feed on soft parts of box elder trees, including leaves, flowers and new twigs. They also extract juices, causing minimal to substantial damage to their host tree. Find out more about box elder bug behavior and whether they bite.'
+    }, {
+      header: 'Reproduction',
+      showContent: false,
+      content: 'The eggs of box elder bugs are reddish brown in color, allowing them to stay well hidden in the bark of the host tree. After a few days, the eggs hatch into red and gray nymphs, which eventually mature and begin the breeding process again. Mature box elder bugs can be found gathering in large numbers on branches and boughs. Concentrations will be heaviest in areas receiving sufficient sunlight. Read more details about the box elder bug life cycle.'
+    }, {
+      header: 'Signs of a Box Elder Bug Infestation',
+      showContent: false,
+      content: 'Like many overwintering pests, the most startling sign is the bugs when they invade in staggering numbers. They usually appear on sunny sides of buildings in the fall. They invade the voids of the building to overwinter. While overwintering, they do not feed or reproduce. Find out more about box elder bug infestations.'
+    }, {
+      header: 'Prevention',
+      showContent: false,
+      content: 'To stop box elder bugs from multiplying, it is often helpful to remove their host trees from the area surrounding your home, but the adults can still fly from locations off the property. If you choose to plant box elder trees in your yard, choose male trees: (non-seed-bearing) since female box elder trees are more susceptible to infestation. However, box elder trees are not recommended for ornamental planting. These insects can also enter through windows and doors; ensure that these close properly and utilize screen doors to keep box elder bugs from entering. Read more details about box elder bugs in the house.'
+    }, {
+      header: 'How HPests treats for box elder bugs',
+      showContent: false,
+      content: '<p>- Repairing damaged windows and door screens.</p><p>- Installing door sweeps on exterior doors.- Installing or repairing screens in roof and soffit vents.</p><p>- Sealing holes or gaps around places where cables, wires or plumbing enters the building.</p><p>- Plugging gaps at doors, windowsills, roof joints, and fascia boards. Checking for and sealing gaps and cracks where different building materials meet. For example, where siding meets the brick exterior or foundation.</p>'
+    }];
+
+    $scope.showHeaderContent = function (index) {
+      angular.forEach($scope.boxElderBugsData, function (boxElderBugData, boxElderBugIndex) {
+        if (boxElderBugIndex != index) {
+          boxElderBugData.showContent = false;
+        } else if (boxElderBugIndex == index)
+          boxElderBugData.showContent = !boxElderBugData.showContent;
+      });
+    }
+  })
+
+  .controller('fruitFliesCtrl', function ($scope) {
+    $scope.fruitFliesData = [{
+      header: 'Identification',
+      showContent: false,
+      content: '- Coloured tan/yellow to light brown, with bright red eyes.- Approximately 2.5 to 4 millimeters.- Three segments in the antennae, third segment appears to be a feathery bristle'
+    }, {
+      header: 'What Attracts Fruit Flies',
+      showContent: false,
+      content: 'Fruits flies enter homes to seek out food and breeding sources. Fruits flies are generally attracted by fermenting fruits, vegetables or moist decaying organic matter. Such fermentations or decays are caused by yeast or other fungi. The larvae feed on the yeast and other micro-organisms in the fermenting materials. The presence of readily available fruits and vegetables in homes, food processing and handling facilities makes these structures primary target of fruit flies. Adult fruit flies do not necessarily eat the fruit, but instead the fermenting material provides the larvae with a ready-made food source.'
+    }, {
+      header: 'Problems/Damage',
+      showContent: false,
+      content: 'Fruit flies are a major concern to everyone concerned about the safety of food supply: storage, and manufacturing, agriculture, restaurants and food service industries, and their customers. Fruit flies cause a high percentage of insect contamination of fruit and fruit products by depositing bacteria and other disease causing organisms.<br><br>Fruit flies have sponging mouthparts, similar to houseflies. That means in order for a fruit fly to enjoy a meal it must deposit its saliva onto food and then suck up the solution. The process inevitably leaves behind bacteria that were once inside the fly as well as on their legs and bodies.'
+    }, {
+      header: 'Habitat and Behaviour',
+      showContent: false,
+      content: 'Fruit flies are found all around the world and almost everywhere one can find exposed food. Restaurants, hotels, cafeterias, farmer’s markets, trash receptacles, recycling areas, dumpsters, beverage stations, and janitorial closets are some of their favourite areas.<br><br>For many years, fruit flies were thought to spontaneously generate on ripe and rotting produce, but that myth has been disproven. In most cases, fruit flies have either found their way inside the home by following the odours of ripe fruit or have been transported there along with the produce. This not only underlines the importance of washing the fruits and vegetables that are brought into the home, but also means that you should not keep excess quantities of produce exposed.<br><br>Females lay approximately 400 eggs, about five at a time, into rotting fruit or other suitable materials. The eggs, which are about 0.5 millimeters long, hatch after 12-15 hours. The larvae grow for about 4 days, during which time they consume the yeast and microorganisms which decompose the fruit as well as the sugar of the fruit itself.'
+    }, {
+      header: 'Life Cycle',
+      showContent: false,
+      content: 'Fruit flies are known for their rapid reproduction and relatively short lifespans. The average lifespan of a fruit fly is about 40 to 50 days. The fruit fly life cycle is made up of four stages: egg, larva, pupa, and adult. Most of the fly’s life is spent as an adult, with development usually taking less than two weeks. Developmental time and overall lifespan is largely influenced by environmental conditions such as temperature and humidity. High temperatures quicken development and may extend lifespans, whereas cooler temperatures may prolongs larval and pupal development and kill off adults.<br><br>The fruit fly life cycle begins when a female fruit fly lays a batch of eggs, which usually consists of around 500 eggs. Under the right conditions, a fruit fly egg only takes about a day to hatch. The newly hatched larvae then develop through three instars stages, with the entire process lasting about five days. A larva then encloses itself in a hard case for the pupal stage, which takes about five days. After emerging from the pupal case, the fruit fly reaches adulthood. Females may begin procreating within within two days.'
+    }, {
+      header: 'Infestations',
+      showContent: false,
+      content: 'The most visible sign of fruit fly infestation is the presence of the adults. Usually seen swarming around fruits and vegetables left out on kitchen or commercial countertops or in and around refuse bins and other receptacles in which foods are disposed, fruit flies congregate en masse and feed on the decaying materials until food sources shore up (?). Fruit flies typically remain in areas with suitable food sources. Diners, bars, cafes, and restaurants often need to take special precautions to limit fruit fly infestations. Stowing raw, whole foods in refrigerated or vacuum-sealed units also helps to prevent fruit fly infestations.'
+    }, {
+      header: 'Tips for prevention and control',
+      showContent: false,
+      content: '<b>These tips may help you get rid of fruit flies in your home:</b><p>- Reduce the presence of ripe fruits and vegetables; place them in a refrigerator or a paper bag.</p><p>- Close the lids on all garbage and waste containers.</p><p>- Clean up and spills and inspect the environment for potential breeding areas; dirty sponges and washcloths, drains, broken tiles, and standing water.</p><p>- Degrease and clean drains and sink areas.</p>'
+    }];
+
+    $scope.showHeaderContent = function (index) {
+      angular.forEach($scope.fruitFliesData, function (fruitFlyData, fruitFlyIndex) {
+        if (fruitFlyIndex != index) {
+          fruitFlyData.showContent = false;
+        } else if (fruitFlyIndex == index)
+        fruitFlyData.showContent = !fruitFlyData.showContent;
       });
     }
   })

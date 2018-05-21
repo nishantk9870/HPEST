@@ -94,6 +94,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
         }
       })
+      .state('app.boxElderBugs', {
+        url: '/boxElderBugs',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/boxElderBugs.html',
+            controller: 'boxElderBugsCtrl'
+          }
+        }
+      })
+      .state('app.fruitFlies', {
+        url: '/fruitFlies',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/fruitFlies.html',
+            controller: 'fruitFliesCtrl'
+          }
+        }
+      })
+      .state('app.mosquitoes', {
+        url: '/mosquitoes',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/mosquitoes.html',
+            controller: 'mosquitoesCtrl'
+          }
+        }
+      })
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
