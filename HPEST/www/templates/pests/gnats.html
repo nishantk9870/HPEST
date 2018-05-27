@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-content class="no-scroll">
+      <div class="innerbnr_block">
+        <img src="img/7a323794a3c6aaade5740d7e692d0c82.jpg">
+      </div>
+      <div class="maincontent pageContent">
+        <div>
+          <h3 class="headingBorder">Gnats</h3>
+          <div>
+            Often mistaken for mosquitoes, gnats are “true flies” and belong to the order Diptera. The relatively small insects are usually poor fliers and infest residences as well as commercial and industrial sites. There are over 600 species of gnats. The most common species found inside and around buildings are fungus gnats and dark-winged fungus gnats. They can be a nuisance or cause significant damage to ornamental plants and garden crops, while some species such as the buffalo or turkey gnat, also known as the black fly, attack humans and other animals to feed on blood.
+            <br>
+            <br>If you think that you have a gnats problem then call in the experts at H pest Control Services by calling +91 9052525294 or you can set up an appointment using our online book now form.
+          </div>
+        </div>
+        <div class="dataContainer">
+          <div id="contentDescription" ng-repeat="data in gnatsData" ng-click="showHeaderContent($index)">
+            <div class="dataDescription">
+              <p>{{data.header}}
+                <i ng-class="data.showContent ? 'fa fa-angle-down' : 'fa fa-angle-right'" class="fa fa-angle-right" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div ng-if="data.showContent" class="contentData">
+              <p ng-bind-html="data.content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

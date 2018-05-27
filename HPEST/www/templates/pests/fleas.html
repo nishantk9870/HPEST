@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-content class="no-scroll">
+      <div class="innerbnr_block">
+        <img src="img/19c488a649264f2c6ee1aa212439b83d.jpg">
+      </div>
+      <div class="maincontent pageContent">
+        <div>
+          <h3 class="headingBorder">Fleas</h3>
+          <div>
+            Fleas are one of the most important insect pests because they inflict painful bites, are nuisances to pet owners, and are capable of transmitting disease-causing pathogens to both humans and pets. They are ectoparasites that survive by feeding on bird and mammalian blood. The most common species of fleas encountered by people are the cat flea (Ctenocephalides felis), dog flea (Ctenocephalides canis), and human flea (Pulex irritans).
+            <br>
+            <br> Do you have a flea problem? Contact a H pest  Control Services flea control professional by calling +91 9052525294 or you can set up an appointment using our online book now form.
+          </div>
+        </div>
+        <div class="dataContainer">
+          <div id="contentDescription" ng-repeat="data in fleasData" ng-click="showHeaderContent($index)">
+            <div class="dataDescription">
+              <p>{{data.header}}
+                <i ng-class="data.showContent ? 'fa fa-angle-down' : 'fa fa-angle-right'" class="fa fa-angle-right" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div ng-if="data.showContent" class="contentData">
+              <p ng-bind-html="data.content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

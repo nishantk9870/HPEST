@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-content class="no-scroll">
+      <div class="innerbnr_block">
+        <img src="img/cfe7e286a38689e080b652c0b2d29f7c.jpg">
+      </div>
+      <div class="maincontent pageContent">
+        <div>
+          <h3 class="headingBorder">Weevils</h3>
+          <div>
+            There are over 40,000 species of weevils throughout the world. They are some of the most destructive pests in India as they cause widespread damage to the agricultural industry, stored food products, garden crops, and lawns.
+            <br>
+            <br>If you think that you have a weevils problem then call in the experts at H pest Control Services by calling +91 9052525294 or you can set up an appointment using our online book now form.
+          </div>
+        </div>
+        <div class="dataContainer">
+          <div id="contentDescription" ng-repeat="data in weevilsData" ng-click="showHeaderContent($index)">
+            <div class="dataDescription">
+              <p>{{data.header}}
+                <i ng-class="data.showContent ? 'fa fa-angle-down' : 'fa fa-angle-right'" class="fa fa-angle-right" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div ng-if="data.showContent" class="contentData">
+              <p ng-bind-html="data.content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

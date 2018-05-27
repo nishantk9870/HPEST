@@ -1,0 +1,32 @@
+<ion-view>
+    <ion-content class="no-scroll">
+      <div class="innerbnr_block">
+        <img src="img/7a323794a3c6aaade5740d7e692d0c82.jpg">
+      </div>
+      <div class="maincontent pageContent">
+        <div>
+          <h3 class="headingBorder">Termites</h3>
+          <div>
+            Termite colonies range from hundreds of thousands to millions of members. Since each colony is capable of consuming at least half a kilogram of wood each day, termites are responsible for costly structural damage wherever they dwell.
+            <br>
+            <br> The three main types of termite species are subterranean, drywood, and dampwood. Categorization is based on both the preferred habitat and main food source of the insects.
+            <br>
+            <br>If you think that you have a termites problem then call in the experts at H pest Control Services by calling +91 9052525294 or you can set up an appointment using our online book now form.
+          </div>
+        </div>
+        <div class="dataContainer">
+          <div id="contentDescription" ng-repeat="data in termitesData" ng-click="showHeaderContent($index)">
+            <div class="dataDescription">
+              <p>{{data.header}}
+                <i ng-class="data.showContent ? 'fa fa-angle-down' : 'fa fa-angle-right'" class="fa fa-angle-right" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div ng-if="data.showContent" class="contentData">
+              <p ng-bind-html="data.content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

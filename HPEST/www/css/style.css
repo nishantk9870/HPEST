@@ -276,7 +276,7 @@ input {
 }
 
 .dataDescription {
-  background: #F7941D;
+  background: #71c040;
   color: white !important;
   padding: 10px 15px 10px 15px;
   border-radius: 5px;
@@ -289,6 +289,7 @@ input {
   border-left: 0.1px outset dimgrey;
   border-right: 0.1px outset dimgrey;
   text-align: justify;
+  font-weight: 400;
 }
 
 
@@ -336,9 +337,24 @@ input {
 }
 
 .headingBorder {
-  border-bottom: 1px solid dimgrey;
+  border-bottom: 1px solid #E0E0E0;
   padding-bottom: 8px;
 }
 .apq_left h3{
 padding-top:10px
+}
+
+#sidenav ion-item[submenu-item] {
+      padding-left: 25px;
+}
+#sideMenu{
+    background-color:dimgray;
+}
+#sideMenu ion-content ion-list ion-item{
+     background-color: dimgray;
+     color: white;
+    }
+.menuHeader{
+    width: 80%;
+    padding-left: 15px;
 }

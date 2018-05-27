@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-content class="no-scroll">
+      <div class="innerbnr_block">
+        <img src="img/8d693701b824852c002cb2cb0b534ae4.jpg">
+      </div>
+      <div class="maincontent pageContent">
+        <div>
+          <h3 class="headingBorder">Rats</h3>
+          <div>
+            Rats are mammals of the genus Rattus. The most commonly encountered commensal rat species in Canada are the Norway rat (Rattus norvegicus), also known as brown rats, and the roof rat (Rattus rattus), or black rats. Distinctive characteristics primarily include coarse fur, protruding ears, and long tails. Rats are of significance because they not only transmit and spread disease-causing germs but also can cause structural and aesthetic damage to property and food losses. In addition, people generally react with negativity and revulsion upon encountering the small mammals.
+            <br>
+            <br>If you think that you have a Rats problem then call in the experts at H pest Control Services by calling +91 9052525294 or you can set up an appointment using our online book now form.
+          </div>
+        </div>
+        <div class="dataContainer">
+          <div id="contentDescription" ng-repeat="data in ratsData" ng-click="showHeaderContent($index)">
+            <div class="dataDescription">
+              <p>{{data.header}}
+                <i ng-class="data.showContent ? 'fa fa-angle-down' : 'fa fa-angle-right'" class="fa fa-angle-right" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div ng-if="data.showContent" class="contentData">
+              <p ng-bind-html="data.content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

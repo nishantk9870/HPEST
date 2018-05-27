@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-content class="no-scroll">
+      <div class="innerbnr_block">
+        <img src="img/7a323794a3c6aaade5740d7e692d0c82.jpg">
+      </div>
+      <div class="maincontent pageContent">
+        <div>
+          <h3 class="headingBorder">Earwing</h3>
+          <div>
+            Earwigs are small insects of the order Dermaptera, which takes its name from the Greek words “derma,” meaning skin, and “ptera,” which means wings. The name refers to the thick forewings that cover and protect the hind wings of the insect. The common name of the earwig is actually a misnomer stemming from the early European belief that the insect would crawl into the ear canal of a sleeping person and bore into the brain. In reality, earwigs rarely do any more harm to people than an occasional nip to the skin when defending itself. Despite being generally perceived as a pest, the earwig is a beneficial insect because it helps in the decomposition of detritus and feeds on destructive insects.
+            <br>
+            <br>If you think that you have a Earwigs problem then call in the experts at H pest Control Services by calling +91 9052525294 or you can set up an appointment using our online book now form.
+          </div>
+        </div>
+        <div class="dataContainer">
+          <div id="contentDescription" ng-repeat="data in earwingData" ng-click="showHeaderContent($index)">
+            <div class="dataDescription">
+              <p>{{data.header}}
+                <i ng-class="data.showContent ? 'fa fa-angle-down' : 'fa fa-angle-right'" class="fa fa-angle-right" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div ng-if="data.showContent" class="contentData">
+              <p ng-bind-html="data.content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

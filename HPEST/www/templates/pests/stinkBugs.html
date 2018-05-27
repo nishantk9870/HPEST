@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-content class="no-scroll">
+      <div class="innerbnr_block">
+        <img src="img/e9ef66fbf25022ed0543ab1216c10989.jpg">
+      </div>
+      <div class="maincontent pageContent">
+        <div>
+          <h3 class="headingBorder">Stink Bugs</h3>
+          <div>
+            Stink bugs are a group of true bugs that belong to the order Hemiptera and family Pentatomidae. They are referred to as stink bugs because they product a “stinky” odour when crushed or disturbed. There are over 260 species, most of which are harmless. However, the brown marmorated stink bug (BMSB), or halyomorpha halys is an invasive species that is indigenous to Asia.
+            <br>
+            <br>If you think that you have a Stink bugs problem then call in the experts at H pest Control Services by calling +91 9052525294 or you can set up an appointment using our online book now form.
+          </div>
+        </div>
+        <div class="dataContainer">
+          <div id="contentDescription" ng-repeat="data in stinkBugsData" ng-click="showHeaderContent($index)">
+            <div class="dataDescription">
+              <p>{{data.header}}
+                <i ng-class="data.showContent ? 'fa fa-angle-down' : 'fa fa-angle-right'" class="fa fa-angle-right" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div ng-if="data.showContent" class="contentData">
+              <p ng-bind-html="data.content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-view>
+  

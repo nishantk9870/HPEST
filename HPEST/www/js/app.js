@@ -31,16 +31,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
       })
-
-      .state('app.search', {
-        url: '/search',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/search.html'
-          }
-        }
-      })
-
       .state('app.aboutus', {
         url: '/aboutus',
         views: {
@@ -58,7 +48,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
         }
       })
-
       .state('app.home', {
         url: '/home',
         views: {
@@ -145,7 +134,130 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
         }
       })
-
+      .state('app.flies', {
+        url: '/flies',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/flies.html',
+            controller: 'fliesCtrl'
+          }
+        }
+      })
+      .state('app.millipedes', {
+        url: '/millipedes',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/millipedes.html',
+            controller: 'millipedesCtrl'
+          }
+        }
+      })
+      .state('app.snakes', {
+        url: '/snakes',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/snakes.html',
+            controller: 'snakesCtrl'
+          }
+        }
+      })
+      .state('app.cockroach', {
+        url: '/cockroach',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/cockroach.html'
+          }
+        }
+      })
+      .state('app.fleas', {
+        url: '/fleas',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/fleas.html',
+            controller: 'fleasCtrl'
+          }
+        }
+      })
+      .state('app.mites', {
+        url: '/mites',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/mites.html',
+            controller: 'mitesCtrl'
+          }
+        }
+      })
+      .state('app.stinkBugs', {
+        url: '/stinkBugs',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/stinkBugs.html',
+            controller: 'stinkBugsCtrl'
+          }
+        }
+      })
+      .state('app.lizards', {
+        url: '/lizards',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/lizards.html'
+          }
+        }
+      })
+      .state('app.termites', {
+        url: '/termites',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/termites.html',
+            controller: 'termitesCtrl'
+          }
+        }
+      })
+      .state('app.earwing', {
+        url: '/earwing',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/earwing.html',
+            controller: 'earwingCtrl'
+          }
+        }
+      })
+      .state('app.gnats', {
+        url: '/gnats',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/gnats.html',
+            controller: 'gnatsCtrl'
+          }
+        }
+      })
+      .state('app.rats', {
+        url: '/rats',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/rats.html',
+            controller: 'ratsCtrl'
+          }
+        }
+      })
+      .state('app.weevils', {
+        url: '/weevils',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/pests/weevils.html',
+            controller: 'weevilsCtrl'
+          }
+        }
+      })
+      .state('app.careers', {
+        url: '/careers',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/careers.html',
+            controller: 'careersCtrl'
+          }
+        }
+      })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
   });
