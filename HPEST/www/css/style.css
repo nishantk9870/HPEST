@@ -50,6 +50,11 @@ Nishant K
   color: #111;
   font-weight: 300;
 }
+.slideInLeft{
+  visibility: visible;
+  animation-delay: 0.1s; 
+  animation-name: slideInLeft;
+}
 
 .ap_links {
   background: #EEEEEE;
@@ -335,6 +340,10 @@ input {
     max-width: 100%;
     max-height: 100%;
 }
+.slideInUp{
+  visibility: visible; 
+  animation-name: slideInUp;
+}
 
 .headingBorder {
   border-bottom: 1px solid #E0E0E0;
@@ -342,6 +351,22 @@ input {
 }
 .apq_left h3{
 padding-top:10px
+}
+.fadeInLeft{
+  visibility: visible; 
+  animation-name: fadeInLeft;
+}
+.slideInRight{
+  visibility: visible; 
+  animation-name: slideInRight;
+}
+.fadeInRight{
+  visibility: visible; 
+  animation-name: fadeInRight;
+}
+.slideInLeft{
+  visibility: visible; 
+  animation-name: slideInLeft;
 }
 
 #sidenav ion-item[submenu-item] {
