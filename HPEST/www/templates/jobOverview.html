@@ -35,37 +35,37 @@
           <div class="list">
             <div class="applicationLabel">
               <label class="item item-input">
-                <span class="input-label">Name</span>
+                <span class="input-label required">Name</span>
                 <input type="text" name="name" ng-model="applyJobForm.name" maxlength="40" required>
               </label>
             </div>
             <div class="applicationLabel">
               <label class="item item-input">
-                <span class="input-label">Email</span>
+                <span class="input-label required">Email</span>
                 <input type="email" name="email" ng-model="applyJobForm.email" maxlength="40" required>
               </label>
             </div>
             <div class="applicationLabel">
               <label class="item item-input">
-                <span class="input-label">Phone</span>
+                <span class="input-label required">Phone</span>
                 <input type="number" name="phoneNumber" ng-model="applyJobForm.phoneNumber" maxlength="10" required>
               </label>
             </div>
             <div class="applicationLabel">
               <label class="item item-input">
-                <span class="input-label">Highest Qualification</span>
+                <span class="input-label required">Highest Qualification</span>
                 <input type="text" name="qualification" ng-model="applyJobForm.qualification" required>
               </label>
             </div>
             <div class="applicationLabel">
               <label class="item item-input">
-                <span class="input-label">Total Experience (Years)</span>
+                <span class="input-label required">Total Experience (Years)</span>
                 <input type="number" name="experience" ng-model="applyJobForm.experience" required>
               </label>
             </div>
             <div class="applicationLabel">
               <label class="item item-input">
-                <span class="input-label">Skills</span>
+                <span class="input-label required">Skills</span>
                 <textarea type="text" name="skills" ng-model="applyJobForm.skills" required></textarea>
               </label>
             </div>
@@ -77,9 +77,18 @@
             </div>
             <div class="applicationLabel">
               <label class="item item-input">
-                <span class="input-label">Resume</span>
+                <span class="input-label required">Resume</span>
                 <input type="file" name="file" ng-model="applyJobForm.skills" required></input>
               </label>
+            </div>
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label required">Security</span>
+                <input type="text" name="security" ng-model="applyJobForm.security" required></input>
+              </label>
+            </div>
+            <div class="applicationLabel alignCenter">
+                <button ng-disabled="applyJob.$invalid" class="submit">Submit Resume</button>
             </div>
           </div>
         </form>

@@ -119,7 +119,7 @@ angular.module('starter.controllers', [])
 
   .controller('contactusCtrl', function ($scope) {})
 
-  .controller('homeCtrl', function($scope,$state) {
+  .controller('homeCtrl', function ($scope, $state) {
     $scope.data = {};
     var setupSlider = function () {
       //some options to pass to our slider
@@ -147,11 +147,114 @@ angular.module('starter.controllers', [])
         }
       });
     };
-  $scope.navigateTo = function (path) {
-    $state.go(path, {});
-  }
+    $scope.navigateTo = function (path) {
+      $state.go(path, {});
+    }
     setupSlider();
 
+    $scope.area = [{
+      id:0,
+      text: 'AREA'
+    },{
+      id: 1,
+      text: 'Commercial Pest Control'
+    },{
+      id: 2,
+      text: 'Residential Pest Control'
+    }];
+
+    $scope.service = [{
+      id: 0,
+      text: 'SERVICE'
+    },{
+      id: 1,
+      text: 'Cockroach Control Service'
+    },{
+      id:2,
+      text: 'Termite Control Service'
+    }, {
+      id: 3,
+      text: 'Bed Bugs Control Service'
+    }, {
+      id: 4,
+      text: 'Lizard Control Service'
+    }, {
+      id: 5,
+      text: 'Mosquito Control Service'
+    }, {
+      id: 6,
+      text: 'Rodents Control Service'
+    }, {
+      id: 8,
+      text: 'General Pest Management(Except Termite)'
+    }];
+
+    $scope.serviceType = [{
+      id: 0,
+      text: 'SERVICE TYPE'
+    }, {
+      id: 1,
+      text: 'Single Service'
+    }, {
+      id: 2,
+      text: '6 Months 2 Services'
+    }, {
+      id: 3,
+      text: '1 Year 3 Services '
+    }, {
+      id: 4,
+      text: '2 Years 6 Services'
+    }, {
+      id: 5,
+      text: '3 Years 9 Services'
+    }];
+
+    $scope.squareFeet = [{
+      id: 0,
+      text: 'SQFT'
+    }, {
+      id: 1,
+      text: '500 SFT'
+    }, {
+      id: 2,
+      text: '800 SFT'
+    }, {
+      id: 3,
+      text: '950 SFT'
+    }, {
+      id: 4,
+      text: '1100 SFT'
+    }, {
+      id: 5,
+      text: '1200 SFT'
+    }, {
+      id: 6,
+      text: '1350 SFT'
+    }, {
+      id: 11,
+      text: '1500 SFT'
+    }, {
+      id: 12,
+      text: '1600 SFT'
+    }, {
+      id: 13,
+      text: '1800 SFT'
+    }, {
+      id: 14,
+      text: '1950 SFT'
+    }, {
+      id: 15,
+      text: '2100 SFT'
+    }, {
+      id: 16,
+      text: '2300 SFT'
+    }, {
+      id: 17,
+      text: '2500 SFT'
+    }, {
+      id: 18,
+      text: '3000 SFT'
+    }];
   })
 
   .controller('batsCtrl', function ($scope) {
@@ -313,7 +416,7 @@ angular.module('starter.controllers', [])
         if (fruitFlyIndex != index) {
           fruitFlyData.showContent = false;
         } else if (fruitFlyIndex == index)
-        fruitFlyData.showContent = !fruitFlyData.showContent;
+          fruitFlyData.showContent = !fruitFlyData.showContent;
       });
     }
   })
@@ -342,7 +445,7 @@ angular.module('starter.controllers', [])
         if (flyIndex != index) {
           flyData.showContent = false;
         } else if (flyIndex == index)
-        flyData.showContent = !flyData.showContent;
+          flyData.showContent = !flyData.showContent;
       });
     }
   })
@@ -378,7 +481,7 @@ angular.module('starter.controllers', [])
         if (millipedeIndex != index) {
           millipedeData.showContent = false;
         } else if (millipedeIndex == index)
-        millipedeData.showContent = !millipedeData.showContent;
+          millipedeData.showContent = !millipedeData.showContent;
       });
     }
   })
@@ -418,7 +521,7 @@ angular.module('starter.controllers', [])
         if (snakeIndex != index) {
           snakeData.showContent = false;
         } else if (snakeIndex == index)
-        snakeData.showContent = !snakeData.showContent;
+          snakeData.showContent = !snakeData.showContent;
       });
     }
   })
@@ -458,7 +561,7 @@ angular.module('starter.controllers', [])
         if (fleaIndex != index) {
           fleaData.showContent = false;
         } else if (fleaIndex == index)
-        fleaData.showContent = !fleaData.showContent;
+          fleaData.showContent = !fleaData.showContent;
       });
     }
   })
@@ -498,7 +601,7 @@ angular.module('starter.controllers', [])
         if (miteIndex != index) {
           miteData.showContent = false;
         } else if (miteIndex == index)
-        miteData.showContent = !miteData.showContent;
+          miteData.showContent = !miteData.showContent;
       });
     }
   })
@@ -542,7 +645,7 @@ angular.module('starter.controllers', [])
         if (stinkBugIndex != index) {
           stinkBugData.showContent = false;
         } else if (stinkBugIndex == index)
-        stinkBugData.showContent = !stinkBugData.showContent;
+          stinkBugData.showContent = !stinkBugData.showContent;
       });
     }
   })
@@ -582,7 +685,7 @@ angular.module('starter.controllers', [])
         if (mosquitoeIndex != index) {
           mosquitoeData.showContent = false;
         } else if (mosquitoeIndex == index)
-        mosquitoeData.showContent = !mosquitoeData.showContent;
+          mosquitoeData.showContent = !mosquitoeData.showContent;
       });
     }
   })
@@ -591,7 +694,7 @@ angular.module('starter.controllers', [])
       header: 'General Facts',
       showContent: false,
       content: 'Aptly named after the Latin term for woodworm, termites have existed for over 120 million years. Despite their pest status, termites play an important role in the ecosystem by recycling wood, facilitating the decomposition of organic matter, replenishing essential nutrients in the soil, and assisting in the growth of plants by way of soil aeration. However, they can cause significant structural damage to homes and other manmade structures.'
-    },{
+    }, {
       header: 'Appearance / Identification',
       showContent: false,
       content: 'Termite colonies contain three main social castes: workers, soldiers, and reproductives. Each caste and type of termite differs slightly in appearance. In general, subterranean termites produce smaller workers of approximately 6 mm, while dampwood termite workers measure about 20 mm in size. Termite soldiers have enlarged mandibles, and reproductives feature two pairs of nearly identical wings. Members of every caste have three body parts: a head with a pair of segmented antennae, thorax, and abdomen. The insects appear whitish-brown to nearly black in colour.'
@@ -630,7 +733,7 @@ angular.module('starter.controllers', [])
         if (termiteIndex != index) {
           termiteData.showContent = false;
         } else if (termiteIndex == index)
-        termiteData.showContent = !termiteData.showContent;
+          termiteData.showContent = !termiteData.showContent;
       });
     }
   })
@@ -670,7 +773,7 @@ angular.module('starter.controllers', [])
         if (earwingindex != index) {
           data.showContent = false;
         } else if (earwingindex == index)
-        data.showContent = !data.showContent;
+          data.showContent = !data.showContent;
       });
     }
   })
@@ -710,7 +813,7 @@ angular.module('starter.controllers', [])
         if (gnatsindex != index) {
           data.showContent = false;
         } else if (gnatsindex == index)
-        data.showContent = !data.showContent;
+          data.showContent = !data.showContent;
       });
     }
   })
@@ -750,7 +853,7 @@ angular.module('starter.controllers', [])
         if (ratsindex != index) {
           data.showContent = false;
         } else if (ratsindex == index)
-        data.showContent = !data.showContent;
+          data.showContent = !data.showContent;
       });
     }
   })
@@ -794,27 +897,29 @@ angular.module('starter.controllers', [])
         if (weevilsindex != index) {
           data.showContent = false;
         } else if (weevilsindex == index)
-        data.showContent = !data.showContent;
+          data.showContent = !data.showContent;
       });
     }
   })
   .controller('careersCtrl', function ($scope, $state) {
     $scope.careersData = [{
-      id:1,
-      positionId:'Pest Control Executive',
+      id: 1,
+      positionId: 'Pest Control Executive',
       jobTitle: 'Service Men',
       category: 'Pest Control Services',
       Location: 'Hyderabad',
       Description: 'Experience: 3-6 Years <br> CTC : Best in Industry<br>Contact Site incharge: +91 9052525294<br>Email: h_pestsofficial@outlook.com'
     }];
 
-    $scope.viewJob = function(career) {
-      $state.go('app.jobOverview', {jobOverviewData: career});
+    $scope.viewJob = function (career) {
+      $state.go('app.jobOverview', {
+        jobOverviewData: career
+      });
     }
   })
   .controller('jobOverviewCtrl', function ($scope, $stateParams) {
-    $scope.applyJobForm = { };
-    if($stateParams.jobOverviewData){
+    $scope.applyJobForm = {};
+    if ($stateParams.jobOverviewData) {
       $scope.jobOverviewData = $stateParams.jobOverviewData;
     }
   })
