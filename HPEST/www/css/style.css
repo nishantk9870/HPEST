@@ -345,6 +345,12 @@ input {
   animation-name: slideInUp;
 }
 
+.tableHeader{
+  background-color:#71c040; 
+  color:#FFFFFF;
+  font-weight: 600;
+}
+
 .headingBorder {
   border-bottom: 1px solid #E0E0E0;
   padding-bottom: 8px;
@@ -382,4 +388,38 @@ padding-top:10px
 .menuHeader{
     width: 80%;
     padding-left: 15px;
+}
+.viewJob{
+  color: #ff0000;
+}
+.tableWidth{
+  width: 100%;
+  text-align: center;
+}
+.overViewContent table{
+  width: 100%;
+  border: 1px solid #CFCFCF
+}
+
+.overViewContent .jobOverviewLeft{
+  background-color: #71c040;
+  color: #fff;
+  padding: 7px 3px 7px 10px;
+  font-size: 16px;
+  width: 25%;
+  border-bottom: 1px solid #ccc;
+}
+.overViewContent .jobOverviewRight{
+  background-color: #F8F8F8;
+  color: #4b4b4b;
+  font-size: 14px;
+  padding: 7px 3px 7px 10px;
+  border-bottom: 1px solid #ccc;
+  width: 75%;
+}
+.applicationForm{
+  padding-top: 20px;
+}
+.applicationLabel{
+  padding-top: 15px;
 }

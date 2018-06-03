@@ -258,6 +258,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
         }
       })
+      .state('app.jobOverview', {
+        url: '/jobOverview',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/jobOverview.html',
+            controller: 'jobOverviewCtrl'
+          }
+        },
+        params: {
+          jobOverviewData: null
+        }
+      })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
   });

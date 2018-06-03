@@ -1,5 +1,27 @@
 <ion-view>
-    <ion-content>
-        
-    </ion-content>
+  <ion-content>
+    <div class="maincontent pageContent">
+      <div>
+        <h3 class="headingBorder">Careers</h3>
+      </div>
+      <div>
+        <table class="tableWidth">
+          <thead>
+            <tr class="tableHeader">
+              <th>Position ID</th>
+              <th>Job Title</th>
+              <th>View Job</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="career in careersData">
+              <td ng-bind="career.positionId"></td>
+              <td ng-bind="career.jobTitle"></td>
+              <td class="viewJob" ng-click="viewJob(career)">View Job</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>

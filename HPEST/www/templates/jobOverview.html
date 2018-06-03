@@ -1,0 +1,89 @@
+<ion-view>
+  <ion-content>
+    <div class="maincontent pageContent">
+      <div>
+        <h3 class="headingBorder">Job Overview</h3>
+      </div>
+      <div class="overViewContent">
+        <table>
+          <tbody>
+            <tr>
+              <td class="jobOverviewLeft">Position ID</td>
+              <td class="jobOverviewRight" ng-bind="jobOverviewData.positionId"></td>
+            </tr>
+            <tr>
+              <td class="jobOverviewLeft">Job Title</td>
+              <td class="jobOverviewRight" ng-bind="jobOverviewData.jobTitle"></td>
+            </tr>
+            <tr>
+              <td class="jobOverviewLeft">Category</td>
+              <td class="jobOverviewRight" ng-bind="jobOverviewData.category"></td>
+            </tr>
+            <tr>
+              <td class="jobOverviewLeft">Description</td>
+              <td class="jobOverviewRight" ng-bind-html="jobOverviewData.Description"></td>
+            </tr>
+            <tr>
+              <td class="jobOverviewLeft">Location</td>
+              <td class="jobOverviewRight" ng-bind="jobOverviewData.Location"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="applicationForm">
+        <form name="applyJob">
+          <div class="list">
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label">Name</span>
+                <input type="text" name="name" ng-model="applyJobForm.name" maxlength="40" required>
+              </label>
+            </div>
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input type="email" name="email" ng-model="applyJobForm.email" maxlength="40" required>
+              </label>
+            </div>
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label">Phone</span>
+                <input type="number" name="phoneNumber" ng-model="applyJobForm.phoneNumber" maxlength="10" required>
+              </label>
+            </div>
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label">Highest Qualification</span>
+                <input type="text" name="qualification" ng-model="applyJobForm.qualification" required>
+              </label>
+            </div>
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label">Total Experience (Years)</span>
+                <input type="number" name="experience" ng-model="applyJobForm.experience" required>
+              </label>
+            </div>
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label">Skills</span>
+                <textarea type="text" name="skills" ng-model="applyJobForm.skills" required></textarea>
+              </label>
+            </div>
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label">Additional Info</span>
+                <textarea type="text" name="information" ng-model="applyJobForm.information" required></textarea>
+              </label>
+            </div>
+            <div class="applicationLabel">
+              <label class="item item-input">
+                <span class="input-label">Resume</span>
+                <input type="file" name="file" ng-model="applyJobForm.skills" required></input>
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

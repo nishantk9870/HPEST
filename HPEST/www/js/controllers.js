@@ -119,7 +119,7 @@ angular.module('starter.controllers', [])
 
   .controller('contactusCtrl', function ($scope) {})
 
-.controller('homeCtrl', function($scope,$state) {
+  .controller('homeCtrl', function($scope,$state) {
     $scope.data = {};
     var setupSlider = function () {
       //some options to pass to our slider
@@ -798,5 +798,23 @@ angular.module('starter.controllers', [])
       });
     }
   })
-  .controller('careersCtrl', function ($scope) {
+  .controller('careersCtrl', function ($scope, $state) {
+    $scope.careersData = [{
+      id:1,
+      positionId:'Pest Control Executive',
+      jobTitle: 'Service Men',
+      category: 'Pest Control Services',
+      Location: 'Hyderabad',
+      Description: 'Experience: 3-6 Years <br> CTC : Best in Industry<br>Contact Site incharge: +91 9052525294<br>Email: h_pestsofficial@outlook.com'
+    }];
+
+    $scope.viewJob = function(career) {
+      $state.go('app.jobOverview', {jobOverviewData: career});
+    }
+  })
+  .controller('jobOverviewCtrl', function ($scope, $stateParams) {
+    $scope.applyJobForm = { };
+    if($stateParams.jobOverviewData){
+      $scope.jobOverviewData = $stateParams.jobOverviewData;
+    }
   })
