@@ -249,25 +249,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
         }
       })
-      .state('app.careers', {
-        url: '/careers',
+      .state('app.bookNow', {
+        url: '/bookNow',
         views: {
           'menuContent': {
-            templateUrl: 'templates/careers.html',
-            controller: 'careersCtrl'
+            templateUrl: 'templates/bookNow.html',
+            controller: 'bookNowCtrl'
           }
-        }
-      })
-      .state('app.jobOverview', {
-        url: '/jobOverview',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/jobOverview.html',
-            controller: 'jobOverviewCtrl'
-          }
-        },
-        params: {
-          jobOverviewData: null
         }
       })
     // if none of the above states are matched, use this as the fallback

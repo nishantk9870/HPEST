@@ -4,9 +4,15 @@ Jilna NT
 Nishant K 
  */
 
-.bar.bar-stable {
-  background: #32CD32;
+ * {
+  font-family:'Open Sans', sans-sarif;
 }
+.bar.bar-stable {
+  background: #000000;
+}
+.bar.bar-stable ion-icon {
+    font-size: 13px;
+  }
 
 .bar-stable .button.button-clear {
   border-color: transparent;
@@ -19,14 +25,13 @@ Nishant K
 .innerbnr_block {
   width: 100%;
   float: left;
+  position: relative;
 }
 
 .about_page,
 .ap_links,
-.apq_links,
-.bred_nav,
-.accdiv {
-  padding: 0 15px;
+.apq_links {
+  padding: 15px;
 }
 
 .maincontent {
@@ -46,7 +51,8 @@ Nishant K
   margin: 0;
   font-size: 15px;
   font-family: 'Open Sans', sans-sarif;
-  line-height: 24px;
+  line-height: 20px;
+  text-align: justify;
   color: #111;
   font-weight: 300;
 }
@@ -231,11 +237,15 @@ input {
 }
 
 #sidenav ion-item[submenu-item] {
-  padding-left: 25px;
+  padding-left: 38px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  border-color: #1b1c1c;
+  overflow-y: scroll;
 }
 
 #sidenav i {
-  font-size: 25px;
+  font-size: 16px;
   float: right;
   font-weight: 600;
 }
@@ -247,12 +257,7 @@ input {
 }
 
 #sideMenu {
-  background-color: dimgrey;
-}
-
-#sideMenu ion-content ion-list ion-item {
-  background-color: dimgrey;
-  color: white;
+  background-color: black;
 }
 
 .menuHeader {
@@ -278,6 +283,12 @@ input {
 .dataContainer {
   padding-top: 15px
 }
+.AboutUsCardHeader{
+  background: #71c040;
+  color: white !important;
+  padding: 10px 15px 10px 15px;
+  font-weight: 600;
+}
 
 .dataDescription {
   background: #71c040;
@@ -286,6 +297,23 @@ input {
   border-radius: 5px;
   margin-bottom: 5px;
   font-weight: 600;
+}
+.aboutUs{
+  padding: 10px 10px 5px 10px;
+  text-align: justify;
+  font-weight: 400;
+  background-color: #efefef;
+  font-family: 'Open Sans', sans-sarif;
+}
+.cardImage{
+  float: left;
+  width: 49%;
+  padding-top: 10px;
+  padding-right: 15px;
+}
+
+.padding-top-5{
+  padding-top: 5px;
 }
 
 .contentData {
@@ -329,6 +357,17 @@ input {
   color: white;
 }
 
+.image-container {
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 30px;
+  width: 100%;
+  font-size:  16px;
+  font-weight: 600;
+  color: #71c040;
+}
+
 .swiper-slide img {
   text-align: center;
   width: 100%;
@@ -337,10 +376,10 @@ input {
   max-height: 100%;
 }
 
-.slideInUp {
+/* .slideInUp {
   visibility: visible;
   animation-name: slideInUp;
-}
+} */
 
 .tableHeader {
   background-color: #71c040;
@@ -377,17 +416,16 @@ input {
   animation-name: slideInLeft;
 }
 
-#sidenav ion-item[submenu-item] {
-  padding-left: 25px;
-}
-
 #sideMenu {
-  background-color: dimgray;
+  background-color: black;
 }
 
 #sideMenu ion-content ion-list ion-item {
-  background-color: dimgray;
+  background-color: #1b1c1c;
   color: white;
+  padding: 13px;
+  text-transform: uppercase;
+  border-color: black;
 }
 
 .menuHeader {

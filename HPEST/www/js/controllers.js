@@ -16,88 +16,75 @@ angular.module('starter.controllers', [])
       name: 'About Us',
       path: 'app.aboutus'
     }, {
-      name: 'Services',
-      showSubMenu: false,
-      subMenu: [{
-        name: 'Residential Pest Control',
-        path: 'app.residentialPestControl'
-      }, {
-        name: 'Commercial Pest Control',
-        path: 'app.commercialPestControl'
-      }, {
-        name: 'Environmentally Friendly',
-        path: 'app.environmentallyFriendly'
-      }]
-    }, {
       name: 'Pests',
       showSubMenu: false,
       subMenu: [{
-        name: 'Ants',
+        name: '- Ants',
         path: 'app.ants'
       }, {
-        name: 'Box Elder Bugs',
+        name: '- Box Elder Bugs',
         path: 'app.boxElderBugs'
       }, {
-        name: 'Cockroach',
+        name: '- Cockroach',
         path: 'app.cockroach'
       }, {
-        name: 'Fruit Flies',
+        name: '- Fruit Flies',
         path: 'app.fruitFlies'
       }, {
-        name: 'Mosquitoes',
+        name: '- Mosquitoes',
         path: 'app.mosquitoes'
       }, {
-        name: 'Stink Bugs',
+        name: '- Stink Bugs',
         path: 'app.stinkBugs'
       }, {
-        name: 'Bats',
+        name: '- Bats',
         path: 'app.bats'
       }, {
-        name: 'Earwing',
+        name: '- Earwing',
         path: 'app.earwing'
       }, {
-        name: 'Gnats',
+        name: '- Gnats',
         path: 'app.gnats'
       }, {
-        name: 'Rats',
+        name: '- Rats',
         path: 'app.rats'
       }, {
-        name: 'Termites',
+        name: '- Termites',
         path: 'app.termites'
       }, {
-        name: 'Bed Bugs',
+        name: '- Bed Bugs',
         path: 'app.bedBugs'
       }, {
-        name: 'Flies',
+        name: '- Flies',
         path: 'app.flies'
       }, {
-        name: 'Millipedes',
+        name: '- Millipedes',
         path: 'app.millipedes'
       }, {
-        name: 'Snakes',
+        name: '- Snakes',
         path: 'app.snakes'
       }, {
-        name: 'Weevils',
+        name: '- Weevils',
         path: 'app.weevils'
       }, {
-        name: 'Birds',
+        name: '- Birds',
         path: 'app.birds'
       }, {
-        name: 'Fleas',
+        name: '- Fleas',
         path: 'app.fleas'
       }, {
-        name: 'Mites',
+        name: '- Mites',
         path: 'app.mites'
       }, {
-        name: 'Squirrel',
+        name: '- Squirrel',
         path: 'app.squirrel'
       }, {
-        name: 'Lizards',
+        name: '- Lizards',
         path: 'app.lizards'
       }]
     }, {
-      name: 'Careers',
-      path: 'app.careers'
+      name: 'Book Now',
+      path: 'app.bookNow'
     }, {
       name: 'Contact Us',
       path: 'app.contactus'
@@ -901,25 +888,6 @@ angular.module('starter.controllers', [])
       });
     }
   })
-  .controller('careersCtrl', function ($scope, $state) {
-    $scope.careersData = [{
-      id: 1,
-      positionId: 'Pest Control Executive',
-      jobTitle: 'Service Men',
-      category: 'Pest Control Services',
-      Location: 'Hyderabad',
-      Description: 'Experience: 3-6 Years <br> CTC : Best in Industry<br>Contact Site incharge: +91 9052525294<br>Email: h_pestsofficial@outlook.com'
-    }];
-
-    $scope.viewJob = function (career) {
-      $state.go('app.jobOverview', {
-        jobOverviewData: career
-      });
-    }
-  })
-  .controller('jobOverviewCtrl', function ($scope, $stateParams) {
-    $scope.applyJobForm = {};
-    if ($stateParams.jobOverviewData) {
-      $scope.jobOverviewData = $stateParams.jobOverviewData;
-    }
+  .controller('bookNowCtrl', function ($scope, $state) {
+    
   })

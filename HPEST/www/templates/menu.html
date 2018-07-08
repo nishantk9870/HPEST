@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
+    <ion-nav-bar class="bar-stable" id="headerButtons">
       <ion-nav-back-button>
       </ion-nav-back-button>
       <ion-nav-buttons side="left">
@@ -25,15 +25,15 @@
         <ion-item>
           <item>
             <div ng-click="navigateToMenu(menu)" role="menu">{{menu.name}}
-              <i ng-class="menu.showSubMenu ? 'fa fa-angle-up' : 'fa fa-angle-down'" ng-if="menu.subMenu" aria-hidden="true"></i>
+              <i ng-class="menu.showSubMenu ? 'fa fa-minus' : 'fa fa-plus'" ng-if="menu.subMenu" aria-hidden="true"></i>
             </div>
           </item>
         </ion-item>
-        <ion-item submenu-item ng-if="menu.showSubMenu" ng-repeat="subMenu in menu.subMenu">
-          <item>
-            <div ng-click="navigateToMenu(subMenu)" ng-bind="subMenu.name" role="menu"></div>
-          </item>
-        </ion-item>
+          <ion-item submenu-item ng-if="menu.showSubMenu" ng-repeat="subMenu in menu.subMenu">
+            <item>
+              <div ng-click="navigateToMenu(subMenu)" ng-bind="subMenu.name" role="menu"></div>
+            </item>
+          </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>
