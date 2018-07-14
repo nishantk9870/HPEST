@@ -243,6 +243,16 @@ input {
   border-color: #1b1c1c;
 
 }
+
+
+#sidenav ion-item {
+  background-color: #1b1c1c;
+  color: white;
+  padding: 13px;
+  text-transform: uppercase;
+  border-color: black;
+}
+
 .submenus{
   max-height: 350px;
   overflow-y: scroll;
@@ -434,18 +444,6 @@ input {
 .slideInLeft {
   visibility: visible;
   animation-name: slideInLeft;
-}
-
-#sideMenu {
-  background-color: black;
-}
-
-#sideMenu ion-content ion-list ion-item {
-  background-color: #1b1c1c;
-  color: white;
-  padding: 13px;
-  text-transform: uppercase;
-  border-color: black;
 }
 
 .menuHeader {
