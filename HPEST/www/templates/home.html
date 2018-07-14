@@ -35,7 +35,7 @@
         </div>
         <div style="height:100px">
 <div ng-repeat="item in [1,2,3,4,5]" style="margin-left:10px;float:left;width:70px;height:70px;background:rgba(128, 128, 128, 0.39)">
-
+<img ng-src="img/{{item}}.jpg" />
 </div>
 </div>
     
@@ -84,14 +84,14 @@
             <div style="text-align:center;padding-top:20px">
                 <h4>TESTIMONIAL</h4>
             </div>
-            <ion-slides id="bottomSlider" options="data.slider2Options" slider="data.sliderDelegate" style="height: 250px;">
+            <ion-slides id="bottomSlider" options="data.slider2Options" slider="data.sliderDelegate" style="height: 200px;">
             <ion-slide-page style="padding:20px" >
             <div class="active">
             <div>
                 We really appreciate the pest control services you have provided to us for the past two years. The professionalism shown by you and your staff is extremely important in the small business world. I look forward to my next annual Inspection this year!
             </div>
             </div>
-            <divp style="padding-left:85px;">
+            <div class="testimonialAuthor">
                 -  Rajitha
             </div>
         </ion-slide-page>
@@ -100,7 +100,7 @@
             <div>
                 HPest Control Company did a quick and excellent job ridding us of an infestation and has kept us pest free ever since 2016. I would highly recommend their services to anyone or any company that needs it.</div>
             </div>
-            <div style="padding-left:85px;">
+            <div class="testimonialAuthor">
                 -  Agarwal
             </div>
         </ion-slide-page>
@@ -109,7 +109,7 @@
             <div>
                 HPEST team responded quickly to my concerns. The technicians were very courteous, efficient and prompt they got right to work and solved my rodent problem. I highly recommend HPEST Control Services and would use them again for any future services</div>
             </div>
-            <div style="padding-left:85px;">
+            <div class="testimonialAuthor">
                 -  Rishabh Sharma 
             </div>
         </ion-slide-page>
@@ -118,7 +118,7 @@
             <div>
                 Thank you so much for your outstanding service and the follow-up treatments making sure things were okay. Also, I appreciate you working around my work schedule to get the job done. I would also use your services again in the future and would refer your company to people who could use your service. </div>
             </div>
-            <div style="padding-left:85px;">
+            <div class="testimonialAuthor">
                 -  Nikhil
             </div>
         </ion-slide-page>

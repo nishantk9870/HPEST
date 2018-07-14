@@ -661,7 +661,9 @@ button[disabled] {
 
 .active > div {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
   background-color:#80808012;
 }.active::after {
   display:block;
@@ -672,4 +674,11 @@ button[disabled] {
   border-left: 75px solid #fff;
 
 }
+
+.testimonialAuthor{
+padding-left: 85px;
+font-weight: bold;
+}
+
+
 /* code ends here */
