@@ -33,12 +33,12 @@
             <button class="button">bookNow
             </button>
         </div>
-        <div style="height:100px">
-<div ng-repeat="item in [1,2,3,4,5]" style="margin-left:10px;float:left;width:70px;height:70px;background:rgba(128, 128, 128, 0.39)">
+        <div class="row">
+<div ng-repeat="item in [1,2,3,4,5]" class = "col">
 <img ng-src="img/{{item}}.jpg" />
 </div>
 </div>
-    
+     
         <div class="slide-wrapper">
                 <ion-slide-box active-slide="activeSlide" on-slide-changed="slideChanged(index)" show-pager="false">
                     <ion-slide>
