@@ -537,7 +537,7 @@ button[disabled] {
 }
 }
 
-.button {
+.bookButton {
   background-color: #32CD32;
   border-radius: 20px;
   width:90%;
@@ -677,6 +677,5 @@ button[disabled] {
 padding-left: 85px;
 font-weight: bold;
 }
-
 
 /* code ends here */
