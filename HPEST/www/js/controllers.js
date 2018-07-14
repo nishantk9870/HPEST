@@ -10,6 +10,8 @@ angular.module('starter.controllers', [])
     //});
 
     $scope.menuItems = [{
+      isLogo: true
+    },{
       name: 'Home',
       path: 'app.home'
     }, {
@@ -89,6 +91,10 @@ angular.module('starter.controllers', [])
       name: 'Contact Us',
       path: 'app.contactus'
     }];
+
+    $scope.closeSideMenu = function(){
+      $ionicSideMenuDelegate.toggleLeft();
+    }
 
     $scope.navigateToMenu = function (menu) {
       if (menu.path) {

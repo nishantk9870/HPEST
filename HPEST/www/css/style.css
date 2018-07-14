@@ -252,9 +252,16 @@ input {
   text-transform: uppercase;
   border-color: black;
 }
+#sideMenu ion-header-bar ion-icon{
+  color: white !important;
+}
+
+.hpestMenuLogo{
+  background-color: white !important;
+}
 
 .submenus{
-  max-height: 350px;
+  max-height: 250px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -272,6 +279,10 @@ input {
 }
 
 #sideMenu {
+  background-color: black;
+}
+
+#sideMenu ion-header-bar {
   background-color: black;
 }
 
@@ -325,6 +336,11 @@ input {
   width: 49%;
   padding-top: 10px;
   padding-right: 15px;
+}
+
+.menuClose{
+  width: 71%;
+  height: 70%;
 }
 
 .padding-top-5{

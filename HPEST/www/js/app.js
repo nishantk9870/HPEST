@@ -43,7 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         url: '/contactus',
         views: {
           'menuContent': {
-            templateUrl: 'templates/contactUs.html',
+            templateUrl: 'templates/contactus.html',
             controller: 'contactusCtrl'
           }
         }
