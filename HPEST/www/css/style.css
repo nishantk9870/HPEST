@@ -241,7 +241,12 @@ input {
   padding-bottom: 0px;
   padding-top: 10px;
   border-color: #1b1c1c;
+
+}
+.submenus{
+  max-height: 350px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #sidenav i {
@@ -339,7 +344,9 @@ input {
 
 #bottomSlider .swiper-container-horizontal>.swiper-pagination .swiper-pagination-bullet {
   margin: 0 5px;
-  background: transparent;
+  background: black;
+  float: right;
+
 }
 
 .swiper-container-horizontal > .swiper-pagination {
@@ -656,10 +663,9 @@ button[disabled] {
   width: 100%;
   padding: 20px;
   background-color:#80808012;
-  color: #fff;
-  text-align: center;
 }.active::after {
   display:block;
+  position: absolute;
   content: "";
   font-size: 0px; line-height: 0%; width: 0px;
   border-top: 30px solid #80808012;

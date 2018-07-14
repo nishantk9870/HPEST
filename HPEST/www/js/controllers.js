@@ -116,9 +116,12 @@ angular.module('starter.controllers', [])
         speed: 3000, //0.3s transition
         autoplay: 300
       };
+
       $scope.data.slider2Options = {
-        initialSlide: 4,
+           initialSlide: 0,
         direction: 'horizontal', //or vertical
+        speed: 3000, //0.3s transition
+        autoplay: 300
       };
 
       //create delegate reference to link with slider
