@@ -4,7 +4,7 @@
       <img src="img/ec4a86464e24bc1301aa394b0e3ad6c8.jpg">
     </div>
     <div class="bookNowContent">
-      <div class="form-group bookNowContentBorder">
+      <div class="form-group bookNowContentBorder" id="bookNowForm">
         <select class="form-control noBackgroundFormControl" ng-model="data.ar" ng-change="getValue()" ng-options="x.text for x in area">
           <option value="">AREA</option>
         </select>
@@ -20,12 +20,12 @@
           <option value="">SQFT</option>
         </select>
 
-        <div class="freeInspectionResult" ng-bind-html="processObject"></div>
+        <div class="freeInspectionResult" ng-class="noSelection ? 'initialPriceQuote': ''"><p  ng-bind-html="processObject"></p></div>
         <input type="text" placeholder="Enter Name *" class="form-control noBackgroundFormControl" id="usr1">
         <input type="text" placeholder="Enter Email *" class="form-control noBackgroundFormControl" id="usr2">
         <input type="text" placeholder="Enter Phone Number *" class="form-control noBackgroundFormControl" id="usr3">
         <textarea class="form-control noBackgroundFormControl" placeholder="Enter Your Message *" rows="5" id="comment"></textarea>
-        <button class="button qouteButton">Book Now</button>
+        <button class="button qouteButton" ng-disabled="noSelection">Book Now</button>
       </div>
     </div>
   </ion-content>

@@ -158,8 +158,6 @@ angular.module('starter.controllers', [])
       var q = '.slider ion-slide.slider-slide[data-index="' + index + '"]';
       var elm = document.querySelector(q);
 
-      console.log("Show banner " + index);
-
       // Remove class "current"
       if (null !== oldElm) {
         oldElm.classList.remove("current");
@@ -1037,10 +1035,12 @@ angular.module('starter.controllers', [])
       id: 18,
       text: '3000 SFT'
     }];
+    $scope.noSelection = true;
     $scope.processObject = 'MRP  :  ₹ /-';
     $scope.data = {};
     $scope.getValue = function () {
       if ($scope.data.ar && $scope.data.serv && $scope.data.st && $scope.data.sqft) {
+        $scope.noSelection = false;
         var url = "http://www.hpests.com/hapdests/get_mrp.php"
         var formData = new FormData();
         formData.append("area_id", $scope.data.ar.id);
@@ -1054,9 +1054,11 @@ angular.module('starter.controllers', [])
         }, ).success(function (response) {
           $scope.processObject = response;
         });
-      }
+      } else {
+        $scope.processObject = 'MRP  :  ₹ /-';
+        $scope.noSelection = true;
+      }      
     }
-
   })
 
   .controller('freeInspectionCtrl', function ($scope, $state, $http) {
