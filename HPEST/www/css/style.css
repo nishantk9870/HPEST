@@ -40,6 +40,12 @@ Nishant K
   position: relative;
 }
 
+.bookNowContent{
+  width: 100%;
+  float: left;
+  position: relative;
+  padding: 10px;
+}
 .mainwrapper {
   max-width: 550px;
   min-width: 240px;
@@ -441,7 +447,7 @@ input {
 .apq_left h3 {
   padding-top: 10px
 
-
+}
 .fadeInLeft {
   visibility: visible;
   animation-name: fadeInLeft;
@@ -480,6 +486,8 @@ input {
   width: 100%;
   border: 1px solid #CFCFCF
 }
+
+
 
 .overViewContent .jobOverviewLeft {
   background-color: #71c040;
@@ -550,7 +558,6 @@ button[disabled] {
   color: #7A97B7;
   font-size: 24px;
   font-weight: 400;
-}
 }
 
 .bookButton {
@@ -723,6 +730,11 @@ font-weight: bold;
   border: 0px;
 }
 
+.noBackgroundFormControl{
+  background-color: white;
+  border: 0px;
+}
+
 .freeInspectionResult {
   background: #13f206;
   height: 60px;
@@ -741,5 +753,9 @@ font-weight: bold;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.bookNowContentBorder{
+  background-color: lightgrey;
 }
 /* code ends here */

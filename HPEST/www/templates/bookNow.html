@@ -3,53 +3,30 @@
     <div class="innerbnr_block">
       <img src="img/ec4a86464e24bc1301aa394b0e3ad6c8.jpg">
     </div>
-    <div>
-      <form>
-        <div class="form-group">
-          <div class="input-group full-grup">
-            <select class="form-control" name="service" id="area">
-              <option value="">AREA</option>
-              <option value="2">Commercial Pest Control</option>
-              <option value="1">Residential Pest Control</option>
-            </select>
-            <select class="form-control" name="services" id="services">
-              <option value="" selected="selected">SERVICE</option>
-              <option value="1">Cockroach Control Service</option>
-              <option value="2">Termite Control Service</option>
-              <option value="3">Bed Bugs Control Service</option>
-              <option value="4">Lizard Control Service</option>
-              <option value="5">Mosquito Control Service</option>
-              <option value="6">Rodents Control Service</option>
-              <option value="8">General Pest Management(Except Termite)</option>
-            </select>
-            <select class="form-control" name="service_type" id="service_type">
-              <option value="">SERVICE TYPE</option>
-              <option value="1">Single Service</option>
-              <option value="2">6 Months 2 Services</option>
-              <option value="3">1 Year 3 Services </option>
-              <option value="4">2 Years 6 Services</option>
-              <option value="5">3 Years 9 Services</option>
-            </select>
-            <select class="form-control" name="sqft" id="sqft">
-              <option value="">SQFT</option>
-              <option value="1">500 SFT</option>
-              <option value="2">800 SFT</option>
-              <option value="3">950 SFT</option>
-              <option value="4">1100 SFT</option>
-              <option value="5">1200 SFT</option>
-              <option value="6">1350 SFT</option>
-              <option value="11">1500 SFT</option>
-              <option value="12">1600 SFT</option>
-              <option value="13">1800 SFT</option>
-              <option value="14">1950 SFT</option>
-              <option value="15">2100 SFT</option>
-              <option value="16">2300 SFT</option>
-              <option value="17">2500 SFT</option>
-              <option value="18">3000 SFT</option>
-            </select>
-          </div>
-        </div>
-      </form>
+    <div class="bookNowContent">
+      <div class="form-group bookNowContentBorder">
+        <select class="form-control noBackgroundFormControl" ng-model="data.ar" ng-change="getValue()" ng-options="x.text for x in area">
+          <option value="">AREA</option>
+        </select>
+        <select class="form-control noBackgroundFormControl" ng-model="data.serv" ng-change="getValue()" ng-options="y.text for y in service">
+          <option value="">SERVICE</option>
+        </select>
+
+        <select class="form-control noBackgroundFormControl" ng-model="data.st" ng-change="getValue()" ng-options="x.text for x in serviceType">
+          <option value="">SERVICE TYPE</option>
+        </select>
+
+        <select class="form-control noBackgroundFormControl" ng-model="data.sqft" ng-change="getValue()" ng-options="x.text for x in squareFeet">
+          <option value="">SQFT</option>
+        </select>
+
+        <div class="freeInspectionResult" ng-bind-html="bookNowObject"></div>
+        <input type="text" placeholder="Enter Name *" class="form-control noBackgroundFormControl" id="usr1">
+        <input type="text" placeholder="Enter Email *" class="form-control noBackgroundFormControl" id="usr2">
+        <input type="text" placeholder="Enter Phone Number *" class="form-control noBackgroundFormControl" id="usr3">
+        <textarea class="form-control noBackgroundFormControl" placeholder="Enter Your Message *" rows="5" id="comment"></textarea>
+        <button class="button qouteButton">Book Now</button>
+      </div>
     </div>
   </ion-content>
 </ion-view>

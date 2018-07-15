@@ -19,7 +19,7 @@
         </a>
              <a ng-click="navigateTo('app.contactus')" href=""> 
           <img src="img/contactus.png" />
-        </a>  
+        </a>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
@@ -28,8 +28,10 @@
   <ion-side-menu side="left" id="sideMenu">
     <ion-header-bar>
       <div class="padding-top-5">
-      <button class="button button-icon button-clear" ng-click="closeSideMenu();"><img class="menuClose" src="img/Close.PNG"/></button>
-    </div>
+        <button class="button button-icon button-clear" ng-click="closeSideMenu();">
+          <img class="menuClose" src="img/Close.PNG" />
+        </button>
+      </div>
     </ion-header-bar>
     <ion-content has-header="true" overflow-scroll="true">
       <ion-list ng-repeat="menu in menuItems" id="sidenav">

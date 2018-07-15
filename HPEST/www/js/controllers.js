@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate,$location) {
+  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate, $location) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
 
     $scope.menuItems = [{
       isLogo: true
-    },{
+    }, {
       name: 'Home',
       path: 'app.home'
     }, {
@@ -92,11 +92,11 @@ angular.module('starter.controllers', [])
       path: 'app.contactus'
     }];
 
-    $scope.closeSideMenu = function(){
+    $scope.closeSideMenu = function () {
       $ionicSideMenuDelegate.toggleLeft();
     }
 
-    $scope.navigateTo = function (path){
+    $scope.navigateTo = function (path) {
       $state.go(path, {});
     }
 
@@ -128,7 +128,7 @@ angular.module('starter.controllers', [])
       };
 
       $scope.data.slider2Options = {
-           initialSlide: 0,
+        initialSlide: 0,
         direction: 'horizontal', //or vertical
         speed: 3000, //0.3s transition
         autoplay: 300
@@ -152,41 +152,41 @@ angular.module('starter.controllers', [])
     }
     setupSlider();
 
-//new slider test code to check how its working . 
-function showBanner(index) {
-  var oldElm = document.querySelector('.slider ion-slide.slider-slide.current');
-  var q = '.slider ion-slide.slider-slide[data-index="' + index + '"]';
-  var elm = document.querySelector(q);
+    //new slider test code to check how its working . 
+    function showBanner(index) {
+      var oldElm = document.querySelector('.slider ion-slide.slider-slide.current');
+      var q = '.slider ion-slide.slider-slide[data-index="' + index + '"]';
+      var elm = document.querySelector(q);
 
-  console.log("Show banner " + index);
-  
-  // Remove class "current"
-  if (null !== oldElm) {
-    oldElm.classList.remove("current");
-  }
+      console.log("Show banner " + index);
 
-  // Add class "current" to current slide
-  if (null !== elm) {
-    elm.classList.add("current");
-  }
-}
+      // Remove class "current"
+      if (null !== oldElm) {
+        oldElm.classList.remove("current");
+      }
 
-$scope.activeSlide = 0;
+      // Add class "current" to current slide
+      if (null !== elm) {
+        elm.classList.add("current");
+      }
+    }
 
-setTimeout(function() {
-  showBanner($scope.activeSlide);
-}, 100);
+    $scope.activeSlide = 0;
 
-$scope.slideChanged = showBanner;
+    setTimeout(function () {
+      showBanner($scope.activeSlide);
+    }, 100);
+
+    $scope.slideChanged = showBanner;
 
 
     $scope.area = [{
-      id:0,
+      id: 0,
       text: 'AREA'
-    },{
+    }, {
       id: 1,
       text: 'Commercial Pest Control'
-    },{
+    }, {
       id: 2,
       text: 'Residential Pest Control'
     }];
@@ -194,11 +194,11 @@ $scope.slideChanged = showBanner;
     $scope.service = [{
       id: 0,
       text: 'SERVICE'
-    },{
+    }, {
       id: 1,
       text: 'Cockroach Control Service'
-    },{
-      id:2,
+    }, {
+      id: 2,
       text: 'Termite Control Service'
     }, {
       id: 3,
@@ -283,6 +283,10 @@ $scope.slideChanged = showBanner;
       id: 18,
       text: '3000 SFT'
     }];
+
+    $scope.goToBookNow = function() {
+      $state.go('app.bookNow', {});
+    }
   })
 
   .controller('batsCtrl', function ($scope) {
@@ -477,6 +481,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('millipedesCtrl', function ($scope) {
     $scope.millipedesData = [{
       header: 'Appearance / Identification',
@@ -513,6 +518,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('snakesCtrl', function ($scope) {
     $scope.snakesData = [{
       header: 'Types of Snakes in Canada',
@@ -553,6 +559,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('fleasCtrl', function ($scope) {
     $scope.fleasData = [{
       header: 'Appearance / Identification',
@@ -593,6 +600,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('mitesCtrl', function ($scope) {
     $scope.mitesData = [{
       header: 'Appearance / Identification',
@@ -633,6 +641,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('stinkBugsCtrl', function ($scope) {
     $scope.stinkBugsData = [{
       header: 'Appearance / Identification',
@@ -677,6 +686,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('mosquitoesCtrl', function ($scope) {
     $scope.mosquitoesData = [{
       header: 'Appearance / Identification',
@@ -717,6 +727,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('termitesCtrl', function ($scope) {
     $scope.termitesData = [{
       header: 'General Facts',
@@ -765,6 +776,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('earwingCtrl', function ($scope) {
     $scope.earwingData = [{
       header: 'Appearance / Identification',
@@ -805,6 +817,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('gnatsCtrl', function ($scope) {
     $scope.gnatsData = [{
       header: 'Appearance / Identification',
@@ -845,6 +858,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('ratsCtrl', function ($scope) {
     $scope.ratsData = [{
       header: 'Appearance / Identification',
@@ -885,6 +899,7 @@ $scope.slideChanged = showBanner;
       });
     }
   })
+
   .controller('weevilsCtrl', function ($scope) {
     $scope.weevilsData = [{
       header: 'Appearance / Identification',
@@ -929,15 +944,12 @@ $scope.slideChanged = showBanner;
       });
     }
   })
-  .controller('bookNowCtrl', function ($scope, $state) {
-    
-  })
 
-  .controller('freeInspectionCtrl',function($scope,$state,$http) {
+  .controller('bookNowCtrl', function ($scope, $state) {
     $scope.area = [{
       id: 2,
       text: 'Commercial Pest Control'
-    },{
+    }, {
       id: 1,
       text: 'Residential Pest Control'
     }];
@@ -945,8 +957,102 @@ $scope.slideChanged = showBanner;
     $scope.service = [{
       id: 1,
       text: 'Cockroach Control Service'
-    },{
-      id:2,
+    }, {
+      id: 2,
+      text: 'Termite Control Service'
+    }, {
+      id: 3,
+      text: 'Bed Bugs Control Service'
+    }, {
+      id: 4,
+      text: 'Lizard Control Service'
+    }, {
+      id: 5,
+      text: 'Mosquito Control Service'
+    }, {
+      id: 6,
+      text: 'Rodents Control Service'
+    }, {
+      id: 8,
+      text: 'General Pest Management(Except Termite)'
+    }];
+
+    $scope.serviceType = [{
+      id: 1,
+      text: 'Single Service'
+    }, {
+      id: 2,
+      text: '6 Months 2 Services'
+    }, {
+      id: 3,
+      text: '1 Year 3 Services '
+    }, {
+      id: 4,
+      text: '2 Years 6 Services'
+    }, {
+      id: 5,
+      text: '3 Years 9 Services'
+    }];
+
+    $scope.squareFeet = [{
+      id: 1,
+      text: '500 SFT'
+    }, {
+      id: 2,
+      text: '800 SFT'
+    }, {
+      id: 3,
+      text: '950 SFT'
+    }, {
+      id: 4,
+      text: '1100 SFT'
+    }, {
+      id: 5,
+      text: '1200 SFT'
+    }, {
+      id: 6,
+      text: '1350 SFT'
+    }, {
+      id: 11,
+      text: '1500 SFT'
+    }, {
+      id: 12,
+      text: '1600 SFT'
+    }, {
+      id: 13,
+      text: '1800 SFT'
+    }, {
+      id: 14,
+      text: '1950 SFT'
+    }, {
+      id: 15,
+      text: '2100 SFT'
+    }, {
+      id: 16,
+      text: '2300 SFT'
+    }, {
+      id: 17,
+      text: '2500 SFT'
+    }, {
+      id: 18,
+      text: '3000 SFT'
+    }];
+  })
+
+  .controller('freeInspectionCtrl', function ($scope, $state, $http) {
+    $scope.area = [{
+      id: 2,
+      text: 'Commercial Pest Control'
+    }, {
+      id: 1,
+      text: 'Residential Pest Control'
+    }];
+
+    $scope.service = [{
+      id: 1,
+      text: 'Cockroach Control Service'
+    }, {
+      id: 2,
       text: 'Termite Control Service'
     }, {
       id: 3,
@@ -1026,26 +1132,23 @@ $scope.slideChanged = showBanner;
       text: '3000 SFT'
     }];
 
-    $scope.processObject ='MRP  :  ₹ /-';
-$scope.data = {};
-    $scope.getValue = function(){
-      if($scope.data.ar && $scope.data.serv && $scope.data.st && $scope.data.sqft){
-      var url =   "http://www.hpests.com/hapdests/get_mrp.php"
-     var formData = new FormData();
-      formData.append("area_id", $scope.data.ar.id);
-      formData.append("service_id", $scope.data.serv.id);
-      formData.append("service_type_id", $scope.data.st.id);
-      formData.append("house_type_id", $scope.data.sqft.id);
-     //var payload = {"area_id" :$scope.data.ar.id ,"service_id" :$scope.data.serv.id, "service_type_id":$scope.data.st.id,"house_type_id": $scope.data.sqft.id}
-     //  url =  url+'?area_id='+$scope.data.ar.id +'&service_id='+$scope.data.serv.id+'&service_type_id='+$scope.data.st.id+'&house_type_id='+ $scope.data.sqft.id;
-      $http.post(url,formData,{headers: {
-        'Content-Type': undefined
-      }},).success(function (response) {
-        $scope.processObject = response;
-      });
+    $scope.processObject = 'MRP  :  ₹ /-';
+    $scope.data = {};
+    $scope.getValue = function () {
+      if ($scope.data.ar && $scope.data.serv && $scope.data.st && $scope.data.sqft) {
+        var url = "http://www.hpests.com/hapdests/get_mrp.php"
+        var formData = new FormData();
+        formData.append("area_id", $scope.data.ar.id);
+        formData.append("service_id", $scope.data.serv.id);
+        formData.append("service_type_id", $scope.data.st.id);
+        formData.append("house_type_id", $scope.data.sqft.id);
+        $http.post(url, formData, {
+          headers: {
+            'Content-Type': undefined
+          }
+        }, ).success(function (response) {
+          $scope.processObject = response;
+        });
+      }
     }
-  }
-
-
-
   })
