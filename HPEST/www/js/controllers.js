@@ -945,7 +945,7 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('bookNowCtrl', function ($scope, $state) {
+  .controller('bookNowCtrl', function ($scope, $state,$http) {
     $scope.area = [{
       id: 2,
       text: 'Commercial Pest Control'
@@ -1037,6 +1037,26 @@ angular.module('starter.controllers', [])
       id: 18,
       text: '3000 SFT'
     }];
+    $scope.processObject = 'MRP  :  ₹ /-';
+    $scope.data = {};
+    $scope.getValue = function () {
+      if ($scope.data.ar && $scope.data.serv && $scope.data.st && $scope.data.sqft) {
+        var url = "http://www.hpests.com/hapdests/get_mrp.php"
+        var formData = new FormData();
+        formData.append("area_id", $scope.data.ar.id);
+        formData.append("service_id", $scope.data.serv.id);
+        formData.append("service_type_id", $scope.data.st.id);
+        formData.append("house_type_id", $scope.data.sqft.id);
+        $http.post(url, formData, {
+          headers: {
+            'Content-Type': undefined
+          }
+        }, ).success(function (response) {
+          $scope.processObject = response;
+        });
+      }
+    }
+
   })
 
   .controller('freeInspectionCtrl', function ($scope, $state, $http) {
