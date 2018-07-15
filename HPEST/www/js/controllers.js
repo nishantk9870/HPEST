@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate) {
+  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate,$location) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -94,6 +94,10 @@ angular.module('starter.controllers', [])
 
     $scope.closeSideMenu = function(){
       $ionicSideMenuDelegate.toggleLeft();
+    }
+
+    $scope.navigateTo = function (path){
+      $state.go(path, {});
     }
 
     $scope.navigateToMenu = function (menu) {
@@ -927,4 +931,121 @@ $scope.slideChanged = showBanner;
   })
   .controller('bookNowCtrl', function ($scope, $state) {
     
+  })
+
+  .controller('freeInspectionCtrl',function($scope,$state,$http) {
+    $scope.area = [{
+      id: 2,
+      text: 'Commercial Pest Control'
+    },{
+      id: 1,
+      text: 'Residential Pest Control'
+    }];
+
+    $scope.service = [{
+      id: 1,
+      text: 'Cockroach Control Service'
+    },{
+      id:2,
+      text: 'Termite Control Service'
+    }, {
+      id: 3,
+      text: 'Bed Bugs Control Service'
+    }, {
+      id: 4,
+      text: 'Lizard Control Service'
+    }, {
+      id: 5,
+      text: 'Mosquito Control Service'
+    }, {
+      id: 6,
+      text: 'Rodents Control Service'
+    }, {
+      id: 8,
+      text: 'General Pest Management(Except Termite)'
+    }];
+
+    $scope.serviceType = [{
+      id: 1,
+      text: 'Single Service'
+    }, {
+      id: 2,
+      text: '6 Months 2 Services'
+    }, {
+      id: 3,
+      text: '1 Year 3 Services '
+    }, {
+      id: 4,
+      text: '2 Years 6 Services'
+    }, {
+      id: 5,
+      text: '3 Years 9 Services'
+    }];
+
+    $scope.squareFeet = [{
+      id: 1,
+      text: '500 SFT'
+    }, {
+      id: 2,
+      text: '800 SFT'
+    }, {
+      id: 3,
+      text: '950 SFT'
+    }, {
+      id: 4,
+      text: '1100 SFT'
+    }, {
+      id: 5,
+      text: '1200 SFT'
+    }, {
+      id: 6,
+      text: '1350 SFT'
+    }, {
+      id: 11,
+      text: '1500 SFT'
+    }, {
+      id: 12,
+      text: '1600 SFT'
+    }, {
+      id: 13,
+      text: '1800 SFT'
+    }, {
+      id: 14,
+      text: '1950 SFT'
+    }, {
+      id: 15,
+      text: '2100 SFT'
+    }, {
+      id: 16,
+      text: '2300 SFT'
+    }, {
+      id: 17,
+      text: '2500 SFT'
+    }, {
+      id: 18,
+      text: '3000 SFT'
+    }];
+
+    $scope.processObject ='MRP  :  ₹ /-';
+$scope.data = {};
+    $scope.getValue = function(){
+      if($scope.data.ar && $scope.data.serv && $scope.data.st && $scope.data.sqft){
+      var url =   "http://www.hpests.com/hapdests/get_mrp.php"
+     var formData = new FormData();
+      formData.append("area_id", $scope.data.ar.id);
+      formData.append("service_id", $scope.data.serv.id);
+      formData.append("service_type_id", $scope.data.st.id);
+      formData.append("house_type_id", $scope.data.sqft.id);
+     //var payload = {"area_id" :$scope.data.ar.id ,"service_id" :$scope.data.serv.id, "service_type_id":$scope.data.st.id,"house_type_id": $scope.data.sqft.id}
+     //  url =  url+'?area_id='+$scope.data.ar.id +'&service_id='+$scope.data.serv.id+'&service_type_id='+$scope.data.st.id+'&house_type_id='+ $scope.data.sqft.id;
+      $http.post(url,formData,{headers: {
+        'Content-Type': undefined
+      }},).success(function (response) {
+        $scope.processObject = response;
+      });
+    }
+  }
+
+
+
   })

@@ -258,6 +258,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           }
         }
       })
+      .state('app.freeInspection',{
+        url:'/freeInspection',
+        views:{
+          'menuContent': {
+            templateUrl: 'templates/freeInspection.html',
+            controller: 'freeInspectionCtrl'
+          }
+        }
+      })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
   });

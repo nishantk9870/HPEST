@@ -694,4 +694,52 @@ padding-left: 85px;
 font-weight: bold;
 }
 
+.inspectionContainer {
+    margin: 20px;
+    text-align: justify;
+    font-weight: 400;
+    background-color: #efefef;
+    font-family: 'Open Sans', sans-sarif;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px;
+}
+
+.form-group .form-control{
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-image: none;
+    margin-bottom: 10px;
+}
+
+.noBorder {
+  border: 0px;
+}
+
+.freeInspectionResult {
+  background: #13f206;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.qouteButton {
+  background-color: rgb(47, 54, 47);
+  border-radius: 20px;
+  width:100%;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 /* code ends here */

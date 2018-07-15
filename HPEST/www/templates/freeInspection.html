@@ -1,0 +1,37 @@
+<ion-view>
+<ion-content class="no-scroll">
+              <div class="inspectionContainer">
+                <div>
+                        <div class="form-group">
+                        <select class="form-control noBorder" ng-model="data.ar" ng-change="getValue()" ng-options="x.text for x in area">
+                                <option value="">AREA</option>
+                        </select>
+                            <select class="form-control noBorder" ng-model="data.serv"  ng-change="getValue()" ng-options="y.text for y in service">
+                                    <option value="" >SERVICE</option>
+                                </select>
+                            
+                                <select class="form-control noBorder" ng-model="data.st"  ng-change="getValue()" ng-options="x.text for x in serviceType">
+                                        <option value="">SERVICE TYPE</option>
+                                    </select>
+                                  
+                                    <select class="form-control noBorder" ng-model="data.sqft"  ng-change="getValue()" ng-options="x.text for x in squareFeet">
+                                            <option value="">SQFT</option>
+                                        </select>
+
+                                        <div class="freeInspectionResult" ng-bind-html="processObject">
+                                            </div>
+                                            <input type="text" placeholder="Enter Name *" class="form-control noBorder" id="usr1">
+                                            <input type="text" placeholder="Enter Email *" class="form-control noBorder" id="usr2">
+                                            <input type="text" placeholder="Enter Phone Number *" class="form-control noBorder" id="usr3">
+                                            <textarea class="form-control noBorder" placeholder="Enter Your Message *" rows="5" id="comment"></textarea>
+
+                                            <button class="button qouteButton">Ask A Quote
+                                                </button>
+                                    </div>
+                                </div>
+
+
+                </div>
+              </div>
+    </ion-content>
+    </ion-view>
