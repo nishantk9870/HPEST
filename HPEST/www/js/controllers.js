@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate, $location) {
+  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate, $location,$http) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -8,6 +8,92 @@ angular.module('starter.controllers', [])
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
+$scope.data= {};
+    $ionicModal.fromTemplateUrl('templates/inspectionModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) { 
+      $scope.modal = modal;
+     });
+
+    $scope.sucessModal =  $ionicModal.fromTemplateUrl('templates/successModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(sucessModal) { 
+      $scope.sucessModal = sucessModal;
+     });
+
+     $scope.inspectionSubmit = function () {
+        var url = "http://www.hpests.com/index.php"
+        var formData = new FormData();
+        formData.append("b_name", $scope.data.name);
+        formData.append("b_email", $scope.data.email);
+        formData.append("b_phone", $scope.data.phone);
+        formData.append("b_pest", $scope.data.pest.text);
+        formData.append("b_address", $scope.comment);
+        formData.append("booknowSubmit","SUBMIT");
+        $http.post(url, formData, {
+          headers: {
+            'Content-Type': undefined
+          }
+        }, ).success(function (response) {
+         $scope.modal.hide();
+         $scope.sucessModal.show()
+        }); 
+    }
+  
+     $scope.pestTypes = [{id: 1,
+      text: 'Ants'
+    },{
+      id: 2,
+      text: 'bed bugs'
+    },{
+      id: 3,
+      text: 'Box Elder Bugs'
+    },{
+      id: 4,
+      text: 'earwing'
+    },{
+      id: 5,
+      text: 'Flies'
+    },{
+      id: 6,
+      text: 'fleas'
+    },{
+      id: 7,
+      text: 'fruit flies'
+    },{
+      id: 8,
+      text: 'Millipedes'
+    },{
+      id: 9,
+      text: 'mites'
+    },{
+      id: 10,
+      text: 'MOSQUITOES'
+    },{
+      id: 11,
+      text: 'rats'
+    },{
+      id: 12,
+      text: 'snakes'
+    },{
+      id: 13,
+      text: 'stink bugs'
+    },{
+      id: 14,
+      text: 'termites'
+    },{
+      id: 15,
+      text: 'weevils'
+    },{
+      id: 16,
+      text: 'cockroach'
+    },{
+      id: 17,
+      text: 'lizards'
+    }
+	];
 
     $scope.menuItems = [{
       isLogo: true
@@ -94,6 +180,10 @@ angular.module('starter.controllers', [])
 
     $scope.closeSideMenu = function () {
       $ionicSideMenuDelegate.toggleLeft();
+    }
+
+    $scope.openInspection = function(){
+      $scope.modal.show()
     }
 
     $scope.navigateTo = function (path) {

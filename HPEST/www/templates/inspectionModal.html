@@ -1,0 +1,12 @@
+    <div class="modal">
+        <div class="form-group modelPopUp">  
+            <input type="text" placeholder="Enter Name *" ng-model="data.name" class="form-control modelform-control noBorder" id="usr1">
+            <input type="text" placeholder="Enter Email *" ng-model="data.email" class="form-control modelform-control noBorder" id="usr2">
+            <input type="text" placeholder="Enter Phone Number *" ng-model="data.phone" class="form-control modelform-control noBorder" id="usr3">
+            <select class="form-control modelform-control noBorder"  ng-model="data.pest" ng-options="x.text for x in pestTypes">
+                <option value="">Select Pest Type</option>
+              </select>
+            <textarea class="form-control modelform-control noBorder"  ng-model="data.comment"  placeholder="Enter Your Address *" rows="5" id="comment"></textarea>
+            <button ng-click="inspectionSubmit()" class="button qouteButton">SUBMIT</button>
+          </div>
+    </div>

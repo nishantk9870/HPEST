@@ -771,4 +771,42 @@ font-weight: bold;
 .bookNowContentBorder{
   background-color: lightgrey;
 }
+
+.modal-backdrop, .modal-backdrop-bg {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  z-index: 10;
+  width: 95%;
+  height: auto;
+}
+
+.modal {
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.modelPopUp{
+  background-color: white ! important;
+}
+.modelform-control{
+  background-color:#80808012;
+}
+
+.closeButton{
+  background-color: #32CD32;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 /* code ends here */
