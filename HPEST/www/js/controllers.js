@@ -204,7 +204,84 @@ $scope.data= {};
     }
   })
 
-  .controller('contactusCtrl', function ($scope) {})
+  .controller('contactusCtrl', function ($scope,$http,$ionicModal) {
+    $scope.data={};
+    
+    $scope.warning =  $ionicModal.fromTemplateUrl('templates/warningModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(warning) { 
+      $scope.warning = warning;
+     });
+
+     $scope.sucessModal =  $ionicModal.fromTemplateUrl('templates/successModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(sucessModal) { 
+      $scope.sucessModal = sucessModal;
+     });
+    
+    $scope.contactusSubmit = function (){
+      if(Validate()){
+        var url = "http://www.hpests.com/contact-us.php"
+        var formData = new FormData();
+        formData.append("txtName", $scope.data.name);
+        formData.append("txtEmail", $scope.data.email);
+        formData.append("txtPhone", $scope.data.phone);
+        formData.append("txtComments", $scope.data.message);
+        formData.append("hid_submit","Submit");
+        $http.post(url, formData, {
+          headers: {
+            'Content-Type': undefined
+          }
+        }, ).success(function (response) {
+          $scope.data ={};
+         $scope.sucessModal.show()
+        }); 
+  }
+    }
+      var Validate = function (){
+        if( !$scope.data.name  || $scope.data.name == ""){
+          $scope.data.warningMessage="please enter the name ";
+          $scope.warning.show();
+          return false;
+        }
+        
+        if(!$scope.data.email || $scope.data.email == "") {
+          $scope.data.warningMessage="please enter the email ";
+          $scope.warning.show();
+          return false;
+        }
+        var regex = /^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/;	 	
+        match = regex.test($scope.data.email)
+        if(! match) {
+          $scope.data.warningMessage="email is not in correct format";
+          $scope.warning.show();
+          return false;
+        }
+        if(!$scope.data.phone || $scope.data.phone == "") {
+          $scope.data.warningMessage="please enter the phone number ";
+          $scope.warning.show();
+          return false;
+        }
+        if(!$scope.data.phone || $scope.data.phone !=""){
+          var regex = /^0?[0-9]{10}$/;	 	
+          match = regex.test($scope.data.phone);
+          if(! match){
+            $scope.data.warningMessage="phone number should be 10 digits";
+          $scope.warning.show();
+          return false;
+          }
+        }
+        if(!$scope.data.message || $scope.data.message == ""){
+          $scope.data.warningMessage="Please provide your Message";
+          $scope.warning.show();
+          return false;
+        }
+    return true;
+      }
+    
+      })
 
   .controller('homeCtrl', function ($scope, $state) {
     $scope.data = {};
