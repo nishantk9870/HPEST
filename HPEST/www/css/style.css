@@ -645,7 +645,8 @@ button[disabled] {
   font-size: 12px;
   text-align: center;
   background-color:#f1f1f1;
-}.active::after {
+}
+.active::after {
   display:block;
   position: absolute;
   content: "";
@@ -794,12 +795,11 @@ font-weight: bold;
 
 .slideshow-container {
   width: 2500px;
-  transition: 1s ease;
-  text-align: center;
+  transition: 20s ease;
   height: 72px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #e5e5e5;
+  background-color: #f1f1f1;
 }
 
 #SlideShowContent img{
@@ -812,11 +812,24 @@ font-weight: bold;
 
 
 .slide {
-  animation: slide 24s ease infinite;
+  animation: slide 60s linear infinite;
 }
 
 @keyframes slide {
-  from { background-position-x: 0; }
-  to   { background-position-x: 2956px; }
+  0%{
+    transform: translateX(-50%);
+  }
+  25%{
+    transform: translateX(-50%);
+  }
+  50%{
+    transform: translateX(-50%);
+  }
+  75%{
+    transform: translateX(-75%);
+  }
+  100%{
+    transform: translateX(0);
+  }
 }
 /* code ends here */
