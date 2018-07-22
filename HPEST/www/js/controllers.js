@@ -107,6 +107,15 @@ $scope.data= {};
       name: 'Pests',
       showSubMenu: false,
       subMenu: [{
+        name: '- Residential Pest Control',
+        path: 'app.residentialPestControl'
+      },{
+        name: '- Commercial Pest Control',
+        path: 'app.commercialPestControl'
+      },{
+        name: '- Industrial Pest Control',
+        path: 'app.environmentallyFriendly'
+      },{
         name: '- Ants',
         path: 'app.ants'
       }, {
