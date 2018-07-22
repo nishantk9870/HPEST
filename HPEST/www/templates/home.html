@@ -33,8 +33,8 @@
       <button class="button bookButton" ng-click="goToBookNow()">Book Now</button>
     </div>
     <div class="row">
-      <div ng-repeat="item in [1,2,3,4,5]" class="col">
-        <img ng-src="img/{{item}}.jpg" />
+      <div ng-repeat="item in items" ng-click="navigateTo(item.route)" class="col">
+        <img ng-src="img/{{item.id}}.jpg" />
       </div>
     </div>
 

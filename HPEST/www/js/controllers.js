@@ -208,6 +208,7 @@ $scope.data= {};
 
   .controller('homeCtrl', function ($scope, $state) {
     $scope.data = {};
+    $scope.items = [{id:1,route:"app.termites"},{id:2,route:"app.cockroach"},{id:3,route:"app.mosquitoes"},{id:4,route:"app.ants"},{id:5,route:"app.flies"}]
     var setupSlider = function () {
       //some options to pass to our slider
       $scope.data.sliderOptions = {
