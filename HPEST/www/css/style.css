@@ -785,4 +785,38 @@ font-weight: bold;
     display: block;
     padding-top:20px;
 }
+
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.slideshow-container {
+  width: 2500px;
+  transition: 1s ease;
+  text-align: center;
+  height: 72px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #e5e5e5;
+}
+
+#SlideShowContent img{
+  width: 100px;
+  height: auto;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+.slide {
+  animation: slide 24s ease infinite;
+}
+
+@keyframes slide {
+  from { background-position-x: 0; }
+  to   { background-position-x: 2956px; }
+}
 /* code ends here */
