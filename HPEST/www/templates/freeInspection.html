@@ -1,33 +1,36 @@
 <ion-view>
   <ion-content class="no-scroll">
-      <div id="alertContainer" class="alert alert-warning alert-dismissible">
-          <a ng-click="closeAlert()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{data.warningMessage}}
-        </div>
+    <div class="innerbnr_block">
+      <img src="img/schedule-freeInspection.jpg">
+    </div>
+    <div id="alertContainer" class="alert alert-warning alert-dismissible">
+      <a ng-click="closeAlert()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      {{data.warningMessage}}
+    </div>
     <div class="inspectionContainer">
       <div>
-        <div class="form-group">
-          <select class="form-control noBorder" ng-model="data.ar" ng-change="getValue()" ng-options="x.text for x in area">
+        <div class="form-group" id="freeInspectionForm">
+          <select class="form-control noBackgroundFormControl" ng-model="data.ar" ng-change="getValue()" ng-options="x.text for x in area">
             <option value="">AREA</option>
           </select>
-          <select class="form-control noBorder" ng-model="data.serv" ng-change="getValue()" ng-options="y.text for y in service">
+          <select class="form-control noBackgroundFormControl" ng-model="data.serv" ng-change="getValue()" ng-options="y.text for y in service">
             <option value="">SERVICE</option>
           </select>
 
-          <select class="form-control noBorder" ng-model="data.st" ng-change="getValue()" ng-options="x.text for x in serviceType">
+          <select class="form-control noBackgroundFormControl" ng-model="data.st" ng-change="getValue()" ng-options="x.text for x in serviceType">
             <option value="">SERVICE TYPE</option>
           </select>
 
-          <select class="form-control noBorder" ng-model="data.sqft" ng-change="getValue()" ng-options="x.text for x in squareFeet">
+          <select class="form-control noBackgroundFormControl" ng-model="data.sqft" ng-change="getValue()" ng-options="x.text for x in squareFeet">
             <option value="">SQFT</option>
           </select>
 
-          <div class="freeInspectionResult" ng-bind-html="processObject"></div>
+          <div class="freeInspectionResult" ng-class="noSelection ? 'initialPriceQuote': ''" ng-bind-html="processObject"></div>
           <input type="text" placeholder="Enter Name *" ng-model="data.name" class="form-control noBorder" id="usr1">
           <input type="text" placeholder="Enter Email *" ng-model="data.email" class="form-control noBorder" id="usr2">
           <input type="text" placeholder="Enter Phone Number *" ng-model="data.phone" class="form-control noBorder" id="usr3">
           <textarea class="form-control noBorder" ng-model="data.message" placeholder="Enter Your Message *" rows="5" id="comment"></textarea>
-          <button class="button qouteButton" ng-click="askqoute()">Ask A Quote</button>
+          <button class="button qouteButton" ng-disabled="noSelection" ng-click="askqoute()">Ask A Quote</button>
         </div>
       </div>
     </div>

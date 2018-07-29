@@ -1,12 +1,21 @@
-    <div class="modal">
-        <div class="modal-form-group modelPopUp">  
-            <input type="text" placeholder="Enter Name *" ng-model="data.name" class="form-control modelform-control noBorder" id="usr1">
-            <input type="text" placeholder="Enter Email *" ng-model="data.email" class="form-control modelform-control noBorder" id="usr2">
-            <input type="text" placeholder="Enter Phone Number *" ng-model="data.phone" class="form-control modelform-control noBorder" id="usr3">
-            <select class="form-control modelform-control noBorder"  ng-model="data.pest" ng-options="x.text for x in pestTypes">
-                <option value="">Select Pest Type</option>
-              </select>
-            <textarea class="form-control modelform-control noBorder"  ng-model="data.comment"  placeholder="Enter Your Address *" rows="5" id="comment"></textarea>
-            <button ng-click="inspectionSubmit()" class="button qouteButton">SUBMIT</button>
-          </div>
-    </div>
+<div id="page-mask"></div>
+<div class="modal" id="inspectionModal">
+  <div class="innerbnr_block fullWidthImage">
+    <img src="img/FreeInspection.jpg">
+  </div>
+  <div id="close" role="button" ng-click="closePopUp()">
+    <i class="fa fa-times"></i>
+  </div>
+  <div class="modal-form-group modelPopUp">
+    <input type="text" placeholder="Enter Name *" ng-model="data.name" class="form-control modelform-control noBorder" id="usr1">
+    <input type="text" placeholder="Enter Email *" ng-model="data.email" class="form-control modelform-control noBorder" id="usr2">
+    <input type="text" placeholder="Enter Phone Number *" ng-model="data.phone" class="form-control modelform-control noBorder"
+      id="usr3">
+    <select class="form-control modelform-control noBorder" ng-model="data.pest" ng-options="x.text for x in pestTypes">
+      <option value="">Select Pest Type</option>
+    </select>
+    <textarea class="form-control modelform-control noBorder" ng-model="data.comment" placeholder="Enter Your Address *" rows="5"
+      id="comment"></textarea>
+    <button ng-click="inspectionSubmit()" class="button qouteButton">SUBMIT</button>
+  </div>
+</div>

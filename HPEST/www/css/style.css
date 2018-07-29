@@ -677,6 +677,7 @@ font-weight: bold;
 .modal-form-group {
   margin-bottom: 15px;
   text-align: center;
+  padding: 10px !important;
 }
 
 .form-group .form-control{
@@ -741,6 +742,9 @@ font-weight: bold;
 #bookNowForm button[disabled] {
   background:rgb(67, 68, 67);
 }
+ #freeInspectionForm button[disabled] {
+  background:rgb(67, 68, 67);
+}
 
 .bookNowContentBorder{
   background-color: #f1f1f1;
@@ -754,6 +758,28 @@ font-weight: bold;
   width: 95%;
   height: auto;
 }
+#page-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.7);
+}
+#close{
+  position:absolute;
+  color:green;
+  right:0px;
+  top:4px;
+  width:30px;
+  height:31px;
+  text-align:center;
+  cursor:pointer;
+}
+
+#inspectionModal {
+padding: 0 !important;
+}
 
 .modal {
   display: block;
@@ -765,8 +791,14 @@ font-weight: bold;
   background-color: #fff;
   border-radius: 10px;
 }
+.pop-up-close-action{
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .2;
+}
 .modelPopUp{
   background-color: white ! important;
+  margin-bottom: 0 !important;
 }
 .modelform-control{
   background-color:#f1f1f1;

@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate, $location,$http) {
+  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate, $location, $http) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -8,95 +8,95 @@ angular.module('starter.controllers', [])
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
-$scope.data= {};
+    $scope.data = {};
     $ionicModal.fromTemplateUrl('templates/inspectionModal.html', {
       scope: $scope,
       animation: 'slide-in-up'
-    }).then(function(modal) { 
+    }).then(function (modal) {
       $scope.modal = modal;
-     });
+    });
 
-    $scope.sucessModal =  $ionicModal.fromTemplateUrl('templates/successModal.html', {
+    $scope.sucessModal = $ionicModal.fromTemplateUrl('templates/successModal.html', {
       scope: $scope,
       animation: 'slide-in-up'
-    }).then(function(sucessModal) { 
+    }).then(function (sucessModal) {
       $scope.sucessModal = sucessModal;
-     });
+    });
 
-     $scope.inspectionSubmit = function () {
-        var url = "http://www.hpests.com/index.php"
-        var formData = new FormData();
-        formData.append("service", $scope.data.pest.text);
-        formData.append("services", $scope.data.pest.text);
-        formData.append("service_type", $scope.data.pest.text);
-        formData.append("house_type", $scope.data.pest.text);
-        formData.append("txtName", $scope.data.name);
-        formData.append("txtEmail", $scope.data.email);
-        formData.append("txtPhone", $scope.data.phone);
-        formData.append("txtComments", $scope.comment);
-        formData.append("submitQuote","ASK A QUOTE");
-        $http.post(url, formData, {
-          headers: {
-            'Content-Type': undefined
-          }
-        }, ).success(function (response) {
-         $scope.modal.hide();
-         $scope.sucessModal.show()
-        }); 
+    $scope.inspectionSubmit = function () {
+      var url = "http://www.hpests.com/index.php"
+      var formData = new FormData();
+      formData.append("service", $scope.data.pest.text);
+      formData.append("services", $scope.data.pest.text);
+      formData.append("service_type", $scope.data.pest.text);
+      formData.append("house_type", $scope.data.pest.text);
+      formData.append("txtName", $scope.data.name);
+      formData.append("txtEmail", $scope.data.email);
+      formData.append("txtPhone", $scope.data.phone);
+      formData.append("txtComments", $scope.comment);
+      formData.append("submitQuote", "ASK A QUOTE");
+      $http.post(url, formData, {
+        headers: {
+          'Content-Type': undefined
+        }
+      }, ).success(function (response) {
+        $scope.modal.hide();
+        $scope.sucessModal.show()
+      });
     }
-  
-     $scope.pestTypes = [{id: 1,
+
+    $scope.pestTypes = [{
+      id: 1,
       text: 'Ants'
-    },{
+    }, {
       id: 2,
       text: 'bed bugs'
-    },{
+    }, {
       id: 3,
       text: 'Box Elder Bugs'
-    },{
+    }, {
       id: 4,
       text: 'earwing'
-    },{
+    }, {
       id: 5,
       text: 'Flies'
-    },{
+    }, {
       id: 6,
       text: 'fleas'
-    },{
+    }, {
       id: 7,
       text: 'fruit flies'
-    },{
+    }, {
       id: 8,
       text: 'Millipedes'
-    },{
+    }, {
       id: 9,
       text: 'mites'
-    },{
+    }, {
       id: 10,
       text: 'MOSQUITOES'
-    },{
+    }, {
       id: 11,
       text: 'rats'
-    },{
+    }, {
       id: 12,
       text: 'snakes'
-    },{
+    }, {
       id: 13,
       text: 'stink bugs'
-    },{
+    }, {
       id: 14,
       text: 'termites'
-    },{
+    }, {
       id: 15,
       text: 'weevils'
-    },{
+    }, {
       id: 16,
       text: 'cockroach'
-    },{
+    }, {
       id: 17,
       text: 'lizards'
-    }
-	];
+    }];
 
     $scope.menuItems = [{
       isLogo: true
@@ -112,13 +112,13 @@ $scope.data= {};
       subMenu: [{
         name: '- Residential Pest Control',
         path: 'app.residentialPestControl'
-      },{
+      }, {
         name: '- Commercial Pest Control',
         path: 'app.commercialPestControl'
-      },{
+      }, {
         name: '- Industrial Pest Control',
         path: 'app.environmentallyFriendly'
-      },{
+      }, {
         name: '- Ants',
         path: 'app.ants'
       }, {
@@ -194,8 +194,12 @@ $scope.data= {};
       $ionicSideMenuDelegate.toggleLeft();
     }
 
-    $scope.openInspection = function(){
-      $scope.modal.show()
+    $scope.openInspection = function () {
+      $scope.modal.show();
+    }
+
+    $scope.closePopUp = function () {
+      $scope.modal.hide();
     }
 
     $scope.navigateTo = function (path) {
@@ -216,88 +220,103 @@ $scope.data= {};
     }
   })
 
-  .controller('contactusCtrl', function ($scope,$http,$ionicModal) {
-    $scope.data={};
-    
-    $scope.warning =  $ionicModal.fromTemplateUrl('templates/warningModal.html', {
-      scope: $scope,
-      animation: 'slide-in-up'
-    }).then(function(warning) { 
-      $scope.warning = warning;
-     });
+  .controller('contactusCtrl', function ($scope, $http, $ionicModal) {
+    $scope.data = {};
 
-     $scope.sucessModal =  $ionicModal.fromTemplateUrl('templates/successModal.html', {
+    $scope.warning = $ionicModal.fromTemplateUrl('templates/warningModal.html', {
       scope: $scope,
       animation: 'slide-in-up'
-    }).then(function(sucessModal) { 
+    }).then(function (warning) {
+      $scope.warning = warning;
+    });
+
+    $scope.sucessModal = $ionicModal.fromTemplateUrl('templates/successModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function (sucessModal) {
       $scope.sucessModal = sucessModal;
-     });
-    
-    $scope.contactusSubmit = function (){
-      if(Validate()){
+    });
+
+    $scope.contactusSubmit = function () {
+      if (Validate()) {
         var url = "http://www.hpests.com/contact-us.php"
         var formData = new FormData();
         formData.append("txtName", $scope.data.name);
         formData.append("txtEmail", $scope.data.email);
         formData.append("txtPhone", $scope.data.phone);
         formData.append("txtComments", $scope.data.message);
-        formData.append("hid_submit","Submit");
+        formData.append("hid_submit", "Submit");
         $http.post(url, formData, {
           headers: {
             'Content-Type': undefined
           }
         }, ).success(function (response) {
-          $scope.data ={};
-         $scope.sucessModal.show()
-        }); 
-  }
-    }
-      var Validate = function (){
-        if( !$scope.data.name  || $scope.data.name == ""){
-          $scope.data.warningMessage="please enter the name ";
-          $scope.warning.show();
-          return false;
-        }
-        
-        if(!$scope.data.email || $scope.data.email == "") {
-          $scope.data.warningMessage="please enter the email ";
-          $scope.warning.show();
-          return false;
-        }
-        var regex = /^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/;	 	
-        match = regex.test($scope.data.email)
-        if(! match) {
-          $scope.data.warningMessage="email is not in correct format";
-          $scope.warning.show();
-          return false;
-        }
-        if(!$scope.data.phone || $scope.data.phone == "") {
-          $scope.data.warningMessage="please enter the phone number ";
-          $scope.warning.show();
-          return false;
-        }
-        if(!$scope.data.phone || $scope.data.phone !=""){
-          var regex = /^0?[0-9]{10}$/;	 	
-          match = regex.test($scope.data.phone);
-          if(! match){
-            $scope.data.warningMessage="phone number should be 10 digits";
-          $scope.warning.show();
-          return false;
-          }
-        }
-        if(!$scope.data.message || $scope.data.message == ""){
-          $scope.data.warningMessage="Please provide your Message";
-          $scope.warning.show();
-          return false;
-        }
-    return true;
+          $scope.data = {};
+          $scope.sucessModal.show()
+        });
       }
-    
-      })
+    }
+    var Validate = function () {
+      if (!$scope.data.name || $scope.data.name == "") {
+        $scope.data.warningMessage = "please enter the name ";
+        $scope.warning.show();
+        return false;
+      }
+
+      if (!$scope.data.email || $scope.data.email == "") {
+        $scope.data.warningMessage = "please enter the email ";
+        $scope.warning.show();
+        return false;
+      }
+      var regex = /^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/;
+      match = regex.test($scope.data.email)
+      if (!match) {
+        $scope.data.warningMessage = "email is not in correct format";
+        $scope.warning.show();
+        return false;
+      }
+      if (!$scope.data.phone || $scope.data.phone == "") {
+        $scope.data.warningMessage = "please enter the phone number ";
+        $scope.warning.show();
+        return false;
+      }
+      if (!$scope.data.phone || $scope.data.phone != "") {
+        var regex = /^0?[0-9]{10}$/;
+        match = regex.test($scope.data.phone);
+        if (!match) {
+          $scope.data.warningMessage = "phone number should be 10 digits";
+          $scope.warning.show();
+          return false;
+        }
+      }
+      if (!$scope.data.message || $scope.data.message == "") {
+        $scope.data.warningMessage = "Please provide your Message";
+        $scope.warning.show();
+        return false;
+      }
+      return true;
+    }
+
+  })
 
   .controller('homeCtrl', function ($scope, $state) {
     $scope.data = {};
-    $scope.items = [{id:1,route:"app.termites"},{id:2,route:"app.cockroach"},{id:3,route:"app.mosquitoes"},{id:4,route:"app.ants"},{id:5,route:"app.flies"}]
+    $scope.items = [{
+      id: 1,
+      route: "app.termites"
+    }, {
+      id: 2,
+      route: "app.cockroach"
+    }, {
+      id: 3,
+      route: "app.mosquitoes"
+    }, {
+      id: 4,
+      route: "app.ants"
+    }, {
+      id: 5,
+      route: "app.flies"
+    }]
     var setupSlider = function () {
       //some options to pass to our slider
       $scope.data.sliderOptions = {
@@ -462,7 +481,7 @@ $scope.data= {};
       text: '3000 SFT'
     }];
 
-    $scope.goToBookNow = function() {
+    $scope.goToBookNow = function () {
       $state.go('app.bookNow', {});
     }
   })
@@ -1123,7 +1142,7 @@ $scope.data= {};
     }
   })
 
-  .controller('bookNowCtrl', function ($scope, $state,$http) {
+  .controller('bookNowCtrl', function ($scope, $state, $http) {
     $scope.area = [{
       id: 2,
       text: 'Commercial Pest Control'
@@ -1237,11 +1256,97 @@ $scope.data= {};
       } else {
         $scope.processObject = 'MRP  :  ₹ /-';
         $scope.noSelection = true;
-      }      
+      }
     }
+
+    $scope.bookNow = function () {
+      if (Validate()) {
+        var url = "http://www.hpests.com/index.php"
+        var formData = new FormData();
+        if ($scope.data.ar)
+          formData.append("service", $scope.data.ar.id);
+        if ($scope.data.serv)
+          formData.append("services", $scope.data.serv.id);
+        if ($scope.data.st)
+          formData.append("service_type", $scope.data.st.id);
+        if ($scope.data.sqft)
+          formData.append("house_type", $scope.data.sqft.id);
+        formData.append("txtName", $scope.data.name);
+        formData.append("txtEmail", $scope.data.email);
+        formData.append("txtPhone", $scope.data.phone);
+        formData.append("txtComments", $scope.comment);
+        formData.append("submitQuote", "ASK A QUOTE");
+        $http.post(url, formData, {
+          headers: {
+            'Content-Type': undefined
+          }
+        }, ).success(function (response) {
+          $scope.data = {};
+          $scope.processObject = 'MRP  :  ₹ /-';
+          $scope.sucessModal.show()
+        });
+      }
+    }
+
+    document.getElementById("alertContainer").style.display = "none";
+    $scope.closeAlert = function () {
+      document.getElementById("alertContainer").style.display = "none";
+    }
+    $scope.warningShow = function () {
+      document.getElementById("alertContainer").style.display = "block";
+    }
+
+    var Validate = function () {
+      if (!$scope.data.name || $scope.data.name == "") {
+        $scope.data.warningMessage = "please enter the name ";
+        $scope.warningShow();
+        return false;
+      }
+
+      if (!$scope.data.email || $scope.data.email == "") {
+        $scope.data.warningMessage = "please enter the email ";
+        $scope.warningShow();
+        return false;
+      }
+      var regex = /^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/;
+      match = regex.test($scope.data.email)
+      if (!match) {
+        $scope.data.warningMessage = "email is not in correct format";
+        $scope.warningShow();
+        return false;
+      }
+      if (!$scope.data.phone || $scope.data.phone == "") {
+        $scope.data.warningMessage = "please enter the phone number ";
+        $scope.warningShow();
+        return false;
+      }
+      if (!$scope.data.phone || $scope.data.phone != "") {
+        var regex = /^0?[0-9]{10}$/;
+        match = regex.test($scope.data.phone);
+        if (!match) {
+          $scope.data.warningMessage = "phone number should be 10 digits";
+          $scope.warningShow();
+          return false;
+        }
+      }
+      if (!$scope.data.message || $scope.data.message == "") {
+        $scope.data.warningMessage = "Please provide your Message";
+        $scope.warningShow();
+        return false;
+      }
+      return true;
+    };
+
+    $scope.sucessModal = $ionicModal.fromTemplateUrl('templates/successModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function (sucessModal) {
+      $scope.sucessModal = sucessModal;
+    });
+
   })
 
-  .controller('freeInspectionCtrl', function ($scope, $state, $http,$ionicModal ) {
+  .controller('freeInspectionCtrl', function ($scope, $state, $http, $ionicModal) {
     $scope.area = [{
       id: 2,
       text: 'Commercial Pest Control'
@@ -1333,11 +1438,12 @@ $scope.data= {};
       id: 18,
       text: '3000 SFT'
     }];
-
+    $scope.noSelection = true;
     $scope.processObject = 'MRP  :  ₹ /-';
     $scope.data = {};
     $scope.getValue = function () {
       if ($scope.data.ar && $scope.data.serv && $scope.data.st && $scope.data.sqft) {
+        $scope.noSelection = false;
         var url = "http://www.hpests.com/hapdests/get_mrp.php"
         var formData = new FormData();
         formData.append("area_id", $scope.data.ar.id);
@@ -1351,91 +1457,94 @@ $scope.data= {};
         }, ).success(function (response) {
           $scope.processObject = response;
         });
-      }
-    }
-
-    $scope.askqoute = function(){
-     if(Validate()){
-      var url = "http://www.hpests.com/index.php"
-      var formData = new FormData();
-      if($scope.data.ar)
-      formData.append("service", $scope.data.ar.id);
-      if($scope.data.serv)
-      formData.append("services", $scope.data.serv.id);
-      if($scope.data.st)
-      formData.append("service_type",  $scope.data.st.id);
-      if($scope.data.sqft)
-      formData.append("house_type", $scope.data.sqft.id);
-      formData.append("txtName", $scope.data.name);
-      formData.append("txtEmail", $scope.data.email);
-      formData.append("txtPhone", $scope.data.phone);
-      formData.append("txtComments", $scope.comment);
-      formData.append("submitQuote","ASK A QUOTE");
-      $http.post(url, formData, {
-        headers: {
-          'Content-Type': undefined
-        }
-      }, ).success(function (response) {
-        $scope.data ={};
+      } else {
         $scope.processObject = 'MRP  :  ₹ /-';
-       $scope.sucessModal.show()
-      }); 
-     }
+        $scope.noSelection = true;
+      }
+    }
+
+    $scope.askqoute = function () {
+      if (Validate()) {
+        var url = "http://www.hpests.com/index.php"
+        var formData = new FormData();
+        if ($scope.data.ar)
+          formData.append("service", $scope.data.ar.id);
+        if ($scope.data.serv)
+          formData.append("services", $scope.data.serv.id);
+        if ($scope.data.st)
+          formData.append("service_type", $scope.data.st.id);
+        if ($scope.data.sqft)
+          formData.append("house_type", $scope.data.sqft.id);
+        formData.append("txtName", $scope.data.name);
+        formData.append("txtEmail", $scope.data.email);
+        formData.append("txtPhone", $scope.data.phone);
+        formData.append("txtComments", $scope.comment);
+        formData.append("submitQuote", "ASK A QUOTE");
+        $http.post(url, formData, {
+          headers: {
+            'Content-Type': undefined
+          }
+        }, ).success(function (response) {
+          $scope.data = {};
+          $scope.processObject = 'MRP  :  ₹ /-';
+          $scope.sucessModal.show()
+        });
+      }
     }
     document.getElementById("alertContainer").style.display = "none";
-  $scope.closeAlert = function (){
-    document.getElementById("alertContainer").style.display = "none";
-  }
-  $scope.warningShow = function () {
-    document.getElementById("alertContainer").style.display = "block";
-  }
+    $scope.closeAlert = function () {
+      document.getElementById("alertContainer").style.display = "none";
+    }
+    $scope.warningShow = function () {
+      document.getElementById("alertContainer").style.display = "block";
+    }
 
-    var Validate = function (){
-      if( !$scope.data.name  || $scope.data.name == ""){
-        $scope.data.warningMessage="please enter the name ";
+    var Validate = function () {
+      if (!$scope.data.name || $scope.data.name == "") {
+        $scope.data.warningMessage = "please enter the name ";
         $scope.warningShow();
         return false;
       }
-      
-      if(!$scope.data.email || $scope.data.email == "") {
-        $scope.data.warningMessage="please enter the email ";
+
+      if (!$scope.data.email || $scope.data.email == "") {
+        $scope.data.warningMessage = "please enter the email ";
         $scope.warningShow();
         return false;
       }
-      var regex = /^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/;	 	
+      var regex = /^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/;
       match = regex.test($scope.data.email)
-      if(! match) {
-        $scope.data.warningMessage="email is not in correct format";
+      if (!match) {
+        $scope.data.warningMessage = "email is not in correct format";
         $scope.warningShow();
         return false;
       }
-      if(!$scope.data.phone || $scope.data.phone == "") {
-        $scope.data.warningMessage="please enter the phone number ";
+      if (!$scope.data.phone || $scope.data.phone == "") {
+        $scope.data.warningMessage = "please enter the phone number ";
         $scope.warningShow();
         return false;
       }
-      if(!$scope.data.phone || $scope.data.phone !=""){
-        var regex = /^0?[0-9]{10}$/;	 	
+      if (!$scope.data.phone || $scope.data.phone != "") {
+        var regex = /^0?[0-9]{10}$/;
         match = regex.test($scope.data.phone);
-        if(! match){
-          $scope.data.warningMessage="phone number should be 10 digits";
-        $scope.warningShow();
-        return false;
+        if (!match) {
+          $scope.data.warningMessage = "phone number should be 10 digits";
+          $scope.warningShow();
+          return false;
         }
       }
-      if(!$scope.data.message || $scope.data.message == ""){
-        $scope.data.warningMessage="Please provide your Message";
+      if (!$scope.data.message || $scope.data.message == "") {
+        $scope.data.warningMessage = "Please provide your Message";
         $scope.warningShow();
         return false;
       }
-  return true;
+      return true;
     };
 
 
-     $scope.sucessModal =  $ionicModal.fromTemplateUrl('templates/successModal.html', {
+    $scope.sucessModal = $ionicModal.fromTemplateUrl('templates/successModal.html', {
       scope: $scope,
       animation: 'slide-in-up'
-    }).then(function(sucessModal) { 
+    }).then(function (sucessModal) {
       $scope.sucessModal = sucessModal;
-     });
+    });
   })
