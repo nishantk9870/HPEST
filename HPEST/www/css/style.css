@@ -881,4 +881,23 @@ font-weight: bold;
   line-height: 1;
   text-shadow: 0 1px 0 #fff;
 }
+
+.lSSlideOuter .lSPager.lSpg {
+  display: none;
+}
+.lSAction > .lSPrev {
+display: none;
+}
+.lSAction > .lSNext {
+  display: none;
+  }
+.clientSlider {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.clientSlider .active {
+  padding: 0px !important;
+}
+
 /* code ends here */
