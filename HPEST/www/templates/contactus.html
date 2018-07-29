@@ -3,6 +3,10 @@
     <div class="innerbnr_block">
       <img src="img/ContactUs.jpg"> </div>
     </div>
+    <div id="alertContainer" class="alert alert-warning alert-dismissible">
+      <a ng-click="closeAlert()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      {{data.warningMessage}}
+    </div>
     <div style="margin:15px;padding:15px;background-color:#f1f1f1">
       <div class="row" style="padding:0px">
         <div class="col col-20" style=" display:block;margin:auto;">
@@ -10,13 +14,16 @@
         </div>
         <div class="col col-80" style="padding: 15px;background-color:white">
           <p>
-            <b>PHONE </b>: <span>+91 9052525294</span>
+            <b>PHONE </b>:
+            <span>+91 9052525294</span>
           </p>
           <p>
-            <b> E-MAIL</b> : <span>info@hpests.com, h_pestofficial@outlook.com</span>
+            <b> E-MAIL</b> :
+            <span>info@hpests.com, h_pestofficial@outlook.com</span>
           </p>
           <p>
-            <b>WEB</b> : <span>wwww.hpests.com</span>
+            <b>WEB</b> :
+            <span>wwww.hpests.com</span>
           </p>
         </div>
       </div>
