@@ -1382,30 +1382,36 @@ $scope.data= {};
       }); 
      }
     }
-
+    document.getElementById("alertContainer").style.display = "none";
+  $scope.closeAlert = function (){
+    document.getElementById("alertContainer").style.display = "none";
+  }
+  $scope.warningShow = function () {
+    document.getElementById("alertContainer").style.display = "block";
+  }
 
     var Validate = function (){
       if( !$scope.data.name  || $scope.data.name == ""){
         $scope.data.warningMessage="please enter the name ";
-        $scope.warning.show();
+        $scope.warningShow();
         return false;
       }
       
       if(!$scope.data.email || $scope.data.email == "") {
         $scope.data.warningMessage="please enter the email ";
-        $scope.warning.show();
+        $scope.warningShow();
         return false;
       }
       var regex = /^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/;	 	
       match = regex.test($scope.data.email)
       if(! match) {
         $scope.data.warningMessage="email is not in correct format";
-        $scope.warning.show();
+        $scope.warningShow();
         return false;
       }
       if(!$scope.data.phone || $scope.data.phone == "") {
         $scope.data.warningMessage="please enter the phone number ";
-        $scope.warning.show();
+        $scope.warningShow();
         return false;
       }
       if(!$scope.data.phone || $scope.data.phone !=""){
@@ -1413,24 +1419,18 @@ $scope.data= {};
         match = regex.test($scope.data.phone);
         if(! match){
           $scope.data.warningMessage="phone number should be 10 digits";
-        $scope.warning.show();
+        $scope.warningShow();
         return false;
         }
       }
       if(!$scope.data.message || $scope.data.message == ""){
         $scope.data.warningMessage="Please provide your Message";
-        $scope.warning.show();
+        $scope.warningShow();
         return false;
       }
   return true;
     };
 
-    $scope.warning =  $ionicModal.fromTemplateUrl('templates/warningModal.html', {
-      scope: $scope,
-      animation: 'slide-in-up'
-    }).then(function(warning) { 
-      $scope.warning = warning;
-     });
 
      $scope.sucessModal =  $ionicModal.fromTemplateUrl('templates/successModal.html', {
       scope: $scope,
