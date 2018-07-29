@@ -1142,7 +1142,7 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('bookNowCtrl', function ($scope, $state, $http) {
+  .controller('bookNowCtrl', function ($scope, $state, $http, $ionicModal) {
     $scope.area = [{
       id: 2,
       text: 'Commercial Pest Control'
