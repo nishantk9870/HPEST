@@ -19,11 +19,11 @@
           </select>
 
           <div class="freeInspectionResult" ng-bind-html="processObject"></div>
-          <input type="text" placeholder="Enter Name *" class="form-control noBorder" id="usr1">
-          <input type="text" placeholder="Enter Email *" class="form-control noBorder" id="usr2">
-          <input type="text" placeholder="Enter Phone Number *" class="form-control noBorder" id="usr3">
-          <textarea class="form-control noBorder" placeholder="Enter Your Message *" rows="5" id="comment"></textarea>
-          <button class="button qouteButton">Ask A Quote</button>
+          <input type="text" placeholder="Enter Name *" ng-model="data.name" class="form-control noBorder" id="usr1">
+          <input type="text" placeholder="Enter Email *" ng-model="data.email" class="form-control noBorder" id="usr2">
+          <input type="text" placeholder="Enter Phone Number *" ng-model="data.phone" class="form-control noBorder" id="usr3">
+          <textarea class="form-control noBorder" ng-model="data.message" placeholder="Enter Your Message *" rows="5" id="comment"></textarea>
+          <button class="button qouteButton" ng-click="askqoute()">Ask A Quote</button>
         </div>
       </div>
     </div>
