@@ -108,13 +108,6 @@ img {
   width: 100%;
 }
 
-
-
-
-
-
-
-
 .fields_two {
   float: left;
   width: 48%;
@@ -222,6 +215,7 @@ input {
 
 .hpestMenuLogo{
   background-color: white !important;
+  padding: 0 !important;
 }
 
 .submenus{
@@ -251,7 +245,7 @@ input {
 }
 
 .menuHeader {
-  width: 80%;
+  padding-right: 15px;
   padding-left: 15px;
 }
 
@@ -940,5 +934,18 @@ display: none;
 .clientSlider .active {
   padding: 0px !important;
 }
+
+.padding-bottom-10px{
+padding-bottom: 10px !important;
+}
+
+input:invalid {
+border-color: #a94442
+}
+.warningMessage{
+  color: #a94442;
+}
+
+  
 
 /* code ends here */

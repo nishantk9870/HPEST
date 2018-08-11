@@ -50,7 +50,7 @@
           </item>
         </ion-item>
         <div class="submenus">
-          <ion-item submenu-item ng-if="menu.showSubMenu" ng-repeat="subMenu in menu.subMenu">
+          <ion-item submenu-item ng-if="menu.showSubMenu" ng-repeat="subMenu in menu.subMenu" ng-class="$last ? 'padding-bottom-10px' :''">
             <item>
               <div ng-click="navigateToMenu(subMenu)" ng-bind="subMenu.name" role="menu"></div>
             </item>

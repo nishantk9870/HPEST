@@ -33,7 +33,7 @@ angular.module('starter.controllers', [])
       formData.append("txtName", $scope.data.name);
       formData.append("txtEmail", $scope.data.email);
       formData.append("txtPhone", $scope.data.phone);
-      formData.append("txtComments", $scope.comment);
+      formData.append("txtComments", $scope.data.comment);
       formData.append("submitQuote", "ASK A QUOTE");
       $http.post(url, formData, {
         headers: {
@@ -106,8 +106,8 @@ angular.module('starter.controllers', [])
     }, {
       name: 'About Us',
       path: 'app.aboutus'
-    }, {
-      name: 'Pests',
+    },{
+      name: 'Services',
       showSubMenu: false,
       subMenu: [{
         name: '- Residential Pest Control',
@@ -118,7 +118,11 @@ angular.module('starter.controllers', [])
       }, {
         name: '- Industrial Pest Control',
         path: 'app.environmentallyFriendly'
-      }, {
+      }]
+    }, {
+      name: 'Pests',
+      showSubMenu: false,
+      subMenu: [{
         name: '- Ants',
         path: 'app.ants'
       }, {
@@ -173,12 +177,6 @@ angular.module('starter.controllers', [])
         name: '- Fleas',
         path: 'app.fleas'
       }, {
-        name: '- Mites',
-        path: 'app.mites'
-      }, {
-        name: '- Squirrel',
-        path: 'app.squirrel'
-      }, {
         name: '- Lizards',
         path: 'app.lizards'
       }]
@@ -195,6 +193,7 @@ angular.module('starter.controllers', [])
     }
 
     $scope.openInspection = function () {
+      $scope.data = {};
       $scope.modal.show();
     }
 

@@ -7,15 +7,25 @@
     <i class="fa fa-times"></i>
   </div>
   <div class="modal-form-group modelPopUp">
-    <input type="text" placeholder="Enter Name *" ng-model="data.name" class="form-control modelform-control noBorder" id="usr1">
-    <input type="text" placeholder="Enter Email *" ng-model="data.email" class="form-control modelform-control noBorder" id="usr2">
-    <input type="text" placeholder="Enter Phone Number *" ng-model="data.phone" class="form-control modelform-control noBorder"
-      id="usr3">
-    <select class="form-control modelform-control noBorder" ng-model="data.pest" ng-options="x.text for x in pestTypes">
-      <option value="">Select Pest Type</option>
-    </select>
-    <textarea class="form-control modelform-control noBorder" ng-model="data.comment" placeholder="Enter Your Address *" rows="5"
-      id="comment"></textarea>
-    <button ng-click="inspectionSubmit()" class="button qouteButton">SUBMIT</button>
+    <form name="inspectionModalForm">
+      <input type="text" name="userName" placeholder="Enter Name *" ng-model="data.name" class="form-control modelform-control noBorder" id="usr1" required>
+
+      <div ng-if="inspectionModalForm.userEmail.$error" class="warningMessage">
+          <p ng-if="inspectionModalForm.userEmail.$error.pattern">Email is not in correct format.</p>  
+      </div>
+      <input type="email" name="userEmail" placeholder="Enter Email *" ng-model="data.email" class="form-control modelform-control noBorder" id="usr2" required ng-pattern="/^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/">
+
+      <div ng-if="inspectionModalForm.userPhoneNumber.$error" class="warningMessage">
+          <p ng-if="inspectionModalForm.userPhoneNumber.$error.pattern">Phone number should be 10 digits.</p>  
+      </div>
+      <input type="number" name="userPhoneNumber" placeholder="Enter Phone Number *" ng-model="data.phone" class="form-control modelform-control noBorder" id="usr3" required ng-pattern="/^0?[0-9]{10}$/">
+
+      <select class="form-control modelform-control noBorder" ng-model="data.pest" ng-options="x.text for x in pestTypes">
+        <option value="">Select Pest Type</option>
+      </select>
+
+      <textarea class="form-control modelform-control noBorder" name="userAddress" ng-model="data.comment" placeholder="Enter Your Address *" rows="5" id="comment" required></textarea>
+    </form>
+    <button ng-click="inspectionSubmit()" class="button qouteButton" ng-disabled="inspectionModalForm.invalid">SUBMIT</button>
   </div>
 </div>
