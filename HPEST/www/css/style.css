@@ -337,11 +337,17 @@ input {
   background: black;
 }
 
-.swiper-container-horizontal > .swiper-pagination {
+#bottomSlider .swiper-container-horizontal > .swiper-pagination {
   bottom: 20px;
   left: 0;
   width: 100%;
   text-align: right !important;
+}
+
+.swiper-container-horizontal > .swiper-pagination {
+  bottom: 20px;
+  left: 0;
+  width: 100%;
 }
 
 .landingPagebuttonPosition {
@@ -610,6 +616,10 @@ button[disabled] {
   text-align: left;
   padding-left: 10px;
   line-height: 16px;
+}
+
+.divLeftText >h6{
+  margin-top: 0px !important;
 }
 
 .viewmore{
