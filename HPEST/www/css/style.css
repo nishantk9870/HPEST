@@ -335,14 +335,13 @@ input {
 #bottomSlider .swiper-container-horizontal>.swiper-pagination .swiper-pagination-bullet {
   margin: 0 5px;
   background: black;
-  float: right;
-
 }
 
 .swiper-container-horizontal > .swiper-pagination {
   bottom: 20px;
   left: 0;
   width: 100%;
+  text-align: right !important;
 }
 
 .landingPagebuttonPosition {

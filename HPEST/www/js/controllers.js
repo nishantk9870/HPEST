@@ -353,6 +353,17 @@ angular.module('starter.controllers', [])
           });
         }
       });
+      $scope.data.slider2Delegate = null;
+      //watch our sliderDelegate reference, and use it when it becomes available
+      $scope.$watch('data.slider2Delegate', function (newVal, oldVal) {
+        if (newVal != null) {
+          $scope.data.slider2Delegate.on('slideChangeEnd', function () {
+           // $scope.data.currentPage = $scope.data.slider2Delegate.activeIndex;
+            //use $scope.$apply() to refresh any content external to the slider
+            $scope.$apply();
+          });
+        }
+      });
     };
     $scope.navigateTo = function (path) {
       $state.go(path, {});
