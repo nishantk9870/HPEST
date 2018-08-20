@@ -197,13 +197,36 @@ input {
   padding-left: 38px;
   padding-bottom: 0px;
   padding-top: 10px;
-  border-color: #1b1c1c;
+  border-color: #232220;;
+  background-color: #232220;
+}
 
+#sidenav   ::-webkit-scrollbar {
+    width: 10px;
+    margin-right: 10px;
 }
 
 
+#sidenav ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black; 
+    border-radius: 10px;
+}
+ 
+
+#sidenav ::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 10px;
+}
+
+
+#sidenav ::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+}
+
+
+
 #sidenav ion-item {
-  background-color: #1b1c1c;
+  background-color: black;
   color: white;
   padding: 13px;
   text-transform: uppercase;
@@ -222,6 +245,8 @@ input {
   max-height: 250px;
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: #232220;
+  padding: 10px;
 }
 
 #sidenav i {
