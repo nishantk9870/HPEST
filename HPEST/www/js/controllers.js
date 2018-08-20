@@ -310,20 +310,39 @@ angular.module('starter.controllers', [])
     $scope.data = {};
     $scope.items = [{
       id: 1,
-      route: "app.termites"
+      route: "app.termites",
+      name:"Termites"
     }, {
       id: 2,
-      route: "app.cockroach"
+      route: "app.cockroach",
+      name:"Cockroach"
     }, {
       id: 3,
-      route: "app.mosquitoes"
+      route: "app.mosquitoes",
+      name:"Mosquitoes"
     }, {
       id: 4,
-      route: "app.ants"
+      route: "app.ants",
+      name:"Ants"
     }, {
       id: 5,
-      route: "app.flies"
-    }]
+      route: "app.flies",
+      name:"Flies"
+     }, 
+    //{
+    //   id: 6,
+    //   route: "app.lizards",
+    //   name:"Lizards"
+    // }, {
+    //   id: 7,
+    //   route: "app.fleas",
+    //   name:"Fleas"
+    // }, {
+    //   id: 8,
+    //   route: "app.bedBugs",
+    //   name:"Bed Bugs"
+    // }
+  ];
     var setupSlider = function () {
       //some options to pass to our slider
       $scope.data.sliderOptions = {

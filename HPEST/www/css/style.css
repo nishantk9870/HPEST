@@ -337,6 +337,9 @@ input {
   width: 100%;
   text-align: right !important;
 }
+#middleSlider .swiper-container-horizontal > .swiper-pagination {
+  display: none;
+}
 
 .swiper-container-horizontal > .swiper-pagination {
   bottom: 20px;
@@ -521,7 +524,7 @@ button[disabled] {
 .bookButton {
   background-color: #32CD32;
   border-radius: 20px;
-  width:90%;
+  width:40%;
   border: none;
   color: white;
   text-align: center;
@@ -531,6 +534,7 @@ button[disabled] {
   margin: 4px 2px;
   cursor: pointer;
 }
+
 
 
 
@@ -613,7 +617,14 @@ button[disabled] {
 }
 
 .divLeftText >h6{
-  margin-top: 0px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+}
+.divLeftText > p{
+  line-height: 12px !important;
+  font-size: 9px !important;
 }
 
 .viewmore{

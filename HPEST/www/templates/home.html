@@ -31,54 +31,66 @@
     </div>
     <div class="landingPagebuttonPosition">
       <button class="button bookButton" ng-click="goToBookNow()">Book Now</button>
+      <button class="button bookButton" ng-click="openInspection()">Free Inspection</button>
     </div>
-    <div class="row">
-      <div ng-repeat="item in items" ng-click="navigateTo(item.route)" class="col">
-        <img ng-src="img/{{item.id}}.jpg" />
-      </div>
-    </div>
-
-    <div>
-      <ion-slides options="data.sliderOptions" slider="data.sliderDelegate" style="height: 190px;">
+    <!-- <div>
+      <ion-slides id="middleSlider" options="data.sliderOptions" slider="data.sliderDelegate" style="height: 120px;">
         <ion-slide-page>
           <div style="background-color:#f1f1f1;display:inline-block">
-              <div style="display:inline-block;width:50%">
-                  <img src="img/d618fc44adc4ba0c50cab513cf33f721.jpg" width="50%">
-                </div>
-            <div class="divLeftText" style="display:inline-block" >
+            <div style="display:inline-block;width:50%">
+              <img src="img/d618fc44adc4ba0c50cab513cf33f721.jpg" width="50%">
+            </div>
+            <div class="divLeftText" style="display:inline-block">
               <h6>COMMERCIAL PEST CONTROL</h6>
-              <p style="font-size:8px">Whatever your industry, pests are bad for business.The team at H Pest Control Services in Hyderabad will act
-                quickly and efficiently to eradicate pests from your premises so you can get on with the job.</p>
+              <p style="font-size:8px">Whatever your industry, pests are bad for business.The team at H Pest Control Services
+                in Hyderabad will act quickly and efficiently to eradicate pests from your premises so you can get on with
+                the job.</p>
               <p style="font-size:8px" class="viewmore" ng-click="navigateTo('app.commercialPestControl')">view more</p>
             </div>
-    
+
           </div>
         </ion-slide-page>
         <ion-slide-page>
-            <div style="background-color:#f1f1f1;display:inline-block">
-          <div style="display:inline-block;width:50%">
-            <img src="img/ee97bbb4d91b64bb4bbb00bb961f27aa.jpg" width="100%">
+          <div style="background-color:#f1f1f1;display:inline-block">
+            <div style="display:inline-block;width:50%">
+              <img src="img/ee97bbb4d91b64bb4bbb00bb961f27aa.jpg" width="100%">
+            </div>
+            <div class="divLeftText" style="display:inline-block">
+              <h6>RESIDENTIAL PEST CONTROL</h6>
+              <p style="font-size:8px">You want your home to be safe and comfortable – but not for pests! The team at H Pest
+                Control Services in Hyderabad will quickly and efficiently free your home from pests and safe-guard against
+                their return.</p>
+              <p class="viewmore" style="font-size:8px" ng-click="navigateTo('app.residentialPestControl')">view more</p>
+            </div>
           </div>
-          <div class="divLeftText" style="display:inline-block" >
-            <h6>RESIDENTIAL PEST CONTROL</h6>
-            <p style="font-size:8px">You want your home to be safe and comfortable – but not for pests! The team at H Pest Control Services in Hyderabad
-              will quickly and efficiently free your home from pests and safe-guard against their return.</p>
-            <p class="viewmore" style="font-size:8px" ng-click="navigateTo('app.residentialPestControl')">view more</p>
-          </div> </div>
         </ion-slide-page>
         <ion-slide-page>
-            <div style="background-color:#f1f1f1;display:inline-block">
-          <div style="display:inline-block;width:50%">
-            <img src="img/715092afb80ec4f84783082fdded51d1.jpg" width="100%">
+          <div style="background-color:#f1f1f1;display:inline-block">
+            <div style="display:inline-block;width:50%">
+              <img src="img/715092afb80ec4f84783082fdded51d1.jpg" width="100%">
+            </div>
+            <div class="divLeftText" style="display:inline-block">
+              <h6>TERMITE CONTROL</h6>
+              <p style="font-size:8px">You know better than anyone that your home is worth protecting. With 8 years’ experience,
+                H Pest Control Services works efficiently in Hyderabad to completely eliminate termites from your property.</p>
+              <p class="viewmore" style="font-size:8px" ng-click="navigateTo('app.termites')">view more</p>
+            </div>
           </div>
-          <div class="divLeftText" style="display:inline-block" >
-            <h6>TERMITE CONTROL</h6>
-            <p style="font-size:8px">You know better than anyone that your home is worth protecting. With 8 years’ experience, H Pest Control Services
-              works efficiently in Hyderabad to completely eliminate termites from your property.</p>
-            <p class="viewmore" style="font-size:8px" ng-click="navigateTo('app.termites')">view more</p>
-          </div>  </div>
         </ion-slide-page>
       </ion-slides>
+    </div> -->
+    <div style="text-align:center;">
+      <h5 style="font-weight:650;margin-top: 0px ">PESTS THAT WE KILL</h5>
+    </div>
+    <div class="row">
+
+      <div ng-repeat="item in items" ng-click="navigateTo(item.route)" style="text-align:center" class="col">
+        <img ng-src="img/{{item.id}}.jpg" />
+        <b style="font-size:9px;">{{item.name}}</b>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <h5 style="font-weight: 650;margin-bottom: 15px">OUR AWESOME NUMBERS</h5>
     </div>
     <div class="cutomerinfo">
       <div class="box">
@@ -97,8 +109,8 @@
         <p class="msg">Employees</p>
       </div>
     </div>
-    <div style="text-align:center;padding-top:20px">
-      <h4>TESTIMONIAL</h4>
+    <div style="text-align:center">
+      <h5 style="font-weight: 650; margin-bottom: 0px">TESTIMONIAL</h5>
     </div>
     <ion-slides id="bottomSlider" options="data.slider2Options" slider="data.slider2Delegate" style="height: 200px;">
       <ion-slide-page style="padding:20px">
@@ -146,6 +158,9 @@
         </div>
       </ion-slide-page>
     </ion-slides>
+    <div style="text-align:center">
+      <h5 style="font-weight: 650;">OUR CLIENTS</h5>
+    </div>
     <div id="SlideShowContent" class="clientSlider">
       <ul id="lightSlider">
         <li data-thumb="img/0563f2ddb0720f709d719ed345dcc690.png">
