@@ -8,16 +8,13 @@
         </button>
       </ion-nav-buttons>
       <ion-nav-buttons side="right">
-        <a href="" class="ion-calendar" style="font-size: 32px;color: white;"  ng-click="navigateTo('app.freeInspection')">
+        <button  class="ion-calendar headerIconFont"   ng-click="navigateTo('app.freeInspection')">
          
-        </a>
-        <a href=""  onclick="window.open('https://www.facebook.com/hpestcontrolservices/', '_system', 'location=yes');">
-          <img src="img/facebook.png" />
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <a ng-click="navigateTo('app.contactus')" href="">
-          <img src="img/contactus.png" />
-        </a>
+        </button>
+        <button class="fa fa-facebook headerIconFont"  onclick="window.open('https://www.facebook.com/hpestcontrolservices/', '_system', 'location=yes');">
+        </button>
+        <button ng-click="navigateTo('app.contactus')" style="padding-right:5px !important" class="fa fa-phone-square headerIconFont">
+        </button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>

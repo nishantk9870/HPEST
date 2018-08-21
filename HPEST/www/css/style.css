@@ -199,6 +199,7 @@ input {
   padding-top: 10px;
   border-color: #232220;;
   background-color: #232220;
+  font-size: 14px;
 }
 
 #sidenav   ::-webkit-scrollbar {
@@ -206,12 +207,19 @@ input {
     margin-right: 10px;
 }
 
+.headerIconFont{
+  font-size: 20px !important;
+    color: white;
+    background-color: black;
+    border-color: black;
+    padding-right: 0px !important;
+}
 
 #sidenav ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px black; 
+    box-shadow: inset 0 0 5px #232220; 
     border-radius: 10px;
 }
- 
+
 
 #sidenav ::-webkit-scrollbar-thumb {
     background: grey; 
