@@ -189,6 +189,10 @@ angular.module('starter.controllers', [])
     }];
 
     $scope.closeSideMenu = function () {
+      angular.forEach($scope.menuItems, function(menuItem){
+        if(menuItem.hasOwnProperty('showSubMenu'))
+          menuItem.showSubMenu = false;
+      });
       $ionicSideMenuDelegate.toggleLeft();
     }
 
@@ -207,9 +211,9 @@ angular.module('starter.controllers', [])
 
     $scope.navigateToMenu = function (menu) {
       if (menu.path) {
-        $scope.menuItems.forEach(menu => {
-          if (menu.subMenu)
-            menu.showSubMenu = false;
+        angular.forEach($scope.menuItems, function(menuItem){
+          if(menuItem.hasOwnProperty('showSubMenu'))
+            menuItem.showSubMenu = false;
         });
         $ionicSideMenuDelegate.toggleLeft();
         $state.go(menu.path, {});
@@ -217,6 +221,16 @@ angular.module('starter.controllers', [])
         menu.showSubMenu = !menu.showSubMenu;
       }
     }
+    $scope.$watch(function() { 
+      return $ionicSideMenuDelegate.isOpen(); 
+    }, function(value) { 
+      if(!value) {
+      angular.forEach($scope.menuItems, function(menuItem){
+        if(menuItem.hasOwnProperty('showSubMenu'))
+          menuItem.showSubMenu = false;
+      });
+    }
+    });
   })
 
   .controller('contactusCtrl', function ($scope, $http, $ionicModal) {
@@ -1501,7 +1515,6 @@ angular.module('starter.controllers', [])
     }
 
     $scope.askqoute = function () {
-      if (Validate()) {
         var url = "http://www.hpests.com/index.php"
         var formData = new FormData();
         if ($scope.data.ar)
@@ -1524,64 +1537,6 @@ angular.module('starter.controllers', [])
         }, ).success(function (response) {
           $scope.data = {};
           $scope.processObject = 'MRP  :  ₹ /-';
-          $scope.sucessModal.show()
         });
-      }
     }
-    document.getElementById("alertContainer").style.display = "none";
-    $scope.closeAlert = function () {
-      document.getElementById("alertContainer").style.display = "none";
-    }
-    $scope.warningShow = function () {
-      document.getElementById("alertContainer").style.display = "block";
-    }
-
-    var Validate = function () {
-      if (!$scope.data.name || $scope.data.name == "") {
-        $scope.data.warningMessage = "Please enter the name.";
-        $scope.warningShow();
-        return false;
-      }
-
-      if (!$scope.data.email || $scope.data.email == "") {
-        $scope.data.warningMessage = "Please enter the email.";
-        $scope.warningShow();
-        return false;
-      }
-      var regex = /^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/;
-      match = regex.test($scope.data.email)
-      if (!match) {
-        $scope.data.warningMessage = "Email is not in correct format.";
-        $scope.warningShow();
-        return false;
-      }
-      if (!$scope.data.phone || $scope.data.phone == "") {
-        $scope.data.warningMessage = "Please enter the phone number.";
-        $scope.warningShow();
-        return false;
-      }
-      if (!$scope.data.phone || $scope.data.phone != "") {
-        var regex = /^0?[0-9]{10}$/;
-        match = regex.test($scope.data.phone);
-        if (!match) {
-          $scope.data.warningMessage = "Phone number should be 10 digits.";
-          $scope.warningShow();
-          return false;
-        }
-      }
-      if (!$scope.data.message || $scope.data.message == "") {
-        $scope.data.warningMessage = "Please provide your Message.";
-        $scope.warningShow();
-        return false;
-      }
-      return true;
-    };
-
-
-    $scope.sucessModal = $ionicModal.fromTemplateUrl('templates/successModal.html', {
-      scope: $scope,
-      animation: 'slide-in-up'
-    }).then(function (sucessModal) {
-      $scope.sucessModal = sucessModal;
-    });
   })

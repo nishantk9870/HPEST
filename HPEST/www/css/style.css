@@ -4,15 +4,17 @@ Jilna NT
 Nishant K 
  */
 
- * {
-  font-family:'Open Sans', sans-sarif;
+* {
+  font-family: 'Open Sans', sans-sarif;
 }
+
 .bar.bar-stable {
   background: #000000;
 }
+
 .bar.bar-stable ion-icon {
     font-size: 13px;
-  }
+}
 
 .bar-stable .button.button-clear {
   border-color: transparent;
@@ -39,12 +41,13 @@ Nishant K
   position: relative;
 }
 
-.bookNowContent{
+.bookNowContent {
   width: 100%;
   float: left;
   position: relative;
   padding: 10px;
 }
+
 .mainwrapper {
   max-width: 550px;
   min-width: 240px;
@@ -117,7 +120,6 @@ img {
   float: right;
   width: 48%;
 }
-
 
 p {
   margin: 0px;
@@ -197,7 +199,7 @@ input {
   padding-left: 38px;
   padding-bottom: 0px;
   padding-top: 10px;
-  border-color: #232220;;
+  border-color: #232220;
   background-color: #232220;
   font-size: 14px;
 }
@@ -227,16 +229,13 @@ input {
 
 
 #sidenav ::-webkit-scrollbar-thumb {
-    background: grey; 
+  background: grey;
     border-radius: 10px;
 }
 
-
 #sidenav ::-webkit-scrollbar-thumb:hover {
-    background: grey; 
+  background: grey;
 }
-
-
 
 #sidenav ion-item {
   background-color: black;
@@ -245,16 +244,17 @@ input {
   text-transform: uppercase;
   border-color: black;
 }
-#sideMenu ion-header-bar ion-icon{
+
+#sideMenu ion-header-bar ion-icon {
   color: white !important;
 }
 
-.hpestMenuLogo{
+.hpestMenuLogo {
   background-color: white !important;
   padding: 0 !important;
 }
 
-.submenus{
+.submenus {
   max-height: 250px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -305,7 +305,8 @@ input {
 .dataContainer {
   padding-top: 15px
 }
-.AboutUsCardHeader{
+
+.AboutUsCardHeader {
   background: #71c040;
   color: white !important;
   padding: 10px 15px 10px 15px;
@@ -320,26 +321,28 @@ input {
   margin-bottom: 5px;
   font-weight: 600;
 }
-.aboutUs{
+
+.aboutUs {
   padding: 10px 10px 5px 10px;
   text-align: justify;
   font-weight: 400;
   background-color: #efefef;
   font-family: 'Open Sans', sans-sarif;
 }
-.cardImage{
+
+.cardImage {
   float: left;
   width: 49%;
   padding-top: 10px;
   padding-right: 15px;
 }
 
-.menuClose{
+.menuClose {
   width: 71%;
   height: 70%;
 }
 
-.padding-top-5{
+.padding-top-5 {
   padding-top: 5px;
 }
 
@@ -369,17 +372,18 @@ input {
   background: black;
 }
 
-#bottomSlider .swiper-container-horizontal > .swiper-pagination {
+#bottomSlider .swiper-container-horizontal>.swiper-pagination {
   bottom: 20px;
   left: 0;
   width: 100%;
   text-align: right !important;
 }
-#middleSlider .swiper-container-horizontal > .swiper-pagination {
+
+#middleSlider .swiper-container-horizontal>.swiper-pagination {
   display: none;
 }
 
-.swiper-container-horizontal > .swiper-pagination {
+.swiper-container-horizontal>.swiper-pagination {
   bottom: 20px;
   left: 0;
   width: 100%;
@@ -409,8 +413,8 @@ input {
 
 .image-container {
   left: 0;
-  position:absolute;
-  text-align:center;
+  position: absolute;
+  text-align: center;
   top: 30px;
   width: 100%;
   font-size:  16px;
@@ -444,8 +448,8 @@ input {
 
 .apq_left h3 {
   padding-top: 10px
-
 }
+
 .fadeInLeft {
   visibility: visible;
   animation-name: fadeInLeft;
@@ -484,8 +488,6 @@ input {
   width: 100%;
   border: 1px solid #CFCFCF
 }
-
-
 
 .overViewContent .jobOverviewLeft {
   background-color: #71c040;
@@ -537,14 +539,14 @@ button[disabled] {
   background: lightblue;
 }
 
-
 .scheduleForm {
   background: #111E2F;
   padding: 20px 25px;
   position: relative;
   overflow: hidden;
 }
-.scheduleTitle{
+
+.scheduleTitle {
   color: #fff;
   border-left: 0;
   padding-left: 0;
@@ -553,6 +555,7 @@ button[disabled] {
   font-weight: 550;
   line-height: 36px;
 }
+
 .scheduleTitle span {
   color: #7A97B7;
   font-size: 24px;
@@ -573,10 +576,8 @@ button[disabled] {
   cursor: pointer;
 }
 
-
-
-
 /* code to be removed if not working  */
+
 .slide-wrapper {
   height: 175px;
   width: 90%;
@@ -595,28 +596,37 @@ button[disabled] {
   background: #f1f1f1;
 	text-align: center;
 }
-  ion-slide {
+
+ion-slide {
 		padding-right: 3px;
 		padding-left: 3px;
-	}
-		ion-slide:first-child { padding-left: 0; }
-		ion-slide:last-child { padding-right: 0; }
+}
 
-		ion-slide:nth-child(2) { z-index: 1; }
+ion-slide:first-child {
+  padding-left: 0;
+}
 
-		ion-slide .box {
+ion-slide:last-child {
+  padding-right: 0;
+}
+
+ion-slide:nth-child(2) {
+  z-index: 1;
+}
+
+ion-slide .box {
 			position: relative;
 			width: 100%;
 			height: 100%;
-		}
+}
 
-			ion-slide .box h1 {
+ion-slide .box h1 {
 				position: absolute;
 				bottom: -43px;
 				margin: 0;
 				width: 100%;
-				background-color: rgba(255,255,255,0.2);
-			}
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
 .slider ion-slide.slider-slide.current .box h1 {
 	transition: bottom 450ms ease-out 250ms;
@@ -626,26 +636,28 @@ button[disabled] {
 .blue {
 	background-color: #009FD9;
 }
-	.blue h1 {
-		color: #fff;
-	}
 
+.blue h1 {
+		color: #fff;
+}
 
 .green {
 	background-color: #1FB36B;
 }
-	.green h1 {
+
+.green h1 {
 		color: #fff;
-	}
+}
 
 .red {
 	background-color: #E62B25;
 }
-	.red h1 {
-		color: #fff;
-	}
 
-.divLeftText{
+.red h1 {
+		color: #fff;
+}
+
+.divLeftText {
   width: 50%;
   float: right;
   font-size: 12px;
@@ -654,62 +666,74 @@ button[disabled] {
   line-height: 16px;
 }
 
-.divLeftText >h6{
+.divLeftText>h6 {
   margin-top: 5px !important;
   margin-bottom: 5px !important;
   font-weight: 700 !important;
   font-size: 11px !important;
 }
-.divLeftText > p{
+
+.divLeftText>p {
   line-height: 12px !important;
   font-size: 9px !important;
 }
 
-.viewmore{
- color:green
+.viewmore {
+  color: green
 }
 
-.cutomerinfo{
+.cutomerinfo {
   height: 100px;
 }
+
 .box {
-  margin-left:10px;float:left;width:30%;height:80px;background:black;
+  margin-left: 10px;
+  float: left;
+  width: 30%;
+  height: 85px;
+  background: black;
   text-align: center;
 }
-.icon{
+
+.icon {
   font-size: 16px;
   color: white;
   padding: 10px;
 }
-.number{
+
+.number {
   font-weight: bold;
   font-size: 25px;
   color: #32CD32;
 }
-.msg{
+
+.msg {
   color: white;
 }
 
-.testi > div {
+.testi>div {
   width: 100%;
   padding: 10px;
   font-size: 12px;
   text-align: center;
-  background-color:#f1f1f1;
+  background-color: #f1f1f1;
 }
+
 .testi::after {
-  display:block;
+  display: block;
   position: absolute;
   content: "";
-  font-size: 0px; line-height: 0%; width: 0px;
+  font-size: 0px;
+  line-height: 0%;
+  width: 0px;
   border-top: 30px solid #f1f1f1;
   border-left: 75px solid #fff;
-
 }
 
-.testimonialAuthor{
-padding-left: 85px;
-font-weight: bold;
+.testimonialAuthor {
+  padding-left: 85px;
+  padding-top: 7px;
+  font-weight: bold;
 }
 
 .inspectionContainer {
@@ -725,13 +749,14 @@ font-weight: bold;
   text-align: center;
   padding: 10px;
 }
+
 .modal-form-group {
   margin-bottom: 15px;
   text-align: center;
   padding: 10px !important;
 }
 
-.form-group .form-control{
+.form-group .form-control {
     display: block;
     width: 100%;
     padding: 6px 12px;
@@ -742,7 +767,7 @@ font-weight: bold;
     margin-bottom: 10px;
 }
 
-.modal-form-group .form-control{
+.modal-form-group .form-control {
   display: block;
   width: 100%;
   padding: 6px 12px;
@@ -757,7 +782,7 @@ font-weight: bold;
   border: 0px;
 }
 
-.noBackgroundFormControl{
+.noBackgroundFormControl {
   background-color: white;
   border: 0px;
 }
@@ -770,7 +795,7 @@ font-weight: bold;
   color: white;
 }
 
-.initialPriceQuote{
+.initialPriceQuote {
   height: 40px;
   line-height: 20px;
 }
@@ -778,7 +803,7 @@ font-weight: bold;
 .qouteButton {
   background-color: rgb(47, 54, 47);
   border-radius: 20px;
-  width:100%;
+  width: 100%;
   border: none;
   color: white;
   text-align: center;
@@ -789,19 +814,24 @@ font-weight: bold;
   cursor: pointer;
 }
 
-
 #bookNowForm button[disabled] {
-  background:rgb(67, 68, 67);
-}
- #freeInspectionForm button[disabled] {
-  background:rgb(67, 68, 67);
+  background: rgb(67, 68, 67);
 }
 
-.bookNowContentBorder{
+#freeInspectionForm button[disabled] {
+  background: rgb(67, 68, 67);
+}
+
+#modalInspection button[disabled] {
+  background: rgb(67, 68, 67);
+}
+
+.bookNowContentBorder {
   background-color: #f1f1f1;
 }
 
-.modal-backdrop, .modal-backdrop-bg {
+.modal-backdrop,
+.modal-backdrop-bg {
   position: fixed;
   top: 100px;
   left: 0;
@@ -809,27 +839,29 @@ font-weight: bold;
   width: 95%;
   height: auto;
 }
+
 #page-mask {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
-#close{
-  position:absolute;
-  color:green;
-  right:0px;
-  top:4px;
-  width:30px;
-  height:31px;
-  text-align:center;
-  cursor:pointer;
+
+#close {
+  position: absolute;
+  color: green;
+  right: 0px;
+  top: 4px;
+  width: 30px;
+  height: 31px;
+  text-align: center;
+  cursor: pointer;
 }
 
 #inspectionModal {
-padding: 0 !important;
+  padding: 0 !important;
 }
 
 .modal {
@@ -842,20 +874,23 @@ padding: 0 !important;
   background-color: #fff;
   border-radius: 10px;
 }
-.pop-up-close-action{
+
+.pop-up-close-action {
   color: #000;
   text-shadow: 0 1px 0 #fff;
   opacity: .2;
 }
-.modelPopUp{
+
+.modelPopUp {
   background-color: white ! important;
   margin-bottom: 0 !important;
 }
-.modelform-control{
-  background-color:#f1f1f1;
+
+.modelform-control {
+  background-color: #f1f1f1;
 }
 
-.closeButton{
+.closeButton {
   background-color: #32CD32;
   border: none;
   color: white;
@@ -868,27 +903,25 @@ padding: 0 !important;
   min-height: 20px;
 }
 
-.padding15{
-  padding:15px;
+.padding15 {
+  padding: 15px;
 }
 
-.active{
+.active {
   padding: 10px;
 }
 
-
-
-.contactinfo{
+.contactinfo {
   padding: 15px;
   background-color: white;
 }
 
-.locationImg{
+.locationImg {
   width: 70%;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    padding-top:20px;
+  padding-top: 20px;
 }
 
 .slideshow {
@@ -906,7 +939,7 @@ padding: 0 !important;
   background-color: #f1f1f1;
 }
 
-#SlideShowContent img{
+#SlideShowContent img {
   width: 100px;
   height: auto;
   display: inline-block;
@@ -914,25 +947,24 @@ padding: 0 !important;
   text-align: center;
 }
 
-
 .slide {
   animation: slide 60s linear infinite;
 }
 
 @keyframes slide {
-  0%{
+  0% {
     transform: translateX(-50%);
   }
-  25%{
+  25% {
     transform: translateX(-50%);
   }
-  50%{
+  50% {
     transform: translateX(-50%);
   }
-  75%{
+  75% {
     transform: translateX(-75%);
   }
-  100%{
+  100% {
     transform: translateX(0);
   }
 }
@@ -942,9 +974,12 @@ padding: 0 !important;
   background-color: #90e955;
   border-color: #d9facc;
 }
-.alert-dismissable, .alert-dismissible {
+
+.alert-dismissable,
+.alert-dismissible {
   padding-right: 35px;
 }
+
 .alert {
   padding: 15px;
   margin: 20px;
@@ -952,11 +987,13 @@ padding: 0 !important;
   border-radius: 4px;
 }
 
-.alert-dismissable .close, .alert-dismissible .close {
+.alert-dismissable .close,
+.alert-dismissible .close {
   position: relative;
   top: -2px;
   color: inherit;
 }
+
 .close {
   float: right;
   font-size: 21px;
@@ -968,12 +1005,15 @@ padding: 0 !important;
 .lSSlideOuter .lSPager.lSpg {
   display: none;
 }
-.lSAction > .lSPrev {
-display: none;
-}
-.lSAction > .lSNext {
+
+.lSAction>.lSPrev {
   display: none;
-  }
+}
+
+.lSAction>.lSNext {
+  display: none;
+}
+
 .clientSlider {
   background-color: #f1f1f1;
   padding: 10px;
@@ -983,17 +1023,12 @@ display: none;
   padding: 0px !important;
 }
 
-.padding-bottom-10px{
-padding-bottom: 10px !important;
+.padding-bottom-10px {
+  padding-bottom: 10px !important;
 }
 
-input:invalid {
-  border: 1px solid #a94442;
-}
-.warningMessage{
+.warningMessage {
   color: #a94442;
 }
-
-  
 
 /* code ends here */
