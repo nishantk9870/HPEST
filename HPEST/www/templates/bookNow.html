@@ -3,10 +3,6 @@
     <div class="innerbnr_block">
       <img src="img/ec4a86464e24bc1301aa394b0e3ad6c8.jpg">
     </div>
-    <div id="alertContainer" class="alert alert-warning alert-dismissible">
-      <a ng-click="closeAlert()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      {{data.warningMessage}}
-    </div>
     <div class="bookNowContent">
       <div class="form-group bookNowContentBorder" id="bookNowForm">
         <select class="form-control noBackgroundFormControl" ng-model="data.ar" ng-change="getValue()" ng-options="x.text for x in area">
@@ -27,12 +23,26 @@
         <div class="freeInspectionResult" ng-class="noSelection ? 'initialPriceQuote': ''">
           <p ng-bind-html="processObject"></p>
         </div>
-        <input type="text" placeholder="Enter Name *" class="form-control noBackgroundFormControl" id="usr1" ng-model="data.name">
-        <input type="text" placeholder="Enter Email *" class="form-control noBackgroundFormControl" id="usr2" ng-model="data.email">
-        <input type="text" placeholder="Enter Phone Number *" class="form-control noBackgroundFormControl" id="usr3" ng-model="data.phone">
-        <textarea class="form-control noBackgroundFormControl" ng-model="data.message" placeholder="Enter Your Message *" rows="5"
-          id="comment"></textarea>
-        <button class="button qouteButton" ng-disabled="noSelection" ng-click="bookNow()">Book Now</button>
+        <form name="bookNowForm">
+          <input type="text" placeholder="Enter Name *" name="username" required class="form-control noBackgroundFormControl" id="usr1"
+            ng-model="data.name">
+
+          <div ng-if="bookNowForm.useremail.$error" class="warningMessage">
+            <p ng-if="bookNowForm.useremail.$error.pattern">Email is not in correct format.</p>
+          </div>
+          <input type="email" name="useremail" placeholder="Enter Email *" required class="form-control noBackgroundFormControl" id="usr2"
+            ng-model="data.email" ng-pattern="/^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/">
+
+          <div ng-if="bookNowForm.usernumber.$error" class="warningMessage">
+            <p ng-if="bookNowForm.usernumber.$error.pattern">Phone number should be 10 digits.</p>
+          </div>
+          <input type="number" name="usernumber" placeholder="Enter Phone Number *" required class="form-control noBackgroundFormControl"
+            id="usr3" ng-model="data.phone" ng-pattern="/^0?[0-9]{10}$/">
+
+          <textarea class="form-control noBackgroundFormControl" required ng-model="data.message" placeholder="Enter Your Message *"
+            rows="5" id="comment" name="userMessage"></textarea>
+        </form>
+        <button class="button qouteButton" ng-disabled="noSelection || bookNowForm.$invalid" ng-click="bookNow()">Book Now</button>
       </div>
     </div>
   </ion-content>

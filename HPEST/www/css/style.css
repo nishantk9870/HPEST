@@ -411,6 +411,10 @@ input {
   color: white;
 }
 
+.centerAlign{
+  text-align: center;
+}
+
 .image-container {
   left: 0;
   position: absolute;
