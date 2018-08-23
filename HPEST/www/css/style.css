@@ -821,6 +821,9 @@ ion-slide .box h1 {
 #bookNowForm button[disabled] {
   background: rgb(67, 68, 67);
 }
+#contactUs button[disabled] {
+  background: rgb(67, 68, 67);
+}
 
 #freeInspectionForm button[disabled] {
   background: rgb(67, 68, 67);

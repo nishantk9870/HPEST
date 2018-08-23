@@ -3,10 +3,6 @@
     <div class="innerbnr_block">
       <img src="img/ContactUs.jpg"> </div>
     </div>
-    <div id="alertContainer" class="alert alert-warning alert-dismissible">
-      <a ng-click="closeAlert()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      {{data.warningMessage}}
-    </div>
     <div style="margin:15px;padding:15px;background-color:#f1f1f1">
       <div class="row" style="padding:0px">
         <div class="col col-20" style=" display:block;margin:auto;">
@@ -28,12 +24,25 @@
         </div>
       </div>
     </div>
-    <div class="form-group" style="background-color:#f1f1f1;margin:15px">
-      <input type="text" placeholder="Enter Name *" ng-model="data.name" class="form-control  noBorder" id="usr1">
-      <input type="text" placeholder="Enter Email *" ng-model="data.email" class="form-control  noBorder" id="usr2">
-      <input type="text" placeholder="Enter Phone Number *" ng-model="data.phone" class="form-control  noBorder" id="usr3">
-      <textarea class="form-control  noBorder" ng-model="data.message" placeholder="Enter Your Message *" rows="5" id="comment"></textarea>
-      <button ng-click="contactusSubmit()" class="button qouteButton">SUBMIT</button>
+
+    <div class="form-group" style="background-color:#f1f1f1;margin:15px" id="contactUs">
+      <form name="contactUsForm">
+        <input type="text" placeholder="Enter Name *" required name="username" ng-model="data.name" class="form-control  noBorder" id="usr1">
+
+        <div ng-if="contactUsForm.useremail.$error" class="warningMessage">
+          <p ng-if="contactUsForm.useremail.$error.pattern">Email is not in correct format.</p>
+        </div>
+        <input type="email" placeholder="Enter Email *" required name="useremail" ng-model="data.email" class="form-control  noBorder" id="usr2" ng-pattern="/^[a-zA-Z0-9_.]+@([a-zA-Z0-9_.]+\.)+[a-zA-Z0-9.-]{2,3}$/">
+
+        <div ng-if="contactUsForm.usernumber.$error" class="warningMessage">
+          <p ng-if="contactUsForm.usernumber.$error.pattern">Phone number should be 10 digits.</p>
+        </div>
+        <input type="number" placeholder="Enter Phone Number *" name="usernumber" required ng-model="data.phone" class="form-control  noBorder" id="usr3" ng-pattern="/^0?[0-9]{10}$/">
+
+        <textarea class="form-control  noBorder" ng-model="data.message" placeholder="Enter Your Message *" required rows="5" id="comment" name="userMessage"></textarea>
+      </form>
+      <button ng-click="contactusSubmit()" class="button qouteButton" ng-disabled="contactUsForm.$invalid">SUBMIT</button>
     </div>
+
   </ion-content>
 </ion-view>

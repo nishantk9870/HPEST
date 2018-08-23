@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate, $location, $http) {
+  .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $state, $ionicSideMenuDelegate, $ionicLoading, $http) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -22,8 +22,18 @@ angular.module('starter.controllers', [])
     }).then(function (sucessModal) {
       $scope.sucessModal = sucessModal;
     });
+    $scope.warning = $ionicModal.fromTemplateUrl('templates/warningModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function (warning) {
+      $scope.warning = warning;
+    });
 
     $scope.inspectionSubmit = function () {
+      $ionicLoading.show({
+        noBackdrop :false,
+        template: ' <ion-spinner icon="lines"></ion-spinner>'
+    });
       var url = "http://www.hpests.com/index.php"
       var formData = new FormData();
       formData.append("service", $scope.data.pest.text);
@@ -36,10 +46,16 @@ angular.module('starter.controllers', [])
       formData.append("txtComments", $scope.data.comment);
       formData.append("submitQuote", "ASK A QUOTE");
       $http.post(url, formData, {
-        headers: {'Content-Type': undefined}
+        headers: {
+          'Content-Type': undefined
+        }
       }, ).success(function (response) {
-        $scope.modal.hide();
+        $ionicLoading.hide();
+        $scope.modal.hide();        
         $scope.sucessModal.show()
+      }).error(function(err){
+        $ionicLoading.hide();
+        $scope.warning.show();
       });
     }
 
@@ -231,7 +247,7 @@ angular.module('starter.controllers', [])
     });
   })
 
-  .controller('contactusCtrl', function ($scope, $http, $ionicModal) {
+  .controller('contactusCtrl', function ($scope, $http, $ionicModal, $ionicLoading) {
     $scope.data = {};
 
     $scope.warning = $ionicModal.fromTemplateUrl('templates/warningModal.html', {
@@ -249,45 +265,56 @@ angular.module('starter.controllers', [])
     });
 
     $scope.contactusSubmit = function () {
-        var url = "http://www.hpests.com/contact-us.php"
-        var formData = new FormData();
-        formData.append("txtName", $scope.data.name);
-        formData.append("txtEmail", $scope.data.email);
-        formData.append("txtPhone", $scope.data.phone);
-        formData.append("txtComments", $scope.data.message);
-        formData.append("hid_submit", "Submit");
-        $http.post(url, formData, {
-          headers: {'Content-Type': undefined}
-        }, ).success(function (response) {
-          $scope.data = {};
-          $scope.sucessModal.show()
-        });
-      }
+      $ionicLoading.show({
+        noBackdrop: false,
+        template: ' <ion-spinner icon="lines"></ion-spinner>'
+      });
+      var url = "http://www.hpests.com/contact-us.php"
+      var formData = new FormData();
+      formData.append("txtName", $scope.data.name);
+      formData.append("txtEmail", $scope.data.email);
+      formData.append("txtPhone", $scope.data.phone);
+      formData.append("txtComments", $scope.data.message);
+      formData.append("hid_submit", "Submit");
+      $http.post(url, formData, {
+        headers: {
+          'Content-Type': undefined
+        }
+      }, ).success(function (response) {
+        $scope.data = {};
+        $ionicLoading.hide();
+        $scope.sucessModal.show();
+      }).error(function (err) {
+        $scope.data = {};
+        $ionicLoading.hide();
+        $scope.warning.show();
+      });
+    }
   })
 
   .controller('homeCtrl', function ($scope, $state) {
     $scope.data = {};
     $scope.items = [{
-        id: 1,
-        route: "app.termites",
-        name: "Termites"
-      }, {
-        id: 2,
-        route: "app.cockroach",
-        name: "Cockroach"
-      }, {
-        id: 3,
-        route: "app.mosquitoes",
-        name: "Mosquitoes"
-      }, {
-        id: 4,
-        route: "app.ants",
-        name: "Ants"
-      }, {
-        id: 5,
-        route: "app.flies",
-        name: "Flies"
-      }];
+      id: 1,
+      route: "app.termites",
+      name: "Termites"
+    }, {
+      id: 2,
+      route: "app.cockroach",
+      name: "Cockroach"
+    }, {
+      id: 3,
+      route: "app.mosquitoes",
+      name: "Mosquitoes"
+    }, {
+      id: 4,
+      route: "app.ants",
+      name: "Ants"
+    }, {
+      id: 5,
+      route: "app.flies",
+      name: "Flies"
+    }];
     var setupSlider = function () {
       //some options to pass to our slider
       $scope.data.sliderOptions = {
@@ -1124,7 +1151,7 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('bookNowCtrl', function ($scope, $http, $ionicModal) {
+  .controller('bookNowCtrl', function ($scope, $http, $ionicModal, $ionicLoading) {
     $scope.area = [{
       id: 2,
       text: 'Commercial Pest Control'
@@ -1229,7 +1256,9 @@ angular.module('starter.controllers', [])
         formData.append("service_type_id", $scope.data.st.id);
         formData.append("house_type_id", $scope.data.sqft.id);
         $http.post(url, formData, {
-          headers: {'Content-Type': undefined}
+          headers: {
+            'Content-Type': undefined
+          }
         }, ).success(function (response) {
           $scope.processObject = response;
         });
@@ -1240,29 +1269,39 @@ angular.module('starter.controllers', [])
     }
 
     $scope.bookNow = function () {
-        var url = "http://www.hpests.com/index.php"
-        var formData = new FormData();
-        if ($scope.data.ar)
-          formData.append("service", $scope.data.ar.id);
-        if ($scope.data.serv)
-          formData.append("services", $scope.data.serv.id);
-        if ($scope.data.st)
-          formData.append("service_type", $scope.data.st.id);
-        if ($scope.data.sqft)
-          formData.append("house_type", $scope.data.sqft.id);
-        formData.append("txtName", $scope.data.name);
-        formData.append("txtEmail", $scope.data.email);
-        formData.append("txtPhone", $scope.data.phone);
-        formData.append("txtComments", $scope.comment);
-        formData.append("submitQuote", "ASK A QUOTE");
-        $http.post(url, formData, {
-          headers: {'Content-Type': undefined}
-        }, ).success(function (response) {
-          $scope.data = {};
-          $scope.noSelection = true;
-          $scope.processObject = 'MRP  :  ₹ /-';
-          $scope.sucessModal.show()
-        });
+      $ionicLoading.show({
+        noBackdrop: false,
+        template: ' <ion-spinner icon="lines"></ion-spinner>'
+      });
+      var url = "http://www.hpests.com/index.php"
+      var formData = new FormData();
+      if ($scope.data.ar)
+        formData.append("service", $scope.data.ar.id);
+      if ($scope.data.serv)
+        formData.append("services", $scope.data.serv.id);
+      if ($scope.data.st)
+        formData.append("service_type", $scope.data.st.id);
+      if ($scope.data.sqft)
+        formData.append("house_type", $scope.data.sqft.id);
+      formData.append("txtName", $scope.data.name);
+      formData.append("txtEmail", $scope.data.email);
+      formData.append("txtPhone", $scope.data.phone);
+      formData.append("txtComments", $scope.comment);
+      formData.append("submitQuote", "ASK A QUOTE");
+      $http.post(url, formData, {
+        headers: {
+          'Content-Type': undefined
+        }
+      }, ).success(function (response) {
+        $scope.data = {};
+        $ionicLoading.hide();
+        $scope.noSelection = true;
+        $scope.processObject = 'MRP  :  ₹ /-';
+        $scope.sucessModal.show()
+      }).error(function (error) {
+        $ionicLoading.hide();
+        $scope.warning.show();
+      });
     }
 
     $scope.sucessModal = $ionicModal.fromTemplateUrl('templates/successModal.html', {
@@ -1271,9 +1310,16 @@ angular.module('starter.controllers', [])
     }).then(function (sucessModal) {
       $scope.sucessModal = sucessModal;
     });
+
+    $scope.warning = $ionicModal.fromTemplateUrl('templates/warningModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function (warning) {
+      $scope.warning = warning;
+    });
   })
 
-  .controller('freeInspectionCtrl', function ($scope, $http, $ionicModal) {
+  .controller('freeInspectionCtrl', function ($scope, $http, $ionicModal, $ionicLoading) {
     $scope.area = [{
       id: 2,
       text: 'Commercial Pest Control'
@@ -1391,6 +1437,10 @@ angular.module('starter.controllers', [])
     }
 
     $scope.askqoute = function () {
+      $ionicLoading.show({
+        noBackdrop: false,
+        template: ' <ion-spinner icon="lines"></ion-spinner>'
+      });
       var url = "http://www.hpests.com/index.php"
       var formData = new FormData();
       if ($scope.data.ar)
@@ -1414,7 +1464,11 @@ angular.module('starter.controllers', [])
         $scope.data = {};
         $scope.noSelection = true;
         $scope.processObject = 'MRP  :  ₹ /-';
+        $ionicLoading.hide();
         $scope.sucessModal.show()
+      }).error(function (err) {
+        $ionicLoading.hide();
+        $scope.warning.show();
       });
     }
     $scope.sucessModal = $ionicModal.fromTemplateUrl('templates/successModal.html', {
@@ -1423,4 +1477,11 @@ angular.module('starter.controllers', [])
     }).then(function (sucessModal) {
       $scope.sucessModal = sucessModal;
     });
+    $scope.warning = $ionicModal.fromTemplateUrl('templates/warningModal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function (warning) {
+      $scope.warning = warning;
+    });
+
   })
