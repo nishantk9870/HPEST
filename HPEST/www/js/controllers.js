@@ -315,7 +315,6 @@ angular.module('starter.controllers', [])
       route: "app.flies",
       name: "Flies"
     }];
-    var setupSlider = function () {
       //some options to pass to our slider
       $scope.data.sliderOptions = {
         initialSlide: 0,
@@ -334,31 +333,47 @@ angular.module('starter.controllers', [])
       //create delegate reference to link with slider
       $scope.data.sliderDelegate = null;
       //watch our sliderDelegate reference, and use it when it becomes available
-      $scope.$watch('data.sliderDelegate', function (newVal, oldVal) {
-        if (newVal != null) {
-          $scope.data.sliderDelegate.on('slideChangeEnd', function () {
-            $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
-            //use $scope.$apply() to refresh any content external to the slider
-            $scope.$apply();
-          });
-        }
-      });
+      // $scope.$watch('data.sliderDelegate', function (newVal, oldVal) {
+      //   if (newVal != null) {
+      //     $scope.data.sliderDelegate.on('slideChangeEnd', function () {
+      //       $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
+      //       // $scope.$apply() //to refresh any content external to the slider
+      //       $scope.$apply();
+      //     });
+      //   }
+      // });
+
       $scope.data.slider2Delegate = null;
       //watch our sliderDelegate reference, and use it when it becomes available
-      $scope.$watch('data.slider2Delegate', function (newVal, oldVal) {
-        if (newVal != null) {
-          $scope.data.slider2Delegate.on('slideChangeEnd', function () {
-            // $scope.data.currentPage = $scope.data.slider2Delegate.activeIndex;
-            //use $scope.$apply() to refresh any content external to the slider
-            $scope.$apply();
-          });
-        }
-      });
-    };
+      // $scope.$watch('data.slider2Delegate', function (newVal, oldVal) {
+      //   if (newVal != null) {
+      //     $scope.data.slider2Delegate.on('slideChangeEnd', function () {
+      //        $scope.data.currentPage = $scope.data.slider2Delegate.activeIndex;
+      //       //use  $scope.$apply() //to refresh any content external to the slider
+      //       $scope.$apply();
+      //     });
+      //   }
+      // });
+
+       $scope.$on("$ionicSlides.sliderInitialized", function(event, data){
+         // data.slider is the instance of Swiper
+         $scope.slider = data.slider;
+       });
+      
+       $scope.$on("$ionicSlides.slideChangeStart", function(event, data){
+         console.log('Slide change is beginning');
+       });
+      
+       $scope.$on("$ionicSlides.slideChangeEnd", function(event, data){
+         // note: the indexes are 0-based
+         $scope.activeIndex = data.slider.activeIndex;
+         $scope.previousIndex = data.slider.previousIndex;
+       });
+    
     $scope.navigateTo = function (path) {
       $state.go(path, {});
     }
-    setupSlider();
+
 
     //new slider test code to check how its working . 
     function showBanner(index) {
@@ -493,6 +508,15 @@ angular.module('starter.controllers', [])
     $scope.goToBookNow = function () {
       $state.go('app.bookNow', {});
     }
+
+    $('#lightSlider').lightSlider({
+      item: 3,
+      slideMargin: 10,
+      loop: true,
+      slideMove: 1,
+      speed: 100, //ms'
+      auto: true
+    });
   })
 
   .controller('batsCtrl', function ($scope) {

@@ -53,7 +53,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
           'menuContent': {
             templateUrl: 'templates/home.html',
-            controller: 'homeCtrl'
+            controller: 'homeCtrl',
+            cache: false
           }
         }
       })
