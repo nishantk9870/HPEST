@@ -360,9 +360,6 @@ angular.module('starter.controllers', [])
          $scope.slider = data.slider;
        });
       
-       $scope.$on("$ionicSlides.slideChangeStart", function(event, data){
-         console.log('Slide change is beginning');
-       });
       
        $scope.$on("$ionicSlides.slideChangeEnd", function(event, data){
          // note: the indexes are 0-based
