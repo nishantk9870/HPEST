@@ -113,91 +113,116 @@ angular.module('starter.controllers', [])
     }];
 
     $scope.menuItems = [{
+      id: 1,
       isLogo: true
     }, {
+      id: 2,
       name: 'Home',
       path: 'app.home'
     }, {
+      id: 3,
       name: 'About Us',
       path: 'app.aboutus'
     }, {
+      id: 4,
       name: 'Services',
       showSubMenu: false,
       subMenu: [{
+        id: 5,
         name: '- Residential Pest Control',
         path: 'app.residentialPestControl'
       }, {
+        id: 6,
         name: '- Commercial Pest Control',
         path: 'app.commercialPestControl'
       }, {
+        id: 7,
         name: '- Industrial Pest Control',
         path: 'app.environmentallyFriendly'
       }]
     }, {
+      id: 8,
       name: 'Pests',
       showSubMenu: false,
       subMenu: [{
+        id: 9,
         name: '- Ants',
         path: 'app.ants'
       }, {
+        id: 10,
         name: '- Box Elder Bugs',
         path: 'app.boxElderBugs'
       }, {
+        id: 11,
         name: '- Cockroach',
         path: 'app.cockroach'
       }, {
+        id: 12,
         name: '- Fruit Flies',
         path: 'app.fruitFlies'
       }, {
+        id: 13,
         name: '- Mosquitoes',
         path: 'app.mosquitoes'
       }, {
+        id: 14,
         name: '- Stink Bugs',
         path: 'app.stinkBugs'
       }, {
-        name: '- Bats',
-        path: 'app.bats'
-      }, {
+        id: 16,
         name: '- Earwing',
         path: 'app.earwing'
       }, {
+        id: 17,
         name: '- Gnats',
         path: 'app.gnats'
       }, {
+        id: 18,
         name: '- Rats',
         path: 'app.rats'
       }, {
+        id: 19,
         name: '- Termites',
         path: 'app.termites'
       }, {
+        id: 20,
         name: '- Bed Bugs',
         path: 'app.bedBugs'
       }, {
+        id: 21,
         name: '- Flies',
         path: 'app.flies'
       }, {
+        id: 22,
         name: '- Millipedes',
         path: 'app.millipedes'
       }, {
+        id: 23,
         name: '- Snakes',
         path: 'app.snakes'
       }, {
+        id: 24,
         name: '- Weevils',
         path: 'app.weevils'
+      },{
+        id: 25,
+        name: '- Mites',
+        path: 'app.mites'
       }, {
-        name: '- Birds',
-        path: 'app.birds'
-      }, {
+        id: 26,
         name: '- Fleas',
         path: 'app.fleas'
       }, {
+        id: 27,
         name: '- Lizards',
         path: 'app.lizards'
       }]
     }, {
+      id: 28,
       name: 'Book Now',
       path: 'app.bookNow'
     }, {
+      id: 29,
       name: 'Contact Us',
       path: 'app.contactus'
     }];
@@ -232,6 +257,10 @@ angular.module('starter.controllers', [])
         $ionicSideMenuDelegate.toggleLeft();
         $state.go(menu.path, {});
       } else if (!menu.path && menu.subMenu) {
+        angular.forEach($scope.menuItems, function(menuItem){
+          if (menuItem.hasOwnProperty('showSubMenu') && menuItem.id != menu.id)
+            menuItem.showSubMenu = false;
+        });
         menu.showSubMenu = !menu.showSubMenu;
       }
     }
